@@ -84,3 +84,7 @@
 #tablapane {
     -fx-background-color: transparent;
 }
+.my-scroll-pane {
+    -fx-fit-to-height: true;
+    -fx-fit-to-width: true;
+}

@@ -1,5 +1,6 @@
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -12,13 +13,15 @@ import java.util.Random;
 
 public class ControladorGuardarPersonaje {
     @FXML
-    AnchorPane rig,lef,cen;
+    AnchorPane rig,lef;
     @FXML
     HBox bot,botlef,botrig,toprig,toplef,up;
     @FXML
     BorderPane back;
     @FXML
-    VBox tabla;
+    VBox tabla,cen;
+    @FXML
+    ScrollPane tablapane;
     public void initialize(){
 
 
@@ -39,15 +42,16 @@ public class ControladorGuardarPersonaje {
         int i = r.nextInt(s.size());
         System.out.println(i+" "+s.get(i));
         ImageView ima = new ImageView(new Image(getClass().getResourceAsStream(s.get(i)+".png")));
-        ima.setFitHeight(128);
-        ima.setFitWidth(128);
+        ima.setFitHeight(115);
+        ima.setFitWidth(120);
         Button bu =new Button();
-        bu.setMinHeight(128);
-        bu.setMinWidth(128);
+        bu.setMinHeight(115);
+        bu.setMinWidth(120);
         bu.setText("tetetete");
         b.getChildren().add(ima);
         b.getChildren().add(bu);
         tabla.getChildren().add(b);
+
 
 
     }
