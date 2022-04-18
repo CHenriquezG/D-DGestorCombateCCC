@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="720.0" prefWidth="1080.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorGuardarPersonaje">
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="575.0" prefWidth="970.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorGuardarPersonaje">
 
     <left>
         <AnchorPane fx:id="lef" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="228.0" prefWidth="32.0" style="-fx-background-color: BLUE;" BorderPane.alignment="CENTER" />
@@ -17,21 +17,21 @@
     <center>
         <AnchorPane fx:id="cen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="457.0" prefWidth="924.0" style="-fx-background-color: GREEN;" BorderPane.alignment="CENTER">
             <children>
-                <ScrollPane fx:id="tablapane" layoutX="223.0" layoutY="131.0" prefHeight="309.0" prefWidth="634.0">
+                <ScrollPane fx:id="tablapane" layoutX="89.0" layoutY="112.0" prefHeight="385.0" prefWidth="528.0">
                     <content>
-                        <VBox fx:id="tabla" prefHeight="105.0" prefWidth="632.0" />
+                        <VBox fx:id="tabla" prefHeight="99.0" prefWidth="528.0" />
                     </content>
                 </ScrollPane>
-                <HBox alignment="CENTER" layoutX="435.0" layoutY="549.0" prefHeight="68.0" prefWidth="211.0">
+                <HBox alignment="CENTER" layoutX="681.0" layoutY="411.0" prefHeight="68.0" prefWidth="211.0">
                     <children>
                         <Button fx:id="crear" mnemonicParsing="false" onMouseClicked="#crear" prefHeight="60.0" prefWidth="103.0" text="agregar" />
                         <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="110.0" text="agregar" />
                     </children>
                 </HBox>
-                <Button layoutX="32.0" layoutY="251.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="160.0" text="borrar seleccionado" />
-                <Button layoutX="79.0" layoutY="537.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="113.0" text="cargar partida" />
-                <Button layoutX="810.0" layoutY="551.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="174.0" text="confirmar participantes" />
-                <Label alignment="CENTER" graphicTextGap="8.0" layoutX="283.0" layoutY="25.0" lineSpacing="7.0" prefHeight="71.0" prefWidth="514.0" text="Gestor de combate D&amp;D" textAlignment="JUSTIFY" textOverrun="LEADING_ELLIPSIS" underline="true">
+                <Button layoutX="707.0" layoutY="141.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="160.0" text="borrar seleccionado" />
+                <Button layoutX="731.0" layoutY="222.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="113.0" text="cargar partida" />
+                <Button layoutX="700.0" layoutY="329.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="174.0" text="confirmar participantes" />
+                <Label alignment="CENTER" graphicTextGap="8.0" layoutX="196.0" layoutY="23.0" lineSpacing="7.0" prefHeight="71.0" prefWidth="514.0" text="Gestor de combate D&amp;D" textAlignment="JUSTIFY" textOverrun="LEADING_ELLIPSIS" underline="true">
                     <font>
                         <Font name="Comic Sans MS" size="38.0" />
                     </font>
