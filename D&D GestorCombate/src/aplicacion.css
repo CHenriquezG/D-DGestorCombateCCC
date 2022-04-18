@@ -50,3 +50,37 @@
     -fx-background-repeat: no-repeat;
 }
 
+
+/*
+.button {
+    -fx-background-image: url(boton.png);
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}*/
+
+
+/*
+#ima {
+    -fx-background-image: url(Spy.png);
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}*/
+
+.hbox {
+    -fx-background-color: #2f4f4f;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+    -fx-overflow: hidden;
+    -fx-background-image: url(subtab.png);
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+.scroll-pane>.viewport {
+    -fx-background-image: url(LADO9.png);
+    -fx-border-color: transparent;
+}
+
+#tablapane {
+    -fx-background-color: transparent;
+}
