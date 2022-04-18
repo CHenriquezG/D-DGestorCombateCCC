@@ -10,7 +10,11 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("ControladorGuardarPersonaje.fxml"));
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        Scene s = new Scene(root);
+        s.getStylesheets().add(getClass().getResource("aplicacion.css").toExternalForm());
+
+        primaryStage.setScene(s);
+
         primaryStage.show();
     }
 

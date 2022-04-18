@@ -1,0 +1,52 @@
+#cen {
+    -fx-background-image: url(LADO9.png);
+    -fx-max-width: Infinity;
+    -fx-max-height: Infinity;
+    -fx-min-width: 100;
+    -fx-min-height: 100;
+}
+
+#lef {
+    -fx-background-color: #00f;
+    -fx-background-image: url(LADO8.png);
+    background-size: cover;
+    -fx-background-repeat: repeat-y;
+    -fx-max-height: Infinity;
+}
+
+#rig {
+    -fx-background-color: #00f;
+    -fx-background-image: url(LADO4.png);
+    -fx-background-repeat: repeat-y;
+    -fx-max-height: Infinity;
+}
+
+#up {
+    -fx-background-image: url(LADO2.png);
+    -fx-background-repeat: repeat-x;
+}
+
+#toplef {
+    -fx-background-image: url(LADO1.png);
+    -fx-background-repeat: no-repeat;
+}
+
+#toprig {
+    -fx-background-image: url(LADO1.png);
+    -fx-background-repeat: no-repeat;
+}
+
+#botlef {
+    -fx-background-image: url(LADO7.png);
+    -fx-background-repeat: no-repeat;
+}
+
+#bot {
+    -fx-background-image: url(LADO6.png);
+}
+
+#botrig {
+    -fx-background-image: url(LADO7.png);
+    -fx-background-repeat: no-repeat;
+}
+
