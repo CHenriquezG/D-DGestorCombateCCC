@@ -50,13 +50,16 @@
     -fx-background-repeat: no-repeat;
 }
 
-
-/*
 .button {
-    -fx-background-image: url(boton.png);
+    /*
+    -fx-background-image: url(bot.png);
     -fx-background-size: cover;
-    -fx-background-repeat: no-repeat;
-}*/
+    -fx-background-repeat: no-repeat;*/
+    -fx-background-radius: 4em;
+    -fx-font-size: 17px;
+    -fx-font-weight: bolder;
+    -fx-background-color: #999;
+}
 
 
 /*
@@ -84,6 +87,7 @@
 #tablapane {
     -fx-background-color: transparent;
 }
+
 .my-scroll-pane {
     -fx-fit-to-height: true;
     -fx-fit-to-width: true;

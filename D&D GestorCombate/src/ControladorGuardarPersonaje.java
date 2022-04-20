@@ -42,10 +42,10 @@ public class ControladorGuardarPersonaje {
         int i = r.nextInt(s.size());
         System.out.println(i+" "+s.get(i));
         ImageView ima = new ImageView(new Image(getClass().getResourceAsStream(s.get(i)+".png")));
-        ima.setFitHeight(115);
+        ima.setFitHeight(130);
         ima.setFitWidth(120);
         Button bu =new Button();
-        bu.setMinHeight(115);
+        bu.setMinHeight(130);
         bu.setMinWidth(120);
         bu.setText("tetetete");
         b.getChildren().add(ima);
