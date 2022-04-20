@@ -52,17 +52,17 @@
                         <Insets left="10.0" right="10.0" />
                      </padding>
                   </ScrollPane>
-                  <VBox alignment="CENTER" prefHeight="458.0" prefWidth="533.0" HBox.hgrow="ALWAYS">
+                  <VBox alignment="CENTER" prefHeight="458.0" prefWidth="533.0" spacing="10.0" HBox.hgrow="ALWAYS">
                      <children>
-                            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="275.0">
+                            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="275.0" spacing="10.0">
                                 <children>
-                                    <Button fx:id="crear" mnemonicParsing="false" onMouseClicked="#crear" prefHeight="60.0" prefWidth="103.0" text="agregar" />
-                                    <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="110.0" text="agregar" />
+                                    <Button fx:id="crear" mnemonicParsing="false" onMouseClicked="#crear" prefHeight="60.0" prefWidth="113.0" text="AGREGAR" />
+                                    <Button fx:id="h" mnemonicParsing="false" prefHeight="60.0" prefWidth="110.0" text="AGREGAR" />
                                 </children>
                             </HBox>
-                            <Button mnemonicParsing="false" prefHeight="69.0" prefWidth="160.0" text="borrar seleccionado" VBox.vgrow="ALWAYS" />
-                            <Button mnemonicParsing="false" prefHeight="92.0" prefWidth="113.0" text="cargar partida" VBox.vgrow="ALWAYS" />
-                            <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="174.0" text="confirmar participantes" VBox.vgrow="ALWAYS" />
+                            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="219.0" text="borrar seleccionado" VBox.vgrow="ALWAYS" />
+                            <Button mnemonicParsing="false" prefHeight="92.0" prefWidth="182.0" text="cargar partida" VBox.vgrow="ALWAYS" />
+                            <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="242.0" text="confirmar participantes" VBox.vgrow="ALWAYS" />
                      </children>
                   </VBox>
                </children>
