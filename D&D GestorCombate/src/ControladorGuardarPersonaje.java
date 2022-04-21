@@ -32,11 +32,12 @@ public class ControladorGuardarPersonaje {
     }
 
     public void CambiarVent(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("nuevo.fxml"));
+        BorderPane b = FXMLLoader.load(getClass().getResource("nuevo.fxml"));
 
 
-        //System.out.println(" hola ");
-        //back.getChildren().setAll(root);
+        System.out.println(" hola ");
+        back.setCenter(b.getCenter());
+        //back.setCenter(root);
 
 
     }
