@@ -1,4 +1,7 @@
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
@@ -8,6 +11,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -27,7 +31,15 @@ public class ControladorGuardarPersonaje {
 
     }
 
+    public void CambiarVent(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("nuevo.fxml"));
 
+
+        //System.out.println(" hola ");
+        //back.getChildren().setAll(root);
+
+
+    }
     public void crear(){
         ArrayList<String> s = new ArrayList<>();
         s.add("Guard-Village");

@@ -62,7 +62,7 @@
                             </HBox>
                             <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="219.0" text="borrar seleccionado" VBox.vgrow="ALWAYS" />
                             <Button mnemonicParsing="false" prefHeight="92.0" prefWidth="182.0" text="cargar partida" VBox.vgrow="ALWAYS" />
-                            <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="242.0" text="confirmar participantes" VBox.vgrow="ALWAYS" />
+                            <Button mnemonicParsing="false" onAction="#CambiarVent" prefHeight="64.0" prefWidth="242.0" text="confirmar participantes" VBox.vgrow="ALWAYS" />
                      </children>
                   </VBox>
                </children>
