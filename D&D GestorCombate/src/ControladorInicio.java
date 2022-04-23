@@ -31,7 +31,7 @@ public class ControladorInicio {
     }
 
     public void CambiarVentana(ActionEvent event) throws IOException {
-        BorderPane b = FXMLLoader.load(getClass().getResource("ControladorGuardarPersonaje.fxml"));
+        BorderPane b = FXMLLoader.load(getClass().getResource("ControladorListaPersonajes.fxml"));
         back.setCenter(b.getCenter());
         //back.setCenter(root);
 
