@@ -1,10 +1,12 @@
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -25,8 +27,22 @@ public class ControladorInicio {
     VBox tabla,cen;
     @FXML
     ScrollPane tablapane;
+    @FXML
+    ImageView ima;
     public void initialize(){
+        ima.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                BorderPane b = null;
+                try {
+                    b = FXMLLoader.load(getClass().getResource("ControladorListaPersonajes.fxml"));
+                    back.setCenter(b.getCenter());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
+            }
+        });
 
     }
 
@@ -37,6 +53,9 @@ public class ControladorInicio {
 
 
     }
+
+
+
     public void crear(){
         ArrayList<String> s = new ArrayList<>();
         s.add("Guard-Village");
