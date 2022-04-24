@@ -1,7 +1,6 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
@@ -15,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class ControladorGuardarPersonaje {
+public class ControladorInicio {
     @FXML
     AnchorPane rig,lef;
     @FXML
@@ -31,9 +30,8 @@ public class ControladorGuardarPersonaje {
 
     }
 
-    public void CambiarVent(ActionEvent event) throws IOException {
-        BorderPane b = FXMLLoader.load(getClass().getResource("ControladorInicio.fxml"));
-
+    public void CambiarVentana(ActionEvent event) throws IOException {
+        BorderPane b = FXMLLoader.load(getClass().getResource("ControladorListaPersonajes.fxml"));
         back.setCenter(b.getCenter());
         //back.setCenter(root);
 
