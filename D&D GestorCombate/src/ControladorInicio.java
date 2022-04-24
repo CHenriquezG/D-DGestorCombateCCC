@@ -29,6 +29,8 @@ public class ControladorInicio {
     ScrollPane tablapane;
     @FXML
     ImageView ima;
+
+
     public void initialize(){
         ima.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
