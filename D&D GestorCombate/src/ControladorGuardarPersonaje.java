@@ -2,6 +2,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
@@ -10,6 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,6 +31,17 @@ public class ControladorGuardarPersonaje {
     public void initialize(){
 
 
+    }
+
+    public void AñadirCombatiente() throws IOException {
+        //Parent root = FXMLLoader.load(getClass().getResource("NuevoEvento.fxml"));
+        //NuevoEvento eve = new NuevoEvento();
+        Stage Ventana = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("VentanaFormulario.fxml"));
+        Ventana.setScene(new Scene(root));
+        //eve.MostrarMapamundi();
+
+        Ventana.show();
     }
 
     public void CambiarVent(ActionEvent event) throws IOException {
