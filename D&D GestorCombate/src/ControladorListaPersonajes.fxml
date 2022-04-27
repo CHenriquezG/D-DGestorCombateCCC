@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="575.0" prefWidth="970.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorListaPersonajes">
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="575.0" prefWidth="970.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorListaPersonajes">
 
     <left>
         <AnchorPane fx:id="lef" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="228.0" prefWidth="32.0" style="-fx-background-color: BLUE;" BorderPane.alignment="CENTER" />
@@ -39,7 +39,13 @@
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <ImageView fitHeight="45.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fitHeight="43.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="48.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Recursos/Diseño/basureroooo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin></ImageView>
                   <ImageView fitHeight="43.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@trash-can-icon-28.png" />
@@ -58,9 +64,9 @@
                         </ScrollPane>
                         <VBox alignment="CENTER" prefHeight="458.0" prefWidth="533.0" spacing="10.0" HBox.hgrow="ALWAYS">
                             <children>
-                        <ImageView fitHeight="104.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="127.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@365-3655350_dungeons-dragons-clipart.png" />
+                              <Image url="@Recursos/Diseño/dyd_logo.png" />
                            </image>
                            <VBox.margin>
                               <Insets bottom="50.0" />
