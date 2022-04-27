@@ -20,6 +20,7 @@ public class ControladorInicio {
     @FXML
     AnchorPane rig,lef;
     @FXML
+
     HBox bot,botlef,botrig,toprig,toplef,up;
     @FXML
     BorderPane back;
@@ -27,11 +28,14 @@ public class ControladorInicio {
     VBox tabla,cen;
     @FXML
     ScrollPane tablapane;
+
     @FXML
-    ImageView ima;
+    ImageView ima, imaSalir;
+
 
 
     public void initialize(){
+
         ima.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -46,17 +50,15 @@ public class ControladorInicio {
             }
         });
 
+        imaSalir.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                System.exit(0);
+
+            }
+        });
+
     }
-
-    public void CambiarVentana(ActionEvent event) throws IOException {
-        BorderPane b = FXMLLoader.load(getClass().getResource("ControladorListaPersonajes.fxml"));
-        back.setCenter(b.getCenter());
-        //back.setCenter(root);
-
-
-    }
-
-
 
     public void crear(){
         ArrayList<String> s = new ArrayList<>();
