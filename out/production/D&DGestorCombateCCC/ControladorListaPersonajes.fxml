@@ -70,19 +70,19 @@
                            <children>
                               <ImageView fx:id="imaAgregarCombatiente" fitHeight="83.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Botones/7.png" />
+                                    <Image url="@Recursos/Botones/Agregar%20combatiente.png" />
                                  </image>
                               </ImageView>
                            </children>
                                 </HBox>
                         <ImageView fx:id="imaAgregarNPC" fitHeight="84.0" fitWidth="155.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Botones/6.png" />
+                              <Image url="@Recursos/Botones/Agregar%20NPC.png" />
                            </image>
                         </ImageView>
                         <ImageView fx:id="imaSiguente" fitHeight="82.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Botones/5.png" />
+                              <Image url="@Recursos/Botones/Siguiente.png" />
                            </image>
                         </ImageView>
                             </children>
