@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -11,13 +10,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="50.0" minWidth="50.0" prefHeight="575.0" prefWidth="970.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorJuego">
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="50.0" minWidth="50.0" prefHeight="575.0" prefWidth="970.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorJuego">
    <center>
       <HBox fx:id="cen" prefHeight="511.0" prefWidth="835.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="511.0" prefWidth="0.0" spacing="15.0" HBox.hgrow="ALWAYS">
+            <VBox prefHeight="511.0" prefWidth="653.0" spacing="15.0" HBox.hgrow="ALWAYS">
                <children>
-                  <BorderPane prefHeight="566.0" prefWidth="482.0" VBox.vgrow="ALWAYS">
+                  <BorderPane prefHeight="316.0" prefWidth="164.0" VBox.vgrow="ALWAYS">
                      <right>
                         <AnchorPane fx:id="subrig" prefHeight="200.0" prefWidth="32.0" BorderPane.alignment="CENTER" />
                      </right>
@@ -25,7 +24,7 @@
                         <AnchorPane fx:id="sublef" prefHeight="200.0" prefWidth="32.0" BorderPane.alignment="CENTER" />
                      </left>
                      <bottom>
-                        <HBox fx:id="subbot" prefHeight="32.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                        <HBox fx:id="subbot" prefHeight="32.0" prefWidth="164.0" BorderPane.alignment="CENTER">
                            <children>
                               <HBox fx:id="subbotlef" alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                               <HBox fx:id="subbotrig" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
@@ -49,7 +48,7 @@
                            </children></VBox>
                      </center>
                   </BorderPane>
-                  <BorderPane prefHeight="188.0" prefWidth="193.0">
+                  <BorderPane prefHeight="180.0" prefWidth="228.0">
                      <right>
                         <AnchorPane fx:id="subrig1" prefHeight="200.0" prefWidth="32.0" BorderPane.alignment="CENTER" />
                      </right>
@@ -73,16 +72,7 @@
                         </HBox>
                      </top>
                      <center>
-                        <VBox fx:id="fcontent" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <ImageView fx:id="paisaje" fitHeight="129.0" fitWidth="300.0" pickOnBounds="true" smooth="false" VBox.vgrow="ALWAYS">
-                                 <image>
-                                    <Image url="@city.png" />
-                                 </image>
-                              </ImageView>
-
-                           </children>
-                        </VBox>
+                        <VBox fx:id="fcontent" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
                      </center>
                      <opaqueInsets>
                         <Insets />
@@ -101,13 +91,21 @@
                      </content>
                   </ScrollPane>
                   <HBox alignment="BOTTOM_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="74.0" prefWidth="613.0" spacing="15.0" VBox.vgrow="ALWAYS">
-                     <children>
-                        <Button mnemonicParsing="false" text="siguiente turno" />
-                        <Button mnemonicParsing="false" text="finalizar batalla" />
-                     </children>
                      <padding>
                         <Insets right="20.0" />
                      </padding>
+                     <children>
+                        <ImageView fitHeight="88.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Recursos/Botones/siguiente%20turno.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="88.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Recursos/Botones/Finalizar%20combate.png" />
+                           </image>
+                        </ImageView>
+                     </children>
                   </HBox>
                </children>
             </VBox>
