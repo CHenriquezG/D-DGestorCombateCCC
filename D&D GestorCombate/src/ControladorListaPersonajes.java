@@ -77,13 +77,21 @@ public class ControladorListaPersonajes {
                 //Parent root = FXMLLoader.load(getClass().getResource("NuevoEvento.fxml"));
                 //NuevoEvento eve = new NuevoEvento();
                 Stage Ventana = new Stage();
-                Parent root = new Pane();
+                FXMLLoader loader = new FXMLLoader(
+                        getClass().getResource(
+                                "VentanaFormulario.fxml"
+                        )
+                );
+
+                BorderPane b = null;
                 try {
-                    root = FXMLLoader.load(getClass().getResource("VentanaFormulario.fxml"));
+                    b = (BorderPane)loader.load();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                Ventana.setScene(new Scene(root));
+                ControladorFormulario controller = loader.<ControladorFormulario>getController();
+                controller.initData( tabla);
+                Ventana.setScene(new Scene(b));
                 //eve.MostrarMapamundi();
 
                 Ventana.show();
