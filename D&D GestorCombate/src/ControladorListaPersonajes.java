@@ -9,10 +9,9 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.shape.Polygon;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -70,6 +69,46 @@ public class ControladorListaPersonajes {
 
             }
         });
+
+
+        imaAgregarCombatiente.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                //Parent root = FXMLLoader.load(getClass().getResource("NuevoEvento.fxml"));
+                //NuevoEvento eve = new NuevoEvento();
+                Stage Ventana = new Stage();
+                Parent root = new Pane();
+                try {
+                    root = FXMLLoader.load(getClass().getResource("VentanaFormulario.fxml"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Ventana.setScene(new Scene(root));
+                //eve.MostrarMapamundi();
+
+                Ventana.show();
+            }
+        });
+
+        imaAgregarNPC.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                //Parent root = FXMLLoader.load(getClass().getResource("NuevoEvento.fxml"));
+                //NuevoEvento eve = new NuevoEvento();
+                Stage Ventana = new Stage();
+                Parent root = new Pane();
+                try {
+                    root = FXMLLoader.load(getClass().getResource("VentanaAgregarCombatienteGen.fxml"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Ventana.setScene(new Scene(root));
+                //eve.MostrarMapamundi();
+
+                Ventana.show();
+            }
+        });
+
 
     }
     void initData(BorderPane customer) {

@@ -168,7 +168,58 @@
     -fx-background-image: url(Recursos/Fondo/sublado8.png);
     -fx-background-repeat: no-repeat;
 }
+#subcen2 {
+    -fx-background-image: url(Recursos/Fondo/LADO9.png);
+    -fx-max-width: Infinity;
+    -fx-max-height: Infinity;
+    -fx-min-width: 100;
+    -fx-min-height: 100;
+}
 
+#sublef2 {
+    -fx-background-color: #00f;
+    -fx-background-image: url(Recursos/Fondo/sublado4.png);
+    background-size: cover;
+    -fx-background-repeat: repeat-y;
+    -fx-max-height: Infinity;
+}
+
+#subrig2 {
+    -fx-background-color: #00f;
+    -fx-background-image: url(Recursos/Fondo/sublado5.png);
+    -fx-background-repeat: repeat-y;
+    -fx-max-height: Infinity;
+}
+
+#subup2 {
+    -fx-background-image: url(Recursos/Fondo/sublado2.png);
+    -fx-background-repeat: repeat-x;
+}
+
+#subtoplef2 {
+    -fx-background-image: url(Recursos/Fondo/sublado1.png);
+    -fx-background-repeat: no-repeat;
+}
+
+#subtoprig2 {
+    -fx-background-image: url(Recursos/Fondo/sublado1.png);
+    -fx-background-repeat: no-repeat;
+}
+
+#subbotlef2 {
+    -fx-background-image: url(Recursos/Fondo/sublado8.png);
+    -fx-background-repeat: no-repeat;
+}
+
+
+#subbot2 {
+    -fx-background-image: url(Recursos/Fondo/sublado7.png);
+}
+
+#subbotrig2 {
+    -fx-background-image: url(Recursos/Fondo/sublado8.png);
+    -fx-background-repeat: no-repeat;
+}
 .button {
     /*
     -fx-background-image: url(bot.png);
