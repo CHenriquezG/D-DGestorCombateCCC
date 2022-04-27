@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class ControladorGuardarPersonaje {
+public class ControladorListaPersonajes {
     @FXML
     AnchorPane rig,lef;
     @FXML
@@ -42,10 +42,39 @@ public class ControladorGuardarPersonaje {
                 System.out.println("agregar npc");
                 //a.crear();
             }
+
+        });
+
+        imaSiguente.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+
+                FXMLLoader loader = new FXMLLoader(
+                        getClass().getResource(
+                                "ControladorJuego.fxml"
+                        )
+                );
+
+                BorderPane b = null;
+                try {
+                    b = (BorderPane)loader.load();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                ControladorJuego controller = loader.<ControladorJuego>getController();
+
+                back.setCenter(controller.back.getCenter());
+                controller.initData(back);
+
+
+
+            }
         });
 
     }
-
+    void initData(BorderPane customer) {
+        back = customer;
+    }
     public void AñadirCombatiente() throws IOException {
         //Parent root = FXMLLoader.load(getClass().getResource("NuevoEvento.fxml"));
         //NuevoEvento eve = new NuevoEvento();
