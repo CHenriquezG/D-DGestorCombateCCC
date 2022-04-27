@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="50.0" minWidth="50.0" prefHeight="575.0" prefWidth="970.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorJuego">
+   <center>
+      <HBox fx:id="cen" prefHeight="511.0" prefWidth="835.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="511.0" prefWidth="653.0" spacing="15.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <BorderPane prefHeight="238.0" prefWidth="406.0" VBox.vgrow="ALWAYS">
+                     <right>
+                        <AnchorPane fx:id="subrig" prefHeight="200.0" prefWidth="32.0" BorderPane.alignment="CENTER" />
+                     </right>
+                     <left>
+                        <AnchorPane fx:id="sublef" prefHeight="200.0" prefWidth="32.0" BorderPane.alignment="CENTER" />
+                     </left>
+                     <bottom>
+                        <HBox fx:id="subbot" prefHeight="32.0" prefWidth="164.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox fx:id="subbotlef" alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <HBox fx:id="subbotrig" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                     </bottom>
+                     <top>
+                        <HBox fx:id="subup" prefHeight="32.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox fx:id="subtoplef" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <HBox fx:id="subtoprig" alignment="TOP_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                     </top>
+                     <center>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox prefHeight="204.0" prefWidth="342.0" VBox.vgrow="ALWAYS" />
+                              <HBox alignment="TOP_RIGHT" prefHeight="0.0" prefWidth="342.0">
+                                 <children>
+                                    <ImageView fitHeight="68.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Recursos/Botones/siguiente%20turno.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children></VBox>
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="202.0" prefWidth="306.0">
+                     <right>
+                        <AnchorPane fx:id="subrig1" prefHeight="200.0" prefWidth="32.0" BorderPane.alignment="CENTER" />
+                     </right>
+                     <left>
+                        <AnchorPane fx:id="sublef1" prefHeight="200.0" prefWidth="32.0" BorderPane.alignment="CENTER" />
+                     </left>
+                     <bottom>
+                        <HBox fx:id="subbot1" prefHeight="32.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox fx:id="subbotlef1" alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <HBox fx:id="subbotrig1" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                     </bottom>
+                     <top>
+                        <HBox fx:id="subup1" prefHeight="32.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox fx:id="subtoplef1" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <HBox fx:id="subtoprig1" alignment="TOP_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                     </top>
+                     <center>
+                        <VBox fx:id="fcontent" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+                     </center>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" />
+                     </VBox.margin>
+                  </BorderPane>
+               </children>
+            </VBox>
+            <VBox prefHeight="511.0" prefWidth="747.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <BorderPane prefHeight="430.0" prefWidth="500.0" VBox.vgrow="ALWAYS">
+                     <right>
+                        <AnchorPane fx:id="subrig2" prefHeight="200.0" prefWidth="32.0" BorderPane.alignment="CENTER" />
+                     </right>
+                     <left>
+                        <AnchorPane fx:id="sublef2" prefHeight="200.0" prefWidth="32.0" BorderPane.alignment="CENTER" />
+                     </left>
+                     <bottom>
+                        <HBox fx:id="subbot2" prefHeight="32.0" prefWidth="164.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox fx:id="subbotlef2" alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <HBox fx:id="subbotrig2" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                     </bottom>
+                     <top>
+                        <HBox fx:id="subup2" prefHeight="32.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox fx:id="subtoplef2" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <HBox fx:id="subtoprig2" alignment="TOP_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                     </top>
+                     <center>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" />
+                              <HBox prefHeight="36.0" prefWidth="342.0" />
+                              <ScrollPane fx:id="tablapane" prefHeight="476.0" prefWidth="613.0" vbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+                                 <content>
+                                    <VBox prefHeight="147.0" prefWidth="369.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+                  <HBox alignment="BOTTOM_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="73.0" prefWidth="500.0" spacing="15.0">
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                     <children>
+                        <ImageView fitHeight="88.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Recursos/Botones/Finalizar%20combate.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+    <left>
+        <AnchorPane fx:id="lef" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="228.0" prefWidth="32.0" style="-fx-background-color: BLUE;" BorderPane.alignment="CENTER" />
+    </left>
+    <right>
+        <AnchorPane fx:id="rig" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="228.0" prefWidth="32.0" BorderPane.alignment="CENTER" />
+    </right>
+    <top>
+        <HBox fx:id="up" prefHeight="32.0" prefWidth="481.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox fx:id="toplef" prefHeight="32.0" prefWidth="32.0" stylesheets="@aplicacion.css" HBox.hgrow="ALWAYS" />
+                <HBox fx:id="toprig" alignment="TOP_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="32.0" HBox.hgrow="ALWAYS" />
+            </children>
+        </HBox>
+    </top>
+    <bottom>
+        <HBox fx:id="bot" prefHeight="32.0" prefWidth="481.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox fx:id="botlef" prefHeight="36.0" prefWidth="36.0" HBox.hgrow="ALWAYS" />
+                <HBox fx:id="botrig" alignment="TOP_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="36.0" prefWidth="36.0" HBox.hgrow="ALWAYS" />
+            </children>
+        </HBox>
+    </bottom>
+
+</BorderPane>
