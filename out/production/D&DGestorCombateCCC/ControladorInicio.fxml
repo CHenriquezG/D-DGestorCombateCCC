@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="575.0" prefWidth="970.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorInicio">
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="575.0" prefWidth="970.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorInicio">
 
     <left>
         <AnchorPane fx:id="lef" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="228.0" prefWidth="32.0" style="-fx-background-color: BLUE;" BorderPane.alignment="CENTER" />
@@ -37,27 +37,19 @@
     <center>
         <VBox fx:id="cen" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
             <children>
-            <ImageView fitHeight="75.0" fitWidth="611.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="391.0" fitWidth="789.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../Desktop/aaaa.png" />
-               </image>
-               <VBox.margin>
-                  <Insets top="50.0" />
-               </VBox.margin>
-            </ImageView>
-            <ImageView fitHeight="228.0" fitWidth="406.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Dungeons-Dragons-Logo.png" />
+                  <Image url="@Sin%20título%20(2160%C2%A0×%C2%A01080%C2%A0px).png" />
                </image>
             </ImageView>
             <HBox prefHeight="100.0" prefWidth="171.0">
                <children>
                   <VBox prefHeight="200.0" prefWidth="100.0" />
-                  <Button mnemonicParsing="false" onAction="#CambiarVentana" prefHeight="80.0" prefWidth="153.0" text="Crear Combate">
-                     <HBox.margin>
-                        <Insets left="60.0" />
-                     </HBox.margin>
-                  </Button>
+                  <ImageView fx:id="ima" fitHeight="111.0" fitWidth="208.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@bot.png" />
+                     </image>
+                  </ImageView>
                   <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="161.0" text="Cargar Combate">
                      <HBox.margin>
                         <Insets left="60.0" />
