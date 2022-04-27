@@ -13,8 +13,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.ResourceBundle;
 
 public class ControladorInicio {
     @FXML
@@ -39,13 +41,25 @@ public class ControladorInicio {
         ima.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
+
+                FXMLLoader loader = new FXMLLoader(
+                        getClass().getResource(
+                                "ControladorListaPersonajes.fxml"
+                        )
+                );
+
                 BorderPane b = null;
                 try {
-                    b = FXMLLoader.load(getClass().getResource("ControladorListaPersonajes.fxml"));
-                    back.setCenter(b.getCenter());
+                    b = (BorderPane)loader.load();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                ControladorListaPersonajes controller = loader.<ControladorListaPersonajes>getController();
+
+                back.setCenter(controller.back.getCenter());
+                controller.initData(back);
+
+
 
             }
         });
