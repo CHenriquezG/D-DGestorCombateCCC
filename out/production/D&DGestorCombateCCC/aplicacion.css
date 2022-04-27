@@ -1,0 +1,215 @@
+#cen {
+    -fx-background-image: url(LADO9.png);
+    -fx-max-width: Infinity;
+    -fx-max-height: Infinity;
+    -fx-min-width: 100;
+    -fx-min-height: 100;
+}
+
+#lef {
+    -fx-background-color: #00f;
+    -fx-background-image: url(LADO8.png);
+    background-size: cover;
+    -fx-background-repeat: repeat-y;
+    -fx-max-height: Infinity;
+}
+
+#rig {
+    -fx-background-color: #00f;
+    -fx-background-image: url(LADO4.png);
+    -fx-background-repeat: repeat-y;
+    -fx-max-height: Infinity;
+}
+
+#up {
+    -fx-background-image: url(LADO2.png);
+    -fx-background-repeat: repeat-x;
+}
+#bot {
+    -fx-background-image: url(LADO6.png);
+}
+
+#botrig {
+    -fx-background-image: url(LADO7.png);
+    -fx-background-repeat: no-repeat;
+}
+#toplef {
+    -fx-background-image: url(LADO1.png);
+    -fx-background-repeat: no-repeat;
+}
+
+#toprig {
+    -fx-background-image: url(LADO1.png);
+    -fx-background-repeat: no-repeat;
+}
+
+#botlef {
+    -fx-background-image: url(LADO7.png);
+    -fx-background-repeat: no-repeat;
+}
+
+#subcen1 {
+    -fx-background-image: url(LADO9.png);
+    -fx-max-width: Infinity;
+    -fx-max-height: Infinity;
+    -fx-min-width: 100;
+    -fx-min-height: 100;
+}
+
+#sublef1 {
+    -fx-background-color: #00f;
+    -fx-background-image: url(sublado4.png);
+    background-size: cover;
+    -fx-background-repeat: repeat-y;
+    -fx-max-height: Infinity;
+}
+
+#subrig1 {
+    -fx-background-color: #00f;
+    -fx-background-image: url(sublado5.png);
+    -fx-background-repeat: repeat-y;
+    -fx-max-height: Infinity;
+}
+
+#subup1 {
+    -fx-background-image: url(sublado2.png);
+    -fx-background-repeat: repeat-x;
+}
+
+#subtoplef1 {
+    -fx-background-image: url(sublado1.png);
+    -fx-background-repeat: no-repeat;
+}
+
+#subtoprig1 {
+    -fx-background-image: url(sublado1.png);
+    -fx-background-repeat: no-repeat;
+}
+
+#subbotlef1 {
+    -fx-background-image: url(sublado8.png);
+    -fx-background-repeat: no-repeat;
+}
+
+
+#subbot1 {
+    -fx-background-image: url(sublado7.png);
+}
+
+#subbotrig1 {
+    -fx-background-image: url(sublado8.png);
+    -fx-background-repeat: no-repeat;
+}
+
+#toplef {
+    -fx-background-image: url(LADO1.png);
+    -fx-background-repeat: no-repeat;
+}
+
+#toprig {
+    -fx-background-image: url(LADO1.png);
+    -fx-background-repeat: no-repeat;
+}
+
+#botlef {
+    -fx-background-image: url(LADO7.png);
+    -fx-background-repeat: no-repeat;
+}
+
+#subcen {
+    -fx-background-image: url(LADO9.png);
+    -fx-max-width: Infinity;
+    -fx-max-height: Infinity;
+    -fx-min-width: 100;
+    -fx-min-height: 100;
+}
+
+#sublef {
+    -fx-background-color: #00f;
+    -fx-background-image: url(sublado4.png);
+    background-size: cover;
+    -fx-background-repeat: repeat-y;
+    -fx-max-height: Infinity;
+}
+
+#subrig {
+    -fx-background-color: #00f;
+    -fx-background-image: url(sublado5.png);
+    -fx-background-repeat: repeat-y;
+    -fx-max-height: Infinity;
+}
+
+#subup {
+    -fx-background-image: url(sublado2.png);
+    -fx-background-repeat: repeat-x;
+}
+
+#subtoplef {
+    -fx-background-image: url(sublado1.png);
+    -fx-background-repeat: no-repeat;
+}
+
+#subtoprig {
+    -fx-background-image: url(sublado1.png);
+    -fx-background-repeat: no-repeat;
+}
+
+#subbotlef {
+    -fx-background-image: url(sublado8.png);
+    -fx-background-repeat: no-repeat;
+}
+
+
+#subbot {
+    -fx-background-image: url(sublado7.png);
+}
+
+#subbotrig {
+    -fx-background-image: url(sublado8.png);
+    -fx-background-repeat: no-repeat;
+}
+
+.button {
+    /*
+    -fx-background-image: url(bot.png);
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;*/
+    -fx-background-radius: 4em;
+    -fx-font-size: 17px;
+    -fx-font-weight: bolder;
+    -fx-background-color: #999;
+}
+
+
+/*
+#ima {
+    -fx-background-image: url(Spy.png);
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}*/
+
+.hbox {
+    -fx-background-color: #2f4f4f;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+    -fx-overflow: hidden;
+    -fx-background-image: url(subtab.png);
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+.scroll-pane>.viewport {
+    -fx-background-image: url(LADO9.png);
+    -fx-border-color: transparent;
+}
+
+#tablapane {
+    -fx-background-color: transparent;
+}
+
+.my-scroll-pane {
+    -fx-fit-to-height: true;
+    -fx-fit-to-width: true;
+}
+
+
