@@ -35,15 +35,6 @@ public class ControladorListaPersonajes {
 
     public void initialize(){
 
-        imaAgregarNPC.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                System.out.println("agregar npc");
-                //a.crear();
-            }
-
-        });
-
         imaSiguente.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
