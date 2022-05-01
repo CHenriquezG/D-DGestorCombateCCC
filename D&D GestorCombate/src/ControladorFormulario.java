@@ -1,3 +1,5 @@
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -33,11 +35,15 @@ public class ControladorFormulario {
     @FXML
     ChoiceBox clase,tipoimagen;
     public void initialize(){
-        tipoimagen.setOnAction(event -> {
-            ImageView ima = new ImageView(new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\"+tipoimagen.getValue()+".png")));
-        });
-
         tipoimagen.getItems().addAll(personajes);
+        tipoimagen.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                System.out.println(newValue);
+                ima.setImage(new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\"+tipoimagen.getItems().get((Integer) newValue)+".png")));
+            }
+        });
         listo.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
