@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="592.0" prefWidth="497.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorFormulario">
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="622.0" prefWidth="497.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorFormulario">
 
     <left>
         <AnchorPane fx:id="lef" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="228.0" prefWidth="32.0" style="-fx-background-color: BLUE;" BorderPane.alignment="CENTER" />
@@ -37,16 +37,16 @@
    <center>
       <VBox fx:id="cen" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" prefHeight="108.0" prefWidth="433.0" VBox.vgrow="ALWAYS">
+            <HBox alignment="CENTER" prefHeight="121.0" prefWidth="433.0" VBox.vgrow="ALWAYS">
                <children>
-                  <ImageView fitHeight="87.0" fitWidth="184.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="160.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Recursos/Botones/Formulario.png" />
                      </image>
                   </ImageView>
                </children>
             </HBox>
-            <VBox alignment="CENTER" prefHeight="491.0" prefWidth="433.0" spacing="5.0" VBox.vgrow="ALWAYS">
+            <VBox alignment="CENTER" prefHeight="427.0" prefWidth="433.0" spacing="15.0" VBox.vgrow="ALWAYS">
                <children>
                   <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="30.0">
                      <children>
@@ -85,16 +85,16 @@
                            </image>
                         </ImageView>
                         <TextField fx:id="armadura" prefHeight="30.0" prefWidth="30.0" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="30.0">
-                     <children>
-                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Recursos/Botones/Bonf%20iniciativa.png" />
-                           </image>
-                        </ImageView>
-                        <TextField fx:id="BIniciativa" prefHeight="30.0" prefWidth="30.0" />
+                        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="30.0">
+                           <children>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Recursos/Botones/Bonf%20iniciativa.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="BIniciativa" prefHeight="30.0" prefWidth="30.0" />
+                           </children>
+                        </HBox>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="70.0" prefWidth="433.0" spacing="30.0">
@@ -105,16 +105,16 @@
                            </image>
                         </ImageView>
                         <TextField fx:id="PGolpe" prefHeight="30.0" prefWidth="30.0" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="52.0">
-                     <children>
-                        <ImageView fitHeight="13.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Recursos/Botones/Fuerza.png" />
-                           </image>
-                        </ImageView>
-                        <TextField fx:id="Fuerza" prefHeight="30.0" prefWidth="30.0" />
+                        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="52.0">
+                           <children>
+                              <ImageView fitHeight="13.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Recursos/Botones/Fuerza.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="Fuerza" prefHeight="30.0" prefWidth="30.0" />
+                           </children>
+                        </HBox>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="30.0">
@@ -125,16 +125,16 @@
                            </image>
                         </ImageView>
                         <TextField fx:id="Inteligencia" prefHeight="30.0" prefWidth="30.0" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="30.0">
-                     <children>
-                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Recursos/Botones/Constitucion.png" />
-                           </image>
-                        </ImageView>
-                        <TextField fx:id="constitucion" prefHeight="30.0" prefWidth="30.0" />
+                        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="30.0">
+                           <children>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Recursos/Botones/Constitucion.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="constitucion" prefHeight="30.0" prefWidth="30.0" />
+                           </children>
+                        </HBox>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="30.0">
@@ -145,23 +145,29 @@
                            </image>
                         </ImageView>
                         <TextField fx:id="destreza" prefHeight="30.0" prefWidth="30.0" />
+                        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="45.0">
+                           <children>
+                              <ImageView fitHeight="13.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Recursos/Botones/Carisma.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="carisma" prefHeight="30.0" prefWidth="30.0" />
+                           </children>
+                        </HBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="45.0">
+                  <HBox alignment="CENTER" prefHeight="29.0" prefWidth="433.0" spacing="40.0">
                      <children>
-                        <ImageView fitHeight="13.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Recursos/Botones/Carisma.png" />
-                           </image>
-                        </ImageView>
-                        <TextField fx:id="carisma" prefHeight="30.0" prefWidth="30.0" />
+                        <ImageView fx:id="ima" fitHeight="93.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" />
+                        <ChoiceBox fx:id="tipoimagen" onMouseClicked="#CambiarIma" prefHeight="25.0" prefWidth="112.0" />
                      </children>
                   </HBox>
                </children>
             </VBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <HBox alignment="CENTER" prefHeight="53.0" prefWidth="433.0" VBox.vgrow="ALWAYS">
                <children>
-                  <ImageView fx:id="listo" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="listo" fitHeight="63.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Recursos/Botones/Listo.png" />
                      </image>

@@ -1,12 +1,11 @@
 package logico.Combatiente;
 
 public class CombatienteReal extends Combatiente {
-    String nombre,clase;
-    int Bini,PG,Arm,fue,inte,des,cons,car;
+
     CombatienteInstancia ParaCombate;
 
-    public CombatienteReal(String nombre,String nombreJugador, String clase, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car) {
-        super(nombre,nombreJugador, clase, bini, PG, arm, fue, inte, des, cons, car);
+    public CombatienteReal(String nombre,String nombreJugador,String imagen, String clase, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car) {
+        super(nombre,nombreJugador, clase,imagen, bini, PG, arm, fue, inte, des, cons, car);
     }
 
 

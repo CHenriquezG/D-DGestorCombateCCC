@@ -1,3 +1,4 @@
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,14 +20,24 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class ControladorFormulario {
+    String[] personajes = {"Animated Broom","Awakened Tree" ,"Daniel Moreno",
+            "Drow Arachnomancer","Dryad","Dwarven Noble","Erinyes-Summoned",
+            "Gibbering Mouther","Gladiator","Guard-Village","Hill Giant","Intellect Devourer","Phase Spider"
+            ,"Planetar","Spy","Young Red Dragon"};
+
     VBox tabla;
     @FXML
-    ImageView listo;
+    ImageView listo,ima;
     @FXML
     TextField nombre,nombreJugador,armadura,BIniciativa,PGolpe,Fuerza,Inteligencia,constitucion,destreza,carisma;
     @FXML
-    ChoiceBox clase;
+    ChoiceBox clase,tipoimagen;
     public void initialize(){
+        tipoimagen.setOnAction(event -> {
+            ImageView ima = new ImageView(new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\"+tipoimagen.getValue()+".png")));
+        });
+
+        tipoimagen.getItems().addAll(personajes);
         listo.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -57,7 +68,7 @@ public class ControladorFormulario {
                             ,in=Integer.parseInt(Inteligencia.getText()),des=Integer.parseInt(destreza.getText())
                             ,con=Integer.parseInt(constitucion.getText()),car=Integer.parseInt(carisma.getText());
                     Creadora c = new CreadoraReal();
-                    Combatiente nuevo = c.CrearCombatiente(nombre.getText(),nombreJugador.getText(),clase.getAccessibleText(),bi,pg,ar,fue,in,des,con,car);
+                    Combatiente nuevo = c.CrearCombatiente(nombre.getText(),nombreJugador.getText(),clase.getAccessibleText(),tipoimagen.getAccessibleText(),bi,pg,ar,fue,in,des,con,car);
 
                 }
 
@@ -73,6 +84,9 @@ public class ControladorFormulario {
     }
 
 
+    public void CambiarIma(){
+        System.out.println("cambio");
+    }
     public boolean ComprobarDatos( ){
 
         try{
