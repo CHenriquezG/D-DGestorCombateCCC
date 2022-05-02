@@ -26,7 +26,9 @@ public class ControladorListaPersonajes {
     @FXML
     BorderPane back;
     @FXML
-    VBox tabla,cen;
+    VBox cen;
+    @FXML
+    VBox tabla;
     @FXML
     ScrollPane tablapane;
 

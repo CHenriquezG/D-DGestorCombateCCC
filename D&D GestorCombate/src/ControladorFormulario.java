@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import logico.Combatiente.Combatiente;
 import logico.Combatiente.Creadora;
@@ -34,6 +35,8 @@ public class ControladorFormulario {
     TextField nombre,nombreJugador,armadura,BIniciativa,PGolpe,Fuerza,Inteligencia,constitucion,destreza,carisma;
     @FXML
     ChoiceBox clase,tipoimagen;
+
+    Image auxima;
     public void initialize(){
         tipoimagen.getItems().addAll(personajes);
         tipoimagen.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
@@ -41,13 +44,15 @@ public class ControladorFormulario {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 System.out.println(newValue);
-                ima.setImage(new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\"+tipoimagen.getItems().get((Integer) newValue)+".png")));
+                auxima = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\"+tipoimagen.getItems().get((Integer) newValue)+".png"));
+                ima.setImage(auxima);
+
             }
         });
         listo.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                if(ComprobarDatos()){
+                if(ComprobarDatos()){/*
                     ArrayList<String> s = new ArrayList<>();
                     s.add("Guard-Village");
                     s.add("Spy");
@@ -66,8 +71,26 @@ public class ControladorFormulario {
                     bu.setMinWidth(120);
                     bu.setText("tetetete");
                     b.getChildren().add(ima);
-                    b.getChildren().add(bu);
-                    tabla.getChildren().add(b);
+                    b.getChildren().add(bu);*/
+                    FXMLLoader loader = new FXMLLoader(
+                            getClass().getResource(
+                                    "Estadisticas.fxml"
+                            )
+                    );
+
+                    BorderPane b ;
+                    try {
+                        b = (BorderPane)loader.load();
+                        Estadisticas controller = loader.<Estadisticas>getController();
+                        controller.imaper.setImage(auxima);
+                        controller.nombre.setText(nombre.getText());
+                        controller.jugador.setText(nombreJugador.getText());
+                        controller.pts.setText(PGolpe.getText());
+                        tabla.getChildren().add(b);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
                     // aca se crean el combatiente
                     int ar = Integer.parseInt(armadura.getText()),pg =Integer.parseInt(PGolpe.getText())
                             ,bi=Integer.parseInt(BIniciativa.getText()) ,fue=Integer.parseInt(Fuerza.getText())
@@ -106,7 +129,8 @@ public class ControladorFormulario {
             System.out.println(Integer.parseInt(carisma.getText()));
 
             System.out.println(nombre.getText());
-            if(nombre.getText().equals("") || (nombreJugador.getText().equals(""))){
+            System.out.println(tipoimagen.getValue());
+            if(nombre.getText().equals("") || (nombreJugador.getText().equals(""))|| (tipoimagen.getValue() == null)){
                 return false;
             }
             System.out.println(clase.getItems());
