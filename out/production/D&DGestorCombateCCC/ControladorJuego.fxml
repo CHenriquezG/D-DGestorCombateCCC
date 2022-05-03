@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,7 +13,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="50.0" minWidth="50.0" prefHeight="575.0" prefWidth="970.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorJuego">
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="50.0" minWidth="50.0" prefHeight="575.0" prefWidth="1193.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorJuego">
    <center>
       <HBox fx:id="cen" prefHeight="511.0" prefWidth="835.0" BorderPane.alignment="CENTER">
          <children>
@@ -41,8 +45,37 @@
                      <center>
                         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                            <children>
-                              <HBox prefHeight="204.0" prefWidth="342.0" VBox.vgrow="ALWAYS" />
-                              <HBox alignment="TOP_RIGHT" prefHeight="0.0" prefWidth="342.0">
+                              <HBox alignment="CENTER" prefHeight="47.0" prefWidth="342.0">
+                                 <children>
+                                    <ImageView fitHeight="50.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Recursos/Botones/Accion.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ChoiceBox prefWidth="150.0" />
+                                 </children></HBox>
+                              <HBox alignment="CENTER" prefHeight="48.0" prefWidth="207.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fitHeight="49.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Recursos/Botones/Reaccion.png" />
+                                       </image>
+                                    </ImageView>
+                                    <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="31.0" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="35.0" prefWidth="342.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fitHeight="43.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Recursos/Botones/golpe.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField prefHeight="25.0" prefWidth="69.0" />
+                                 </children>
+                              </HBox>
+                              <HBox />
+                              <HBox alignment="CENTER_RIGHT" prefHeight="73.0" prefWidth="342.0" VBox.vgrow="ALWAYS">
                                  <children>
                                     <ImageView fitHeight="68.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -78,7 +111,88 @@
                         </HBox>
                      </top>
                      <center>
-                        <VBox fx:id="fcontent" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+                        <VBox fx:id="fcontent" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <HBox prefHeight="83.0" prefWidth="242.0">
+                                       <children>
+                                          <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="fue">
+                                                   <VBox.margin>
+                                                      <Insets left="40.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="int">
+                                                   <VBox.margin>
+                                                      <Insets left="40.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="des">
+                                                   <VBox.margin>
+                                                      <Insets left="40.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="cons">
+                                                   <VBox.margin>
+                                                      <Insets left="40.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="car">
+                                                   <VBox.margin>
+                                                      <Insets left="40.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <ImageView fitHeight="91.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                             <image>
+                                                <Image url="@Recursos/Foto%20de%20personajes/Gibbering%20Mouther.png" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="nombre">
+                                                   <VBox.margin>
+                                                      <Insets right="40.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="jugador">
+                                                   <VBox.margin>
+                                                      <Insets right="40.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="arm">
+                                                   <VBox.margin>
+                                                      <Insets right="40.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="iniciativa">
+                                                   <VBox.margin>
+                                                      <Insets right="40.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="bonif">
+                                                   <VBox.margin>
+                                                      <Insets right="40.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="0.0" prefWidth="242.0" spacing="30.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <Label text="ptsAct / pts max" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children></VBox>
                      </center>
                      <opaqueInsets>
                         <Insets />
@@ -91,7 +205,7 @@
             </VBox>
             <VBox prefHeight="511.0" prefWidth="747.0" HBox.hgrow="ALWAYS">
                <children>
-                  <BorderPane prefHeight="430.0" prefWidth="500.0" VBox.vgrow="ALWAYS">
+                  <BorderPane prefHeight="430.0" prefWidth="532.0" VBox.vgrow="ALWAYS">
                      <right>
                         <AnchorPane fx:id="subrig2" prefHeight="200.0" prefWidth="32.0" BorderPane.alignment="CENTER" />
                      </right>
@@ -117,11 +231,9 @@
                      <center>
                         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                            <children>
-                              <HBox prefHeight="100.0" prefWidth="200.0" />
-                              <HBox prefHeight="36.0" prefWidth="342.0" />
-                              <ScrollPane fx:id="tablapane" prefHeight="476.0" prefWidth="613.0" vbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+                              <ScrollPane fx:id="tablapane" prefHeight="360.0" prefWidth="538.0">
                                  <content>
-                                    <VBox prefHeight="147.0" prefWidth="369.0" />
+                                    <VBox fx:id="tabla" prefHeight="200.0" prefWidth="509.0" />
                                  </content>
                               </ScrollPane>
                            </children>

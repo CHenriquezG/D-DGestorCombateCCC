@@ -3,10 +3,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class ControladorJuego {
     @FXML
-    VBox fcontent;
+    VBox tabla;
     @FXML
     ImageView paisaje;
     @FXML
@@ -17,8 +18,11 @@ public class ControladorJuego {
 
 
     }
-    void initData(BorderPane customer) {
+    void initData(BorderPane customer, VBox tabla, Stage primary) {
+        primary.setMinWidth(back.getPrefWidth());
+        primary.setMinHeight(back.getPrefHeight());
         back = customer;
+        this.tabla.getChildren().setAll(tabla.getChildren());
     }
 
 }
