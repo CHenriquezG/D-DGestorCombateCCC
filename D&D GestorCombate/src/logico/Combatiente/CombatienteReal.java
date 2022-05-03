@@ -88,4 +88,5 @@ public class CombatienteReal extends Combatiente {
     public void setCar(int car) {
         this.car = car;
     }
+
 }

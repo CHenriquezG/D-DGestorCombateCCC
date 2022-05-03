@@ -1,4 +1,9 @@
 package logico.Configuracion;
 
-public class configuracion {
+public class configuracion { // prepara el combate
+
+    // Arraylist de combatientes reales
+
+
+
 }
