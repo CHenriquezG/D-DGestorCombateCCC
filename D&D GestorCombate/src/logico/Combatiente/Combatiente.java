@@ -111,11 +111,13 @@ public class Combatiente {
         this.car = car;
     }
 
-    public ArrayList<Jugador> getJugadores() {
-        return jugadores;
+    public void getJugadores() {
+        for(i=0; i< jugadores.size(); i++) {
+            System.out.println(jugadores.get(i));
+        }
     }
 
-    public void setJugadores(ArrayList<Jugador> jugadores) {
-        this.jugadores = jugadores;
+    public void setJugador(int j, String nuevoNombre) {
+        jugadores.get(j).nombreJugador= nuevoNombre;
     }
 }

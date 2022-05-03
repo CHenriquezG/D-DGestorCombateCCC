@@ -1,4 +1,4 @@
-package logico.Configuracion;
+package logico.Datos;
 
 public class estructuraDeDatos {
 
