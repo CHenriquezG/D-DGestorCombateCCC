@@ -29,6 +29,7 @@ public class ControladorFormulario {
             ,"Planetar","Spy","Young Red Dragon"};
 
     VBox tabla;
+<<<<<<< Updated upstream
     @FXML
     ImageView listo,ima;
     @FXML
@@ -37,6 +38,9 @@ public class ControladorFormulario {
     ChoiceBox clase,tipoimagen;
 
     Image auxima;
+=======
+
+>>>>>>> Stashed changes
     public void initialize(){
         tipoimagen.getItems().addAll(personajes);
         tipoimagen.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {

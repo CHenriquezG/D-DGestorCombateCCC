@@ -22,6 +22,8 @@ public class ControladorNPCAgregar  implements Initializable {
     ControladorListaPersonajes controlador;
     @FXML
     Label myLabel;
+    @FXML
+    ImageView imaSiguente;
 
 
     String[] personajes = {"Animated Broom","Awakened Tree" ,"Daniel Moreno",
