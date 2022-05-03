@@ -35,6 +35,8 @@ public class ControladorListaPersonajes {
     @FXML
     ImageView imaAgregarNPC, imaSiguente, imaAgregarCombatiente;
 
+    Stage scene;
+
     public void initialize(){
 
         imaSiguente.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -56,7 +58,7 @@ public class ControladorListaPersonajes {
                 ControladorJuego controller = loader.<ControladorJuego>getController();
 
                 back.setCenter(controller.back.getCenter());
-                controller.initData(back);
+                controller.initData(back,tabla,scene);
 
 
 
@@ -118,8 +120,8 @@ public class ControladorListaPersonajes {
 
 
     }
-    void initData(BorderPane customer) {
-        back = customer;
+    void initData(BorderPane customer,Stage scene) {
+        back = customer;this.scene = scene;
     }
     public void AñadirCombatiente() throws IOException {
         //Parent root = FXMLLoader.load(getClass().getResource("NuevoEvento.fxml"));
