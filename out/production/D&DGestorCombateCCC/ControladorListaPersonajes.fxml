@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -36,22 +37,34 @@
     <center>
         <VBox fx:id="cen" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
             <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox prefHeight="45.0" prefWidth="810.0">
                <children>
-                  <ImageView fitHeight="45.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fitHeight="48.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="45.0" fitWidth="1.0" pickOnBounds="true" preserveRatio="true" />
+                  <CheckBox mnemonicParsing="false">
+                     <HBox.margin>
+                        <Insets top="7.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <ImageView fitHeight="31.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Recursos/Botones/Editar.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="31.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Recursos/Diseño/basureroooo.png" />
                      </image>
                      <HBox.margin>
-                        <Insets left="25.0" />
-                     </HBox.margin></ImageView>
-                  <ImageView fitHeight="43.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@trash-can-icon-28.png" />
-                     </image>
+                        <Insets />
+                     </HBox.margin>
                   </ImageView>
-               </children></HBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="50.0" top="5.0" />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></HBox>
                 <HBox prefHeight="507.0" prefWidth="422.0" VBox.vgrow="ALWAYS">
                     <children>
                         <ScrollPane fx:id="tablapane" prefHeight="458.0" prefWidth="988.0" HBox.hgrow="ALWAYS">

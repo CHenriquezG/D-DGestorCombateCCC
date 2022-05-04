@@ -1,5 +1,7 @@
 package logico.Combatiente;
 
+import java.util.ArrayList;
+
 public class Jugador {
 	String nombreJugador;
 
