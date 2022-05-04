@@ -83,9 +83,9 @@ public class ControladorFormulario {
                         b = (BorderPane)loader.load();
                         Estadisticas controller = loader.<Estadisticas>getController();
                         controller.imaper.setImage(auxima);
-                        controller.nombre.setText(nombre.getText());
-                        controller.jugador.setText(nombreJugador.getText());
-                        controller.pts.setText(PGolpe.getText());
+                        controller.nombre.setText("Nombre Personaje: "+nombre.getText());
+                        controller.jugador.setText("Nombre Jugador: "+nombreJugador.getText());
+                        controller.pts.setText("PG:"+PGolpe.getText());
                         tabla.getChildren().add(b);
                     } catch (IOException e) {
                         e.printStackTrace();
