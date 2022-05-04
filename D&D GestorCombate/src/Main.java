@@ -31,10 +31,10 @@ public class Main extends Application {
         controller.initData(primaryStage);
         Scene s = new Scene(b);
         s.getStylesheets().add(getClass().getResource("aplicacion.css").toExternalForm());
-
         primaryStage.setScene(s);
         primaryStage.getIcons().add(new Image("/iconoDYD.png"));
         primaryStage.setTitle("DYD SIMULATOR");
+
         primaryStage.show();
 
     }
