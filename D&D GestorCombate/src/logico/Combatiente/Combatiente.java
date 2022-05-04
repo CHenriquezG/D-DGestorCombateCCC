@@ -5,12 +5,10 @@ import java.util.ArrayList;
 public class Combatiente {
     // poner máximo de combatientes
     String nombre,clase, imagen;
-    int Bini,PG,Arm,fue,inte,des,cons,car;
-    ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+    int Bini,PG,Arm,fue,inte,des,cons,car, id;
 
-    public Combatiente(String nombre,String nombreJugador, String clase,String imagen, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car) {
+    public Combatiente(String nombre,String nombreJugador, String clase,String imagen, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car, int id) {
         this.nombre = nombre;
-        jugadores.add(new Jugador(nombreJugador));
         this.clase = clase;
         this.imagen = imagen;
         Bini = bini;
@@ -21,6 +19,9 @@ public class Combatiente {
         this.des = des;
         this.cons = cons;
         this.car = car;
+        this.id = id;
+        // validar jugador
+        Jugador e = new Jugador(nombreJugador); // puede haber un jugador repetido
     }
 
     public String getNombre() {
@@ -111,13 +112,11 @@ public class Combatiente {
         this.car = car;
     }
 
-    public void getJugadores() {
-        for(int i=0; i< jugadores.size(); i++) {
-            System.out.println(jugadores.get(i));
-        }
+    public int getId() {
+        return id;
     }
 
-    public void setJugador(int j, String nuevoNombre) {
-        jugadores.get(j).nombreJugador= nuevoNombre;
+    public void setId(int id) {
+        this.id = id;
     }
 }

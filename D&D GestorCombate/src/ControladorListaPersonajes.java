@@ -165,8 +165,5 @@ public class ControladorListaPersonajes {
         b.getChildren().add(ima);
         b.getChildren().add(bu);
         tabla.getChildren().add(b);
-
-
-
     }
 }
