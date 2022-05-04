@@ -37,6 +37,7 @@ public class ControladorFormulario {
     ChoiceBox clase,tipoimagen;
 
     Image auxima;
+
     public void initialize(){
         tipoimagen.getItems().addAll(personajes);
         tipoimagen.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
