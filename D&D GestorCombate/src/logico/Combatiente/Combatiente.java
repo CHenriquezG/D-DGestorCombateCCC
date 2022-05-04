@@ -112,7 +112,7 @@ public class Combatiente {
     }
 
     public void getJugadores() {
-        for(i=0; i< jugadores.size(); i++) {
+        for(int i=0; i< jugadores.size(); i++) {
             System.out.println(jugadores.get(i));
         }
     }
