@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="575.0" prefWidth="570.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorNPCAgregar">
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="691.0" prefWidth="800.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorNPCAgregar">
 
     <left>
         <AnchorPane fx:id="lef" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="228.0" prefWidth="32.0" style="-fx-background-color: BLUE;" BorderPane.alignment="CENTER" />
@@ -30,6 +34,26 @@
         </HBox>
     </bottom>
    <center>
-      <VBox fx:id="cen" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER" />
+      <VBox fx:id="cen" alignment="TOP_CENTER" prefHeight="260.0" prefWidth="393.0" spacing="15.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="listaNPC" prefHeight="405.0" prefWidth="736.0" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="252.0" fitWidth="365.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imageView2" fitHeight="252.0" fitWidth="371.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </HBox>
+            <ImageView fx:id="listo" fitHeight="63.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets bottom="-0.0" left="600.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@Recursos/Botones/Siguiente.png" />
+               </image>
+            </ImageView>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin></VBox>
    </center>
 </BorderPane>
