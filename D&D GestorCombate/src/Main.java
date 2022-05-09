@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import logico.Configuracion.iniciativa;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,6 +28,7 @@ public class Main extends Application {
             e.printStackTrace();
         }
         ControladorInicio controller = loader.<ControladorInicio>getController();
+
 
         controller.initData(primaryStage);
         Scene s = new Scene(b);
