@@ -100,7 +100,7 @@ public class ControladorFormulario {
                     // crear ID random
                     int id = (char) (rnd.nextInt(94)+33); // actualizar método de obtener una ID;
                     Creadora c = new CreadoraReal();
-                    Combatiente nuevo = c.CrearCombatiente(nombre.getText(),nombreJugador.getText(),clase.getAccessibleText(),tipoimagen.getAccessibleText(),bi,pg,ar,fue,in,des,con,car,id);
+                    Combatiente nuevo = c.CrearCombatiente(nombre.getText(),nombreJugador.getText(),clase.getAccessibleText(),tipoimagen.getAccessibleText(),bi,pg,ar,fue,in,des,con,car, sab,id);
 
                 }
             }
