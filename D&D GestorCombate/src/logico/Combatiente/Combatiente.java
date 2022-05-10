@@ -1,10 +1,13 @@
 package logico.Combatiente;
+import java.util.ArrayList;
+
 
 public class Combatiente {
+    // poner máximo de combatientes
     String nombre,clase, imagen;
-    int Bini,PG,Arm,fue,inte,des,cons,car;
+    int Bini,PG,Arm,fue,inte,des,cons,car, id, sab;
 
-    public Combatiente(String nombre,String nombreJugador, String clase,String imagen, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car) {
+    public Combatiente(String nombre,String nombreJugador, String clase,String imagen, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car, int sab ,int id) {
         this.nombre = nombre;
         this.clase = clase;
         this.imagen = imagen;
@@ -16,6 +19,10 @@ public class Combatiente {
         this.des = des;
         this.cons = cons;
         this.car = car;
+        this.id = id;
+        this.sab = sab;
+        // validar jugador
+        Jugador e = new Jugador(nombreJugador); // puede haber un jugador repetido
     }
 
     public String getNombre() {
@@ -104,5 +111,13 @@ public class Combatiente {
 
     public void setCar(int car) {
         this.car = car;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

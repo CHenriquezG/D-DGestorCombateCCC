@@ -4,8 +4,8 @@ public class CombatienteReal extends Combatiente {
 
     CombatienteInstancia ParaCombate;
 
-    public CombatienteReal(String nombre,String nombreJugador,String imagen, String clase, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car) {
-        super(nombre,nombreJugador, clase,imagen, bini, PG, arm, fue, inte, des, cons, car);
+    public CombatienteReal(String nombre,String nombreJugador,String imagen, String clase, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car,int sab, int id) {
+        super(nombre,nombreJugador, clase,imagen, bini, PG, arm, fue, inte, des, cons, car, sab , id);
     }
 
 
@@ -88,4 +88,5 @@ public class CombatienteReal extends Combatiente {
     public void setCar(int car) {
         this.car = car;
     }
+
 }

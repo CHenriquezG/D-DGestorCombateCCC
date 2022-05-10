@@ -27,6 +27,7 @@ public class ControladorFormulario {
             "Drow Arachnomancer","Dryad","Dwarven Noble","Erinyes-Summoned",
             "Gibbering Mouther","Gladiator","Guard-Village","Hill Giant","Intellect Devourer","Phase Spider"
             ,"Planetar","Spy","Young Red Dragon"};
+    Random rnd = new Random();
 
     VBox tabla;
     @FXML
@@ -37,6 +38,7 @@ public class ControladorFormulario {
     ChoiceBox clase,tipoimagen;
 
     Image auxima;
+
     public void initialize(){
         tipoimagen.getItems().addAll(personajes);
         tipoimagen.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
@@ -96,15 +98,12 @@ public class ControladorFormulario {
                             ,bi=Integer.parseInt(BIniciativa.getText()) ,fue=Integer.parseInt(Fuerza.getText())
                             ,in=Integer.parseInt(Inteligencia.getText()),des=Integer.parseInt(destreza.getText())
                             ,con=Integer.parseInt(constitucion.getText()),car=Integer.parseInt(carisma.getText());
+                    // crear ID random
+                    int id = (char) (rnd.nextInt(94)+33); // actualizar método de obtener una ID;
                     Creadora c = new CreadoraReal();
-                    Combatiente nuevo = c.CrearCombatiente(nombre.getText(),nombreJugador.getText(),clase.getAccessibleText(),tipoimagen.getAccessibleText(),bi,pg,ar,fue,in,des,con,car);
+                    Combatiente nuevo = c.CrearCombatiente(nombre.getText(),nombreJugador.getText(),clase.getAccessibleText(),tipoimagen.getAccessibleText(),bi,pg,ar,fue,in,des,con,car, sab,id);
 
                 }
-
-
-
-
-
             }
         });
     }
@@ -139,10 +138,6 @@ public class ControladorFormulario {
         }catch (NumberFormatException e){
             return false;
         }
-
-
-
-
     }
 
 }

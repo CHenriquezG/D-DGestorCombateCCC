@@ -23,7 +23,6 @@ public class ControladorInicio {
     @FXML
     AnchorPane rig,lef;
     @FXML
-
     HBox bot,botlef,botrig,toprig,toplef,up;
     @FXML
     BorderPane back;

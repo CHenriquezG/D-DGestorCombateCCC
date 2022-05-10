@@ -157,6 +157,16 @@
                         </HBox>
                      </children>
                   </HBox>
+                  <HBox alignment="CENTER" prefHeight="0.0" prefWidth="433.0" spacing="30.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ImageView fitHeight="26.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Recursos/Botones/Destreza.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="sabiduria" prefHeight="30.0" prefWidth="30.0" />
+                     </children>
+                  </HBox>
                   <HBox alignment="CENTER" prefHeight="29.0" prefWidth="433.0" spacing="40.0">
                      <children>
                         <ImageView fx:id="ima" fitHeight="93.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" />
