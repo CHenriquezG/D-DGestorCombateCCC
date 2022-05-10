@@ -84,14 +84,33 @@ public class ControladorFormulario {
                         b = (BorderPane)loader.load();
                         Estadisticas controller = loader.<Estadisticas>getController();
                         controller.imaper.setImage(auxima);
+<<<<<<< Updated upstream
                         controller.nombre.setText(nombre.getText());
                         controller.jugador.setText(nombreJugador.getText());
                         controller.pts.setText(PGolpe.getText());
+=======
+                        controller.nombre.setText("Nombre Personaje: "+nombre.getText());
+                        controller.jugador.setText("Nombre Jugador: "+nombreJugador.getText());
+                        controller.pts.setText("PG:"+PGolpe.getText());
+
+                        // aca se crean el combatiente
+                        int ar = Integer.parseInt(armadura.getText()),pg =Integer.parseInt(PGolpe.getText())
+                                ,bi=Integer.parseInt(BIniciativa.getText()) ,fue=Integer.parseInt(Fuerza.getText())
+                                ,in=Integer.parseInt(Inteligencia.getText()),des=Integer.parseInt(destreza.getText())
+                                ,con=Integer.parseInt(constitucion.getText()),car=Integer.parseInt(carisma.getText())
+                                ,sab=Integer.parseInt(sabiduria.getText());
+                        // crear ID random
+                        int id = (char) (rnd.nextInt(94)+33); // actualizar método de obtener una ID;
+
+                        conf.setCombatiente(nombre.getText(),nombreJugador.getText(),clase.getAccessibleText(),tipoimagen.getAccessibleText(),bi,pg,ar,fue,in,des,con,car, sab,id);
+                        controller.initData(0,conf);
+>>>>>>> Stashed changes
                         tabla.getChildren().add(b);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
 
+<<<<<<< Updated upstream
                     // aca se crean el combatiente
                     int ar = Integer.parseInt(armadura.getText()),pg =Integer.parseInt(PGolpe.getText())
                             ,bi=Integer.parseInt(BIniciativa.getText()) ,fue=Integer.parseInt(Fuerza.getText())
@@ -99,6 +118,8 @@ public class ControladorFormulario {
                             ,con=Integer.parseInt(constitucion.getText()),car=Integer.parseInt(carisma.getText());
                     Creadora c = new CreadoraReal();
                     Combatiente nuevo = c.CrearCombatiente(nombre.getText(),nombreJugador.getText(),clase.getAccessibleText(),tipoimagen.getAccessibleText(),bi,pg,ar,fue,in,des,con,car);
+=======
+>>>>>>> Stashed changes
 
                 }
 
