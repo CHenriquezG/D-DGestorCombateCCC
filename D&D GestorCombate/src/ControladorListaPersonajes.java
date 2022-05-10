@@ -35,6 +35,8 @@ public class ControladorListaPersonajes {
     @FXML
     ImageView imaAgregarNPC, imaSiguente, imaAgregarCombatiente;
 
+    Stage scene;
+
     public void initialize(){
 
         imaSiguente.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -56,7 +58,7 @@ public class ControladorListaPersonajes {
                 ControladorJuego controller = loader.<ControladorJuego>getController();
 
                 back.setCenter(controller.back.getCenter());
-                controller.initData(back);
+                controller.initData(back,tabla,scene);
 
 
 
@@ -83,9 +85,8 @@ public class ControladorListaPersonajes {
                     e.printStackTrace();
                 }
                 ControladorFormulario controller = loader.<ControladorFormulario>getController();
-                controller.initData( tabla);
+                controller.initData(tabla);
                 Ventana.setScene(new Scene(b));
-                //eve.MostrarMapamundi();
 
                 Ventana.show();
             }
@@ -97,23 +98,30 @@ public class ControladorListaPersonajes {
                 //Parent root = FXMLLoader.load(getClass().getResource("NuevoEvento.fxml"));
                 //NuevoEvento eve = new NuevoEvento();
                 Stage Ventana = new Stage();
-                Parent root = new Pane();
+                FXMLLoader loader = new FXMLLoader(
+                        getClass().getResource(
+                                "VentanaAgregarCombatienteGen.fxml"
+                        )
+                );
+
+                BorderPane b = null;
                 try {
-                    root = FXMLLoader.load(getClass().getResource("VentanaAgregarCombatienteGen.fxml"));
+                    b = (BorderPane)loader.load();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                Ventana.setScene(new Scene(root));
-                //eve.MostrarMapamundi();
-
+                Parent root = new Pane();
+                ControladorNPCAgregar controller = loader.<ControladorNPCAgregar>getController();
+                controller.initData(tabla);
+                Ventana.setScene(new Scene(b));
                 Ventana.show();
             }
         });
 
 
     }
-    void initData(BorderPane customer) {
-        back = customer;
+    void initData(BorderPane customer,Stage scene) {
+        back = customer;this.scene = scene;
     }
     public void AñadirCombatiente() throws IOException {
         //Parent root = FXMLLoader.load(getClass().getResource("NuevoEvento.fxml"));

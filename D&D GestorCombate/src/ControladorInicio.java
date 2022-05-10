@@ -11,6 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -33,7 +34,7 @@ public class ControladorInicio {
     @FXML
     ImageView ima, imaSalir;
 
-
+    Stage scene;
 
     public void initialize(){
 
@@ -56,7 +57,7 @@ public class ControladorInicio {
                 ControladorListaPersonajes controller = loader.<ControladorListaPersonajes>getController();
 
                 back.setCenter(controller.back.getCenter());
-                controller.initData(back);
+                controller.initData(back,scene);
 
 
 
@@ -72,7 +73,9 @@ public class ControladorInicio {
         });
 
     }
-
+    void initData(Stage customer) {
+        scene = customer;
+    }
     public void crear(){
         ArrayList<String> s = new ArrayList<>();
         s.add("Guard-Village");
