@@ -13,6 +13,7 @@ import javafx.scene.layout.*;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import logico.Configuracion.configuracion;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -36,9 +37,9 @@ public class ControladorListaPersonajes {
     ImageView imaAgregarNPC, imaSiguente, imaAgregarCombatiente;
 
     Stage scene;
-
+    configuracion conf;
     public void initialize(){
-
+        conf = new configuracion();
         imaSiguente.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -85,7 +86,7 @@ public class ControladorListaPersonajes {
                     e.printStackTrace();
                 }
                 ControladorFormulario controller = loader.<ControladorFormulario>getController();
-                controller.initData(tabla);
+                controller.initData(tabla,conf);
                 Ventana.setScene(new Scene(b));
 
                 Ventana.show();

@@ -32,7 +32,7 @@ public class iniciativa {
         Random r = new Random();
         for (int i = 0; i < 10; i++) {
             // aca se generan las instancias de combatientes en base a los combatientes reales
-            y = (CombatienteInstancia) f.CrearCombatiente("ew", "eret", "dsdsf", "sd", 3, 3, 3, 3, 3, 3, 3,5,1);
+            y = (CombatienteInstancia) f.CrearCombatiente("ew", "eret", "dsdsf", "sd", 3, 3, 3, 3, 3, 3, 3,5,1,2);
             GenerarIniciativa(y);// aca se genera las iniciativas de cada combatiente
             aux = new IteradorCombatiente(y);
             c = d;
