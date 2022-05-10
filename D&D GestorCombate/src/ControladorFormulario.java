@@ -17,6 +17,7 @@ import javafx.scene.layout.VBox;
 import logico.Combatiente.Combatiente;
 import logico.Combatiente.Creadora;
 import logico.Combatiente.CreadoraReal;
+import logico.Configuracion.configuracion;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,16 +28,18 @@ public class ControladorFormulario {
             "Drow Arachnomancer","Dryad","Dwarven Noble","Erinyes-Summoned",
             "Gibbering Mouther","Gladiator","Guard-Village","Hill Giant","Intellect Devourer","Phase Spider"
             ,"Planetar","Spy","Young Red Dragon"};
+    Random rnd = new Random();
 
     VBox tabla;
     @FXML
     ImageView listo,ima;
     @FXML
-    TextField nombre,nombreJugador,armadura,BIniciativa,PGolpe,Fuerza,Inteligencia,constitucion,destreza,carisma;
+    TextField nombre,nombreJugador,armadura,BIniciativa,PGolpe,Fuerza,Inteligencia,constitucion,destreza,carisma,sabiduria;
     @FXML
     ChoiceBox clase,tipoimagen;
 
     Image auxima;
+    configuracion conf;
 
     public void initialize(){
         tipoimagen.getItems().addAll(personajes);
@@ -84,11 +87,14 @@ public class ControladorFormulario {
                         b = (BorderPane)loader.load();
                         Estadisticas controller = loader.<Estadisticas>getController();
                         controller.imaper.setImage(auxima);
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                         controller.nombre.setText(nombre.getText());
                         controller.jugador.setText(nombreJugador.getText());
                         controller.pts.setText(PGolpe.getText());
 =======
+=======
+>>>>>>> Claudio
                         controller.nombre.setText("Nombre Personaje: "+nombre.getText());
                         controller.jugador.setText("Nombre Jugador: "+nombreJugador.getText());
                         controller.pts.setText("PG:"+PGolpe.getText());
@@ -104,12 +110,16 @@ public class ControladorFormulario {
 
                         conf.setCombatiente(nombre.getText(),nombreJugador.getText(),clase.getAccessibleText(),tipoimagen.getAccessibleText(),bi,pg,ar,fue,in,des,con,car, sab,id);
                         controller.initData(0,conf);
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> Claudio
                         tabla.getChildren().add(b);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                     // aca se crean el combatiente
                     int ar = Integer.parseInt(armadura.getText()),pg =Integer.parseInt(PGolpe.getText())
@@ -120,20 +130,17 @@ public class ControladorFormulario {
                     Combatiente nuevo = c.CrearCombatiente(nombre.getText(),nombreJugador.getText(),clase.getAccessibleText(),tipoimagen.getAccessibleText(),bi,pg,ar,fue,in,des,con,car);
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Claudio
 
                 }
-
-
-
-
-
             }
         });
     }
-    void initData(VBox customer) {
+    void initData(VBox customer, configuracion conf) {
         tabla= customer;
+        this.conf = conf;
     }
-
 
     public void CambiarIma(){
         System.out.println("cambio");
@@ -149,7 +156,7 @@ public class ControladorFormulario {
             System.out.println(Integer.parseInt(destreza.getText()));
             System.out.println(Integer.parseInt(constitucion.getText()));
             System.out.println(Integer.parseInt(carisma.getText()));
-
+            System.out.println(Integer.parseInt(sabiduria.getText()));
             System.out.println(nombre.getText());
             System.out.println(tipoimagen.getValue());
             if(nombre.getText().equals("") || (nombreJugador.getText().equals(""))|| (tipoimagen.getValue() == null)){
@@ -161,10 +168,6 @@ public class ControladorFormulario {
         }catch (NumberFormatException e){
             return false;
         }
-
-
-
-
     }
 
 }

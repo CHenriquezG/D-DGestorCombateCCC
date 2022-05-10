@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import logico.Configuracion.iniciativa;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,13 +29,14 @@ public class Main extends Application {
         }
         ControladorInicio controller = loader.<ControladorInicio>getController();
 
+
         controller.initData(primaryStage);
         Scene s = new Scene(b);
         s.getStylesheets().add(getClass().getResource("aplicacion.css").toExternalForm());
-
         primaryStage.setScene(s);
         primaryStage.getIcons().add(new Image("/iconoDYD.png"));
         primaryStage.setTitle("DYD SIMULATOR");
+
         primaryStage.show();
 
     }
