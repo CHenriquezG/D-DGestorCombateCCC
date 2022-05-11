@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="691.0" prefWidth="800.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorNPCAgregar">
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="691.0" prefWidth="800.0" stylesheets="@../aplicacion.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ControladorNPCAgregar">
 
     <left>
         <AnchorPane fx:id="lef" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="228.0" prefWidth="32.0" style="-fx-background-color: BLUE;" BorderPane.alignment="CENTER" />
@@ -22,7 +22,7 @@
     <top>
         <HBox fx:id="up" prefHeight="32.0" prefWidth="481.0" BorderPane.alignment="CENTER">
             <children>
-                <HBox fx:id="toplef" prefHeight="32.0" prefWidth="32.0" stylesheets="@aplicacion.css" HBox.hgrow="ALWAYS" />
+                <HBox fx:id="toplef" prefHeight="32.0" prefWidth="32.0" stylesheets="@../aplicacion.css" HBox.hgrow="ALWAYS" />
                 <HBox fx:id="toprig" alignment="TOP_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="32.0" HBox.hgrow="ALWAYS" />
             </children>
         </HBox>
@@ -61,7 +61,7 @@
                   <Insets bottom="-0.0" left="600.0" />
                </VBox.margin>
                <image>
-                  <Image url="@Recursos/Botones/Siguiente.png" />
+                  <Image url="@../Recursos/Botones/Siguiente.png" />
                </image>
             </ImageView>
          </children>

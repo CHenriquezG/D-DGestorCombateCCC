@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="50.0" minWidth="50.0" prefHeight="575.0" prefWidth="1193.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorJuego">
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="50.0" minWidth="50.0" prefHeight="575.0" prefWidth="1193.0" stylesheets="@../aplicacion.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ControladorJuego">
    <center>
       <HBox fx:id="cen" prefHeight="511.0" prefWidth="835.0" BorderPane.alignment="CENTER">
          <children>
@@ -50,7 +50,7 @@
                                  <children>
                                     <ImageView fitHeight="50.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@Recursos/Botones/Accion.png" />
+                                          <Image url="@../Recursos/Botones/Accion.png" />
                                        </image>
                                     </ImageView>
                                     <ChoiceBox fx:id="contenidoAccion" prefWidth="150.0" />
@@ -59,7 +59,7 @@
                                  <children>
                                     <ImageView fitHeight="49.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@Recursos/Botones/Reaccion.png" />
+                                          <Image url="@../Recursos/Botones/Reaccion.png" />
                                        </image>
                                     </ImageView>
                                     <CheckBox fx:id="verReaccion" mnemonicParsing="false" prefHeight="17.0" prefWidth="31.0" />
@@ -69,7 +69,7 @@
                                  <children>
                                     <ImageView fx:id="CurDno" fitHeight="43.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@Recursos/Botones/golpe.png" />
+                                          <Image url="@../Recursos/Botones/golpe.png" />
                                        </image>
                                     </ImageView>
                                     <TextField fx:id="Ingreso" prefHeight="25.0" prefWidth="69.0" />
@@ -80,7 +80,7 @@
                                  <children>
                                     <ImageView fx:id="siguienteFase" fitHeight="68.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                        <image>
-                                          <Image url="@Recursos/Botones/Siguiente.png" />
+                                          <Image url="@../Recursos/Botones/Siguiente.png" />
                                        </image>
                                     </ImageView>
                                     <ImageView fx:id="siguienteTurno" fitHeight="68.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" visible="false">
@@ -313,7 +313,7 @@
     <top>
         <HBox fx:id="up" prefHeight="32.0" prefWidth="481.0" BorderPane.alignment="CENTER">
             <children>
-                <HBox fx:id="toplef" prefHeight="32.0" prefWidth="32.0" stylesheets="@aplicacion.css" HBox.hgrow="ALWAYS" />
+                <HBox fx:id="toplef" prefHeight="32.0" prefWidth="32.0" stylesheets="@../aplicacion.css" HBox.hgrow="ALWAYS" />
                 <HBox fx:id="toprig" alignment="TOP_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="32.0" HBox.hgrow="ALWAYS" />
             </children>
         </HBox>

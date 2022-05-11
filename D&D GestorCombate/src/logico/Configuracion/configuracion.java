@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class configuracion { // prepara el combate
 
     // Arraylist de combatientes reales
-	ArrayList<CombatienteReal> combatientes = new ArrayList<CombatienteReal>(); // lista de combatientes
+	public ArrayList<CombatienteReal> combatientes = new ArrayList<CombatienteReal>(); // lista de combatientes
 
 	public configuracion() {
 

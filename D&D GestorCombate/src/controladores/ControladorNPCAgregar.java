@@ -1,9 +1,10 @@
+package controladores;
+
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
@@ -13,9 +14,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import logico.Combatiente.Combatiente;
-import logico.Combatiente.Creadora;
-import logico.Combatiente.CreadoraReal;
 import logico.Configuracion.configuracion;
 
 import java.io.IOException;

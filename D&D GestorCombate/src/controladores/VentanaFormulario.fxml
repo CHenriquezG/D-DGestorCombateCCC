@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="622.0" prefWidth="497.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorFormulario">
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="622.0" prefWidth="497.0" stylesheets="@../aplicacion.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ControladorFormulario">
 
     <left>
         <AnchorPane fx:id="lef" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="228.0" prefWidth="32.0" style="-fx-background-color: BLUE;" BorderPane.alignment="CENTER" />
@@ -21,7 +21,7 @@
     <top>
         <HBox fx:id="up" prefHeight="32.0" prefWidth="481.0" BorderPane.alignment="CENTER">
             <children>
-                <HBox fx:id="toplef" prefHeight="32.0" prefWidth="32.0" stylesheets="@aplicacion.css" HBox.hgrow="ALWAYS" />
+                <HBox fx:id="toplef" prefHeight="32.0" prefWidth="32.0" stylesheets="@../aplicacion.css" HBox.hgrow="ALWAYS" />
                 <HBox fx:id="toprig" alignment="TOP_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="32.0" HBox.hgrow="ALWAYS" />
             </children>
         </HBox>
@@ -41,7 +41,7 @@
                <children>
                   <ImageView fitHeight="160.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Recursos/Botones/Formulario.png" />
+                        <Image url="@../Recursos/Botones/Formulario.png" />
                      </image>
                   </ImageView>
                </children>
@@ -52,13 +52,13 @@
                      <children>
                         <ImageView fitHeight="40.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Recursos/Botones/Nombre.png" />
+                              <Image url="@../Recursos/Botones/Nombre.png" />
                            </image>
                         </ImageView>
                         <TextField fx:id="nombre" />
                         <ImageView fitHeight="40.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Recursos/Botones/Nombre.png" />
+                              <Image url="@../Recursos/Botones/Nombre.png" />
                            </image>
                         </ImageView>
                         <TextField fx:id="nombreJugador" />
@@ -68,7 +68,7 @@
                      <children>
                         <ImageView fitHeight="40.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Recursos/Botones/Clase.png" />
+                              <Image url="@../Recursos/Botones/Clase.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="50.0" />
@@ -81,7 +81,7 @@
                      <children>
                         <ImageView fitHeight="101.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Recursos/Botones/Armadura.png" />
+                              <Image url="@../Recursos/Botones/Armadura.png" />
                            </image>
                         </ImageView>
                         <TextField fx:id="armadura" prefHeight="30.0" prefWidth="30.0" />
@@ -109,7 +109,7 @@
                            <children>
                               <ImageView fitHeight="13.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Recursos/Botones/Fuerza.png" />
+                                    <Image url="@../Recursos/Botones/Fuerza.png" />
                                  </image>
                               </ImageView>
                               <TextField fx:id="Fuerza" prefHeight="30.0" prefWidth="30.0" />
@@ -121,7 +121,7 @@
                      <children>
                         <ImageView fitHeight="24.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Recursos/Botones/Inteligencia.png" />
+                              <Image url="@../Recursos/Botones/Inteligencia.png" />
                            </image>
                         </ImageView>
                         <TextField fx:id="Inteligencia" prefHeight="30.0" prefWidth="30.0" />
@@ -129,7 +129,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Recursos/Botones/Constitucion.png" />
+                                    <Image url="@../Recursos/Botones/Constitucion.png" />
                                  </image>
                               </ImageView>
                               <TextField fx:id="constitucion" prefHeight="30.0" prefWidth="30.0" />
@@ -141,7 +141,7 @@
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Recursos/Botones/Destreza.png" />
+                              <Image url="@../Recursos/Botones/Destreza.png" />
                            </image>
                         </ImageView>
                         <TextField fx:id="destreza" prefHeight="30.0" prefWidth="30.0" />
@@ -149,7 +149,7 @@
                            <children>
                               <ImageView fitHeight="13.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Recursos/Botones/Carisma.png" />
+                                    <Image url="@../Recursos/Botones/Carisma.png" />
                                  </image>
                               </ImageView>
                               <TextField fx:id="carisma" prefHeight="30.0" prefWidth="30.0" />
@@ -161,7 +161,7 @@
                      <children>
                         <ImageView fitHeight="26.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Recursos/Botones/Destreza.png" />
+                              <Image url="@../Recursos/Botones/Destreza.png" />
                            </image>
                         </ImageView>
                         <TextField fx:id="sabiduria" prefHeight="30.0" prefWidth="30.0" />
@@ -179,7 +179,7 @@
                <children>
                   <ImageView fx:id="listo" fitHeight="63.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Recursos/Botones/Listo.png" />
+                        <Image url="@../Recursos/Botones/Listo.png" />
                      </image>
                   </ImageView>
                </children>

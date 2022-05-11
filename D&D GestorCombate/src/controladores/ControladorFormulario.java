@@ -1,18 +1,16 @@
+package controladores;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import logico.Combatiente.Combatiente;
 import logico.Combatiente.Creadora;
@@ -20,7 +18,6 @@ import logico.Combatiente.CreadoraReal;
 import logico.Configuracion.configuracion;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Random;
 
 public class ControladorFormulario {
@@ -39,7 +36,7 @@ public class ControladorFormulario {
     ChoiceBox clase,tipoimagen;
 
     Image auxima;
-    configuracion conf;
+    public configuracion conf;
 
     public void initialize(){
         tipoimagen.getItems().addAll(personajes);
@@ -104,7 +101,6 @@ public class ControladorFormulario {
                                 ,sab=Integer.parseInt(sabiduria.getText());
                         // crear ID random
                         int id = (char) (rnd.nextInt(94)+33); // actualizar método de obtener una ID;
-
                         conf.setCombatiente(nombre.getText(),nombreJugador.getText(),clase.getAccessibleText(),tipoimagen.getAccessibleText(),bi,pg,ar,fue,in,des,con,car, sab,id);
                         controller.initData(0,conf);
                         tabla.getChildren().add(b);
