@@ -15,9 +15,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.ResourceBundle;
+
+import logico.Datos.estructuraDeDatos;
 
 public class ControladorInicio {
     @FXML

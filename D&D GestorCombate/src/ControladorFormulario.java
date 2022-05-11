@@ -97,7 +97,7 @@ public class ControladorFormulario {
                     int ar = Integer.parseInt(armadura.getText()),pg =Integer.parseInt(PGolpe.getText())
                             ,bi=Integer.parseInt(BIniciativa.getText()) ,fue=Integer.parseInt(Fuerza.getText())
                             ,in=Integer.parseInt(Inteligencia.getText()),des=Integer.parseInt(destreza.getText())
-                            ,con=Integer.parseInt(constitucion.getText()),car=Integer.parseInt(carisma.getText());
+                            ,con=Integer.parseInt(constitucion.getText()),car=Integer.parseInt(carisma.getText()), sab=Integer.parseInt(carisma.getText()) ;
                     // crear ID random
                     int id = (char) (rnd.nextInt(94)+33); // actualizar método de obtener una ID;
                     Creadora c = new CreadoraReal();
