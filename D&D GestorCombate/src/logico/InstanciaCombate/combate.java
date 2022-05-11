@@ -7,7 +7,6 @@ import logico.Configuracion.configuracion;
 import java.util.ArrayList;
 
 public class combate {
-
     ArrayList<CombatienteReal> combatientes;
     configuracion c;
 
@@ -20,9 +19,8 @@ public class combate {
 
         //ControladorFormulario controller = loader.<ControladorFormulario>getController();
         //combatientes= new ArrayList<CombatienteReal>();
+
        // combatientes=c.combatientes;
-
-
     }
 
 }

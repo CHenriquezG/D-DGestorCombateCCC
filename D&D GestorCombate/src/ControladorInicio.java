@@ -13,8 +13,12 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Random;
+
+import logico.Datos.estructuraDeDatos;
 
 public class ControladorInicio {
     @FXML
