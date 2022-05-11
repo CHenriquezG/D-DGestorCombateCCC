@@ -105,7 +105,6 @@ public class ControladorFormulario {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-<<<<<<< HEAD
                     // aca se crean el combatiente
                     int ar = Integer.parseInt(armadura.getText()),pg =Integer.parseInt(PGolpe.getText())
                             ,bi=Integer.parseInt(BIniciativa.getText()) ,fue=Integer.parseInt(Fuerza.getText())
@@ -115,10 +114,8 @@ public class ControladorFormulario {
                             int id = (char) (rnd.nextInt(94)+33); // actualizar método de obtener una ID;
                     Creadora c = new CreadoraReal();
                     Combatiente nuevo = c.CrearCombatiente(nombre.getText(),nombreJugador.getText(),clase.getAccessibleText(),tipoimagen.getAccessibleText(),bi,pg,ar,fue,in,des,con,car,sab,id);
-=======
 
                     // aca se crean el combatiente
->>>>>>> prueba
 
                 }
             }
