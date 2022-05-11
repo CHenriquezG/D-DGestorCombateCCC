@@ -14,8 +14,8 @@ public class configuracion { // prepara el combate
 	}
 
 	// Agregar combatiente a la lista combatientes
-	public void setCombatiente(String nombre,String nombreJugador,String imagen, String clase, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car, int id) {  // crear personaje
-			CombatienteReal aux = new CombatienteReal(nombre, nombreJugador, imagen,  clase,  bini,  PG,  arm,  fue,  inte,  des,  cons,  car, id);
+	public void setCombatiente(String nombre,String nombreJugador,String imagen, String clase, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car, int sab ,int id) {  // crear personaje
+			CombatienteReal aux = new CombatienteReal(nombre, nombreJugador, imagen,  clase,  bini,  PG,  arm,  fue,  inte,  des,  cons,  car, sab,id);
 			combatientes.add(aux);
 		}
 
