@@ -1,3 +1,5 @@
+package controladores;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -10,8 +12,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.shape.Polygon;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import logico.Configuracion.configuracion;
 
@@ -33,11 +33,13 @@ public class ControladorListaPersonajes {
     @FXML
     ScrollPane tablapane;
 
+    configuracion conf;
+
     @FXML
     ImageView imaAgregarNPC, imaSiguente, imaAgregarCombatiente;
 
     Stage scene;
-    configuracion conf;
+    configuracion bhconf;
     public void initialize(){
         conf = new configuracion();
         imaSiguente.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -113,7 +115,10 @@ public class ControladorListaPersonajes {
                 }
                 Parent root = new Pane();
                 ControladorNPCAgregar controller = loader.<ControladorNPCAgregar>getController();
-                controller.initData(tabla);
+
+                //Estadisticas controller = loader.<Estadisticas>getController();
+
+                controller.initData(tabla,conf);
                 Ventana.setScene(new Scene(b));
                 Ventana.show();
             }
