@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="tablero" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="532.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.Estadisticas">
+<BorderPane fx:id="tablero" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="532.0" stylesheets="@../aplicacion.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.Estadisticas">
    <right>
       <AnchorPane fx:id="subrig1" prefHeight="200.0" prefWidth="32.0" BorderPane.alignment="CENTER" />
    </right>

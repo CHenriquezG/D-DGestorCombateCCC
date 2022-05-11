@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="575.0" prefWidth="970.0" stylesheets="@../aplicacion.css" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ControladorListaPersonajes">
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="575.0" prefWidth="970.0" stylesheets="@../aplicacion.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ControladorListaPersonajes">
 
     <left>
         <AnchorPane fx:id="lef" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="228.0" prefWidth="32.0" style="-fx-background-color: BLUE;" BorderPane.alignment="CENTER" />
@@ -89,14 +89,14 @@
                            <children>
                               <ImageView fx:id="imaAgregarCombatiente" fitHeight="83.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Recursos/Botones/Agregar%20combatiente.png" />
+                                    <Image url="@../Recursos/Botones/Agregar%20combatiente.png" />
                                  </image>
                               </ImageView>
                            </children>
                                 </HBox>
                         <ImageView fx:id="imaAgregarNPC" fitHeight="84.0" fitWidth="155.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Recursos/Botones/Agregar%20NPC.png" />
+                              <Image url="@../Recursos/Botones/6.png" />
                            </image>
                         </ImageView>
                         <ImageView fx:id="imaSiguente" fitHeight="82.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">

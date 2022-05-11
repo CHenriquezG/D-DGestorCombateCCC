@@ -36,7 +36,7 @@ public class Estadisticas {
 
 
     }
-    void initData(int customer, configuracion conf) {
+    public void initData(int customer, configuracion conf) {
         combR= customer;
         this.conf = conf;
     }
@@ -46,5 +46,59 @@ public class Estadisticas {
 
     }
 
+    public ImageView getImaper() {
+        return imaper;
+    }
 
+    public void setImaper(ImageView imaper) {
+        this.imaper = imaper;
+    }
+
+    public Label getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(Label jugador) {
+        this.jugador = jugador;
+    }
+
+    public Label getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(Label nombre) {
+        this.nombre = nombre;
+    }
+
+    public Label getPts() {
+        return pts;
+    }
+
+    public void setPts(Label pts) {
+        this.pts = pts;
+    }
+
+    public BorderPane getTablero() {
+        return tablero;
+    }
+
+    public void setTablero(BorderPane tablero) {
+        this.tablero = tablero;
+    }
+
+    public configuracion getConf() {
+        return conf;
+    }
+
+    public void setConf(configuracion conf) {
+        this.conf = conf;
+    }
+
+    public int getCombR() {
+        return combR;
+    }
+
+    public void setCombR(int combR) {
+        this.combR = combR;
+    }
 }

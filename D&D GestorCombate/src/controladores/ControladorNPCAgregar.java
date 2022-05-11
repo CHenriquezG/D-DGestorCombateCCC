@@ -44,22 +44,22 @@ public class ControladorNPCAgregar  implements Initializable {
     @FXML
     ImageView imaSiguente;
 
-    Image animatedBroom = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Animated Broom.png"));
-    Image awakenedTree = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Awakened Tree.png"));
-    Image danielMoreno = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Daniel Moreno.png"));
-    Image drowArachnomancer = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Drow Arachnomancer.png"));
-    Image dryad = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Dryad.png"));
-    Image dwarvenNoble = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Dwarven Noble.png"));
-    Image erinyesSummoned = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Erinyes-Summoned.png"));
-    Image gibberingMouther = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Gibbering Mouther.png"));
-    Image gladiator = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Gladiator.png"));
-    Image guardVillage = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Guard-Village.png"));
-    Image hillGiant = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Hill Giant.png"));
-    Image intellectDevourer = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Intellect Devourer.png"));
-    Image phaseSpider = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Phase Spider.png"));
-    Image planetar = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Planetar.png"));
-    Image spy = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Spy.png"));
-    Image youngRedDragon = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Young Red Dragon.png"));
+    Image animatedBroom = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\Animated Broom.png"));
+    Image awakenedTree = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\Awakened Tree.png"));
+    Image danielMoreno = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\Daniel Moreno.png"));
+    Image drowArachnomancer = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\Drow Arachnomancer.png"));
+    Image dryad = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\Dryad.png"));
+    Image dwarvenNoble = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\Dwarven Noble.png"));
+    Image erinyesSummoned = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\Erinyes-Summoned.png"));
+    Image gibberingMouther = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\Gibbering Mouther.png"));
+    Image gladiator = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\Gladiator.png"));
+    Image guardVillage = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\Guard-Village.png"));
+    Image hillGiant = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\Hill Giant.png"));
+    Image intellectDevourer = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\Intellect Devourer.png"));
+    Image phaseSpider = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\Phase Spider.png"));
+    Image planetar = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\Planetar.png"));
+    Image spy = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\Spy.png"));
+    Image youngRedDragon = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\Young Red Dragon.png"));
 
 
 
@@ -76,7 +76,7 @@ public class ControladorNPCAgregar  implements Initializable {
 
         Font font =
                 Font.loadFont(getClass()
-                        .getResourceAsStream("\\Recursos\\Diseño\\SF Atarian System.ttf"), 38);
+                        .getResourceAsStream("..\\Recursos\\Diseño\\SF Atarian System.ttf"), 38);
 
         detallesPersonaje.setText("");
         detallesPersonaje.setFont(font);

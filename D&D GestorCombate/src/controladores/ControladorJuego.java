@@ -87,7 +87,7 @@ public class ControladorJuego {
 
 
     }
-    void initData(BorderPane customer, VBox tabla, Stage primary) {
+    public void initData(BorderPane customer, VBox tabla, Stage primary) {
         //customer.setPrefWidth(back.getPrefWidth());
         //customer.setPrefHeight(back.getPrefHeight());
 

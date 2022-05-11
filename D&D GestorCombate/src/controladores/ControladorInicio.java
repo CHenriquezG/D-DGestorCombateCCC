@@ -72,7 +72,7 @@ public class ControladorInicio {
         });
 
     }
-    void initData(Stage customer) {
+    public void initData(Stage customer) {
         scene = customer;
     }
     public void crear(){

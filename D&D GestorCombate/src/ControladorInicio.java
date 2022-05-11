@@ -19,7 +19,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.ResourceBundle;
-
+import controladores.ControladorListaPersonajes;
 import logico.Datos.estructuraDeDatos;
 
 public class ControladorInicio {
@@ -59,7 +59,7 @@ public class ControladorInicio {
                 }
                 ControladorListaPersonajes controller = loader.<ControladorListaPersonajes>getController();
 
-                back.setCenter(controller.back.getCenter());
+                back.setCenter(controller.getBack().getCenter());
                 controller.initData(back,scene);
 
 

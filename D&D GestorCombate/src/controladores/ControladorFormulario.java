@@ -45,7 +45,7 @@ public class ControladorFormulario {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 System.out.println(newValue);
-                auxima = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\"+tipoimagen.getItems().get((Integer) newValue)+".png"));
+                auxima = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\"+tipoimagen.getItems().get((Integer) newValue)+".png"));
                 ima.setImage(auxima);
 
             }

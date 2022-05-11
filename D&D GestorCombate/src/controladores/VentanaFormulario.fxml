@@ -89,7 +89,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Recursos/Botones/Bonf%20iniciativa.png" />
+                                    <Image url="@../Recursos/Botones/Bonf%20iniciativa.png" />
                                  </image>
                               </ImageView>
                               <TextField fx:id="BIniciativa" prefHeight="30.0" prefWidth="30.0" />
@@ -101,7 +101,7 @@
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Recursos/Botones/Puntos%20de%20golpe.png" />
+                              <Image url="@../Recursos/Botones/Puntos%20de%20golpe.png" />
                            </image>
                         </ImageView>
                         <TextField fx:id="PGolpe" prefHeight="30.0" prefWidth="30.0" />

@@ -85,7 +85,7 @@
                                     </ImageView>
                                     <ImageView fx:id="siguienteTurno" fitHeight="68.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                        <image>
-                                          <Image url="@Recursos/Botones/siguiente%20turno.png" />
+                                          <Image url="@../Recursos/Botones/siguiente%20turno.png" />
                                        </image>
                                     </ImageView>
                                  </children>
@@ -172,7 +172,7 @@
                                           </VBox>
                                           <ImageView fx:id="imaPerfil" fitHeight="119.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                                              <image>
-                                                <Image url="@Recursos/Foto%20de%20personajes/Gibbering%20Mouther.png" />
+                                                <Image url="@../Recursos/Foto%20de%20personajes/Gibbering%20Mouther.png" />
                                              </image>
                                           </ImageView>
                                           <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
@@ -294,7 +294,7 @@
                      <children>
                         <ImageView fitHeight="88.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Recursos/Botones/Finalizar%20combate.png" />
+                              <Image url="@../Recursos/Botones/Finalizar%20combate.png" />
                            </image>
                         </ImageView>
                      </children>

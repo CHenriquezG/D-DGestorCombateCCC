@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -8,8 +9,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="691.0" prefWidth="800.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ControladorNPCAgregar">
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="691.0" prefWidth="800.0" stylesheets="@../aplicacion.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ControladorNPCAgregar">
 
     <left>
         <AnchorPane fx:id="lef" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="228.0" prefWidth="32.0" style="-fx-background-color: BLUE;" BorderPane.alignment="CENTER" />
@@ -20,7 +22,7 @@
     <top>
         <HBox fx:id="up" prefHeight="32.0" prefWidth="481.0" BorderPane.alignment="CENTER">
             <children>
-                <HBox fx:id="toplef" prefHeight="32.0" prefWidth="32.0" stylesheets="@aplicacion.css" HBox.hgrow="ALWAYS" />
+                <HBox fx:id="toplef" prefHeight="32.0" prefWidth="32.0" stylesheets="@../aplicacion.css" HBox.hgrow="ALWAYS" />
                 <HBox fx:id="toprig" alignment="TOP_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="32.0" HBox.hgrow="ALWAYS" />
             </children>
         </HBox>
@@ -39,8 +41,19 @@
             <ListView fx:id="listaNPC" prefHeight="405.0" prefWidth="736.0" />
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fx:id="imageView" fitHeight="252.0" fitWidth="365.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="imageView2" fitHeight="252.0" fitWidth="371.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imageView" fitHeight="252.0" fitWidth="365.0" onMouseClicked="#queImagen" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin></ImageView>
+                  <AnchorPane prefHeight="252.0" prefWidth="374.0">
+                     <children>
+                        <Label fx:id="detallesPersonaje" alignment="TOP_LEFT" layoutX="50.0" layoutY="3.0" onMouseClicked="#queImagen" prefHeight="392.0" prefWidth="367.0" text="Label" textFill="WHITE">
+                           <font>
+                              <Font name="Verdana Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
                </children>
             </HBox>
             <ImageView fx:id="listo" fitHeight="63.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
@@ -48,7 +61,7 @@
                   <Insets bottom="-0.0" left="600.0" />
                </VBox.margin>
                <image>
-                  <Image url="@Recursos/Botones/Siguiente.png" />
+                  <Image url="@../Recursos/Botones/Siguiente.png" />
                </image>
             </ImageView>
          </children>

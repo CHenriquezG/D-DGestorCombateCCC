@@ -110,23 +110,24 @@ public class ControladorListaPersonajes {
                 BorderPane b = null;
                 try {
                     b = (BorderPane)loader.load();
+                    Parent root = new Pane();
+                    ControladorNPCAgregar controller = loader.<ControladorNPCAgregar>getController();
+
+                    //Estadisticas controller = loader.<Estadisticas>getController();
+
+                    controller.initData(tabla,conf);
+                    Ventana.setScene(new Scene(b));
+                    Ventana.show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                Parent root = new Pane();
-                ControladorNPCAgregar controller = loader.<ControladorNPCAgregar>getController();
 
-                //Estadisticas controller = loader.<Estadisticas>getController();
-
-                controller.initData(tabla,conf);
-                Ventana.setScene(new Scene(b));
-                Ventana.show();
             }
         });
 
 
     }
-    void initData(BorderPane customer,Stage scene) {
+    public void initData(BorderPane customer,Stage scene) {
         back = customer;this.scene = scene;
     }
     public void AñadirCombatiente() throws IOException {
@@ -171,5 +172,150 @@ public class ControladorListaPersonajes {
         b.getChildren().add(ima);
         b.getChildren().add(bu);
         tabla.getChildren().add(b);
+    }
+
+
+    public AnchorPane getRig() {
+        return rig;
+    }
+
+    public void setRig(AnchorPane rig) {
+        this.rig = rig;
+    }
+
+    public AnchorPane getLef() {
+        return lef;
+    }
+
+    public void setLef(AnchorPane lef) {
+        this.lef = lef;
+    }
+
+    public HBox getBot() {
+        return bot;
+    }
+
+    public void setBot(HBox bot) {
+        this.bot = bot;
+    }
+
+    public HBox getBotlef() {
+        return botlef;
+    }
+
+    public void setBotlef(HBox botlef) {
+        this.botlef = botlef;
+    }
+
+    public HBox getBotrig() {
+        return botrig;
+    }
+
+    public void setBotrig(HBox botrig) {
+        this.botrig = botrig;
+    }
+
+    public HBox getToprig() {
+        return toprig;
+    }
+
+    public void setToprig(HBox toprig) {
+        this.toprig = toprig;
+    }
+
+    public HBox getToplef() {
+        return toplef;
+    }
+
+    public void setToplef(HBox toplef) {
+        this.toplef = toplef;
+    }
+
+    public HBox getUp() {
+        return up;
+    }
+
+    public void setUp(HBox up) {
+        this.up = up;
+    }
+
+    public BorderPane getBack() {
+        return back;
+    }
+
+    public void setBack(BorderPane back) {
+        this.back = back;
+    }
+
+    public VBox getCen() {
+        return cen;
+    }
+
+    public void setCen(VBox cen) {
+        this.cen = cen;
+    }
+
+    public VBox getTabla() {
+        return tabla;
+    }
+
+    public void setTabla(VBox tabla) {
+        this.tabla = tabla;
+    }
+
+    public ScrollPane getTablapane() {
+        return tablapane;
+    }
+
+    public void setTablapane(ScrollPane tablapane) {
+        this.tablapane = tablapane;
+    }
+
+    public configuracion getConf() {
+        return conf;
+    }
+
+    public void setConf(configuracion conf) {
+        this.conf = conf;
+    }
+
+    public ImageView getImaAgregarNPC() {
+        return imaAgregarNPC;
+    }
+
+    public void setImaAgregarNPC(ImageView imaAgregarNPC) {
+        this.imaAgregarNPC = imaAgregarNPC;
+    }
+
+    public ImageView getImaSiguente() {
+        return imaSiguente;
+    }
+
+    public void setImaSiguente(ImageView imaSiguente) {
+        this.imaSiguente = imaSiguente;
+    }
+
+    public ImageView getImaAgregarCombatiente() {
+        return imaAgregarCombatiente;
+    }
+
+    public void setImaAgregarCombatiente(ImageView imaAgregarCombatiente) {
+        this.imaAgregarCombatiente = imaAgregarCombatiente;
+    }
+
+    public Stage getScene() {
+        return scene;
+    }
+
+    public void setScene(Stage scene) {
+        this.scene = scene;
+    }
+
+    public configuracion getBhconf() {
+        return bhconf;
+    }
+
+    public void setBhconf(configuracion bhconf) {
+        this.bhconf = bhconf;
     }
 }

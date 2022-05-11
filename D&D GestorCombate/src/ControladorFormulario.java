@@ -18,6 +18,7 @@ import logico.Combatiente.Combatiente;
 import logico.Combatiente.Creadora;
 import logico.Combatiente.CreadoraReal;
 import logico.Configuracion.configuracion;
+import controladores.Estadisticas;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -78,7 +79,7 @@ public class ControladorFormulario {
                     b.getChildren().add(bu);*/
                     FXMLLoader loader = new FXMLLoader(
                             getClass().getResource(
-                                    "Estadisticas.fxml"
+                                    "controladores\\Estadisticas.fxml"
                             )
                     );
 
@@ -86,10 +87,10 @@ public class ControladorFormulario {
                     try {
                         b = (BorderPane)loader.load();
                         Estadisticas controller = loader.<Estadisticas>getController();
-                        controller.imaper.setImage(auxima);
-                        controller.nombre.setText("Nombre Personaje: "+nombre.getText());
-                        controller.jugador.setText("Nombre Jugador: "+nombreJugador.getText());
-                        controller.pts.setText("PG:"+PGolpe.getText());
+                        controller.getImaper().setImage(auxima);
+                        controller.getNombre().setText("Nombre Personaje: "+nombre.getText());
+                        controller.getJugador().setText("Nombre Jugador: "+nombreJugador.getText());
+                        controller.getPts().setText("PG:"+PGolpe.getText());
 
                         // aca se crean el combatiente
                         int ar = Integer.parseInt(armadura.getText()),pg =Integer.parseInt(PGolpe.getText())
