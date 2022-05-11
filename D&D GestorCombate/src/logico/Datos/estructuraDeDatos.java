@@ -2,7 +2,7 @@ package logico.Datos;
 // import java.sql.*;
 
 public class estructuraDeDatos {   // NO TOCAR
-
+	// CREAR BD, abrir conexion , ejecutar insert comando, cerrar conexion con la BVD
 	/*estructuraDeDatos e = new estructuraDeDatos();
         e.extraerInformacion();
         System.out.println("-------------------------");
@@ -71,26 +71,8 @@ public class estructuraDeDatos {   // NO TOCAR
 			e.printStackTrace();
 		}
 	}
-
 	// acceder y guardar en BD
-
-	// CREAR BD, abrir conexion , ejecutar insert comando, cerrar conexion con la BVD
-
      // JSON serializable
     // combatiente real
-
-    /*  String fichero = "";
-
-	try (BufferedReader br = new BufferedReader(new FileReader("datos.json"))) {
-        String linea;
-        while ((linea = br.readLine()) != null) {
-            fichero += linea;
-        }
-
-    } catch (FileNotFoundException ex) {
-        System.out.println(ex.getMessage());
-    } catch (IOException ex) {
-        System.out.println(ex.getMessage());
-    }
    */
 }
