@@ -1,5 +1,3 @@
-package controladores;
-
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -31,10 +29,16 @@ public class ControladorJuego {
     combate combateinstancia ;
 
     String[] clavesAccion = {"Atacar","Moverse","PasarTurno","Curar","Ayudar"};
+
+    @FXML
+    ImageView imaSalir;
     public void initialize(){/**
+
 
         paisaje.fitWidthProperty().bind(fcontent.widthProperty());
         paisaje.fitHeightProperty().bind(fcontent.heightProperty());**/
+
+
         combateinstancia = new combate();
         iniciativa i = new iniciativa();
         contenidoAccion.getItems().addAll(clavesAccion);

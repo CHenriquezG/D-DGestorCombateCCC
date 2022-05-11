@@ -1,5 +1,3 @@
-package controladores;
-
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -75,6 +73,7 @@ public class ControladorInicio {
     void initData(Stage customer) {
         scene = customer;
     }
+
     public void crear(){
         ArrayList<String> s = new ArrayList<>();
         s.add("Guard-Village");

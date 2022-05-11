@@ -3,7 +3,6 @@ package logico.InstanciaCombate;
 import javafx.fxml.FXMLLoader;
 import logico.Combatiente.CombatienteReal;
 import logico.Configuracion.configuracion;
-import controladores.ControladorFormulario;
 
 import java.util.ArrayList;
 
@@ -19,9 +18,9 @@ public class combate {
                 )
         );
 
-        ControladorFormulario controller = loader.<ControladorFormulario>getController();
-        combatientes= new ArrayList<CombatienteReal>();
-        combatientes=c.combatientes;
+        //ControladorFormulario controller = loader.<ControladorFormulario>getController();
+        //combatientes= new ArrayList<CombatienteReal>();
+       // combatientes=c.combatientes;
 
 
     }

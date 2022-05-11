@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="575.0" prefWidth="970.0" stylesheets="@../aplicacion.css" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ControladorListaPersonajes">
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="575.0" prefWidth="970.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorListaPersonajes">
 
     <left>
         <AnchorPane fx:id="lef" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="228.0" prefWidth="32.0" style="-fx-background-color: BLUE;" BorderPane.alignment="CENTER" />
@@ -21,7 +21,7 @@
     <top>
         <HBox fx:id="up" prefHeight="32.0" prefWidth="481.0" BorderPane.alignment="CENTER">
             <children>
-                <HBox fx:id="toplef" prefHeight="32.0" prefWidth="32.0" stylesheets="@../aplicacion.css" HBox.hgrow="ALWAYS" />
+                <HBox fx:id="toplef" prefHeight="32.0" prefWidth="32.0" stylesheets="@aplicacion.css" HBox.hgrow="ALWAYS" />
                 <HBox fx:id="toprig" alignment="TOP_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="32.0" HBox.hgrow="ALWAYS" />
             </children>
         </HBox>
@@ -47,12 +47,12 @@
                   </CheckBox>
                   <ImageView fitHeight="31.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Recursos/Botones/Editar.png" />
+                        <Image url="@Recursos/Botones/Editar.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="31.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Recursos/Diseño/basureroooo.png" />
+                        <Image url="@Recursos/Diseño/basureroooo.png" />
                      </image>
                      <HBox.margin>
                         <Insets />
@@ -79,7 +79,7 @@
                             <children>
                         <ImageView fitHeight="127.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Recursos/Diseño/dyd_logo.png" />
+                              <Image url="@Recursos/Diseño/dyd_logo.png" />
                            </image>
                            <VBox.margin>
                               <Insets bottom="50.0" />
@@ -101,7 +101,7 @@
                         </ImageView>
                         <ImageView fx:id="imaSiguente" fitHeight="82.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Recursos/Botones/Siguiente.png" />
+                              <Image url="@Recursos/Botones/Siguiente.png" />
                            </image>
                         </ImageView>
                             </children>

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="691.0" prefWidth="800.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ControladorNPCAgregar">
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="691.0" prefWidth="800.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorNPCAgregar">
 
     <left>
         <AnchorPane fx:id="lef" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="228.0" prefWidth="32.0" style="-fx-background-color: BLUE;" BorderPane.alignment="CENTER" />

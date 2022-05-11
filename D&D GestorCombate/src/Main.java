@@ -1,4 +1,3 @@
-import controladores.ControladorInicio;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,7 +14,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource(
-                        "controladores/ControladorInicio.fxml"
+                        "ControladorInicio.fxml"
                 )
         );
 
