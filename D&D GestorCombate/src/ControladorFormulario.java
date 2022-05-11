@@ -17,6 +17,7 @@ import javafx.scene.layout.VBox;
 import logico.Combatiente.Combatiente;
 import logico.Combatiente.Creadora;
 import logico.Combatiente.CreadoraReal;
+import logico.Configuracion.configuracion;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,11 +34,12 @@ public class ControladorFormulario {
     @FXML
     ImageView listo,ima;
     @FXML
-    TextField nombre,nombreJugador,armadura,BIniciativa,PGolpe,Fuerza,Inteligencia,constitucion,destreza,carisma;
+    TextField nombre,nombreJugador,armadura,BIniciativa,PGolpe,Fuerza,Inteligencia,constitucion,destreza,carisma,sabiduria;
     @FXML
     ChoiceBox clase,tipoimagen;
 
     Image auxima;
+    configuracion conf;
 
     public void initialize(){
         tipoimagen.getItems().addAll(personajes);
@@ -88,29 +90,33 @@ public class ControladorFormulario {
                         controller.nombre.setText("Nombre Personaje: "+nombre.getText());
                         controller.jugador.setText("Nombre Jugador: "+nombreJugador.getText());
                         controller.pts.setText("PG:"+PGolpe.getText());
+
+                        // aca se crean el combatiente
+                        int ar = Integer.parseInt(armadura.getText()),pg =Integer.parseInt(PGolpe.getText())
+                                ,bi=Integer.parseInt(BIniciativa.getText()) ,fue=Integer.parseInt(Fuerza.getText())
+                                ,in=Integer.parseInt(Inteligencia.getText()),des=Integer.parseInt(destreza.getText())
+                                ,con=Integer.parseInt(constitucion.getText()),car=Integer.parseInt(carisma.getText())
+                                ,sab=Integer.parseInt(sabiduria.getText());
+                        // crear ID random
+                        int id = (char) (rnd.nextInt(94)+33); // actualizar método de obtener una ID;
+
+                        conf.setCombatiente(nombre.getText(),nombreJugador.getText(),clase.getAccessibleText(),tipoimagen.getAccessibleText(),bi,pg,ar,fue,in,des,con,car, sab,id);
+                        controller.initData(0,conf);
                         tabla.getChildren().add(b);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
 
                     // aca se crean el combatiente
-                    int ar = Integer.parseInt(armadura.getText()),pg =Integer.parseInt(PGolpe.getText())
-                            ,bi=Integer.parseInt(BIniciativa.getText()) ,fue=Integer.parseInt(Fuerza.getText())
-                            ,in=Integer.parseInt(Inteligencia.getText()),des=Integer.parseInt(destreza.getText())
-                            ,con=Integer.parseInt(constitucion.getText()),car=Integer.parseInt(carisma.getText()), sab=Integer.parseInt(carisma.getText()) ;
-                    // crear ID random
-                    int id = (char) (rnd.nextInt(94)+33); // actualizar método de obtener una ID;
-                    Creadora c = new CreadoraReal();
-                    Combatiente nuevo = c.CrearCombatiente(nombre.getText(),nombreJugador.getText(),clase.getAccessibleText(),tipoimagen.getAccessibleText(),bi,pg,ar,fue,in,des,con,car, sab,id);
 
                 }
             }
         });
     }
-    void initData(VBox customer) {
+    void initData(VBox customer, configuracion conf) {
         tabla= customer;
+        this.conf = conf;
     }
-
 
     public void CambiarIma(){
         System.out.println("cambio");
@@ -126,7 +132,7 @@ public class ControladorFormulario {
             System.out.println(Integer.parseInt(destreza.getText()));
             System.out.println(Integer.parseInt(constitucion.getText()));
             System.out.println(Integer.parseInt(carisma.getText()));
-
+            System.out.println(Integer.parseInt(sabiduria.getText()));
             System.out.println(nombre.getText());
             System.out.println(tipoimagen.getValue());
             if(nombre.getText().equals("") || (nombreJugador.getText().equals(""))|| (tipoimagen.getValue() == null)){
