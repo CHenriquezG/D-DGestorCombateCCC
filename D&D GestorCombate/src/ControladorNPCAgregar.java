@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import logico.Combatiente.Combatiente;
 import logico.Combatiente.Creadora;
 import logico.Combatiente.CreadoraReal;
+import logico.Configuracion.configuracion;
 
 import java.io.IOException;
 import java.net.URL;
@@ -37,6 +38,7 @@ public class ControladorNPCAgregar  implements Initializable {
     Image auxima;
     @FXML
     Label detallesPersonaje;
+    configuracion conf;
 
     ControladorListaPersonajes controlador;
     @FXML
@@ -97,8 +99,10 @@ public class ControladorNPCAgregar  implements Initializable {
                     b = (BorderPane)loader.load();
                     Estadisticas controller = loader.<Estadisticas>getController();
                     queImagen();
-                    controller.imaper.setImage(auxima);
+                    conf.setCombatiente("","nombreJugador.getText()","clase.getAccessibleText()","tipoimagen.getAccessibleText()",22,2,2,2,2,2,2,2, 2,2);
+                    controller.initData(0,conf);
                     tabla.getChildren().add(b);
+                    controller.imaper.setImage(auxima);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -120,81 +124,81 @@ public class ControladorNPCAgregar  implements Initializable {
                     if(personajeSelected>=0){
                         if(personajeSelected==0){
                             displayImage(animatedBroom);
-                            personajeAux="Nombre: Animated Broom\nClase: Construct\nArmadura: 4\nPuntos de Golpe: 4\nInteligencia: 5\nDestreza: 5\nBonif. Iniciativa: 4\nFuerza: 2\nConstitucion: 5\nCarisma: 2";
+                            personajeAux="Animated Broom\nClase: Construct\nArmadura: 4\nPuntos de Golpe: 4\nInteligencia:           5\nDestreza: 5\nBonif. Iniciativa: 4\nFuerza: 2\nConstitucion: 5\nCarisma: 2";
                         }
                         if(personajeSelected==1){
                             displayImage(awakenedTree);
-                            personajeAux="Nombre: Awakened Tree\nClase: Plant\nArmadura: 3\nPuntos de Golpe: 2\nInteligencia: 5\nDestreza: 6\nBonif. Iniciativa: 7\nFuerza: 7\nConstitucion: 5\nCarisma: 4";
+                            personajeAux="Awakened Tree\nClase: Plant\nArmadura: 3\nPuntos de Golpe: 2\nInteligencia: 5\nDestreza: 6\nBonif. Iniciativa: 7\nFuerza: 7\nConstitucion: 5\nCarisma: 4";
 
                         }
                         if(personajeSelected==2){
                             displayImage(danielMoreno);
-                            personajeAux="Nombre: Daniel Moreno\nClase: Aberration\nArmadura: 10\nPuntos de Golpe: 12\nInteligencia: 8\nDestreza: 11\nBonif. Iniciativa: 10\nFuerza:9\nConstitucion: 6\nCarisma: 6";
+                            personajeAux="Daniel Moreno\nClase: Aberration\nArmadura: 10\nPuntos de Golpe: 12\nInteligencia: 8\nDestreza: 11\nBonif. Iniciativa: 10\nFuerza:9\nConstitucion: 6\nCarisma: 6";
 
                         }
                         if(personajeSelected==3){
                             displayImage(drowArachnomancer);
-                            personajeAux="Nombre: Drow Arachnomancer\nClase: Humanoid\nArmadura: 7\nPuntos de Golpe: 11\nInteligencia: 11\nDestreza: 10\nBonif. Iniciativa: 8\nFuerza: 7\nConstitucion: 3\nCarisma: 3";
+                            personajeAux="Drow Arachnomancer\nClase: Humanoid\nArmadura: 7\nPuntos de Golpe: 11\nInteligencia: 11\nDestreza: 10\nBonif. Iniciativa: 8\nFuerza: 7\nConstitucion: 3\nCarisma: 3";
 
                         }
                         if(personajeSelected==4) {
                             displayImage(dryad);
-                            personajeAux="Nombre: Dryad\nClase: Fey\nArmadura: 9\nPuntos de Golpe: 5\nInteligencia: 5\nDestreza: 6\nBonif. Iniciativa: 7\nFuerza: 7\nConstitucion: 5\nCarisma: 4";
+                            personajeAux="Dryad\nClase: Fey\nArmadura: 9\nPuntos de Golpe: 5\nInteligencia: 5\nDestreza: 6\nBonif. Iniciativa: 7\nFuerza: 7\nConstitucion: 5\nCarisma: 4";
 
                         }
                         if(personajeSelected==5){
                             displayImage(dwarvenNoble);
-                            personajeAux="Nombre: Dwarven Noble\nClase: Fey\nArmadura: 5\nPuntos de Golpe: 7\nInteligencia: 10\nDestreza: 10\nBonif. Iniciativa: 12\nFuerza: 6\nConstitucion: 7\nCarisma: 10";
+                            personajeAux="Dwarven Noble\nClase: Fey\nArmadura: 5\nPuntos de Golpe: 7\nInteligencia: 10\nDestreza: 10\nBonif. Iniciativa: 12\nFuerza: 6\nConstitucion: 7\nCarisma: 10";
 
                         }
                         if(personajeSelected==6){
                             displayImage(erinyesSummoned);
-                            personajeAux="Nombre: Erinyes Summoned\nClase: Celestial\nArmadura: 10\nPuntos de Golpe: 8\nInteligencia: 8\nDestreza: 9\nBonif. Iniciativa: 11\nFuerza: 9\nConstitucion: 7\nCarisma: 9";
+                            personajeAux="Erinyes Summoned\nClase: Celestial\nArmadura: 10\nPuntos de Golpe: 8\nInteligencia: 8\nDestreza: 9\nBonif. Iniciativa: 11\nFuerza: 9\nConstitucion: 7\nCarisma: 9";
 
                         }
                         if(personajeSelected==7){
                             displayImage(gibberingMouther);
-                            personajeAux="Nombre: Gibbering Mouther\nClase: Aberration\nArmadura: 14\nPuntos de Golpe: 12\nInteligencia: 9\nDestreza: 6\nBonif. Iniciativa: 6\nFuerza: 10\nConstitucion: 5\nCarisma: 1";
+                            personajeAux="Gibbering Mouther\nClase: Aberration\nArmadura: 14\nPuntos de Golpe: 12\nInteligencia: 9\nDestreza: 6\nBonif. Iniciativa: 6\nFuerza: 10\nConstitucion: 5\nCarisma: 1";
 
                         }
                         if(personajeSelected==8){
                             displayImage(gladiator);
-                            personajeAux="Nombre: Gladiator\nClase: Fiend\nArmadura: 12\nPuntos de Golpe: 9\nInteligencia: 8\nDestreza: 6\nBonif. Iniciativa: 11\nFuerza: 8\nConstitucion: 4\nCarisma: 10";
+                            personajeAux="Gladiator\nClase: Fiend\nArmadura: 12\nPuntos de Golpe: 9\nInteligencia: 8\nDestreza: 6\nBonif. Iniciativa: 11\nFuerza: 8\nConstitucion: 4\nCarisma: 10";
 
                         }
                         if(personajeSelected==9){
                             displayImage(guardVillage);
-                            personajeAux="Nombre: Guard Village\nClase: Fiend\nArmadura: 8\nPuntos de Golpe: 8\nInteligencia: 9\nDestreza: 9\nBonif. Iniciativa: 7\nFuerza: 8\nConstitucion: 5\nCarisma: 5";
+                            personajeAux="Guard Village\nClase: Fiend\nArmadura: 8\nPuntos de Golpe: 8\nInteligencia: 9\nDestreza: 9\nBonif. Iniciativa: 7\nFuerza: 8\nConstitucion: 5\nCarisma: 5";
 
                         }
                         if(personajeSelected==10){
                             displayImage(hillGiant);
-                            personajeAux="Nombre: Hill Giant\nClase: Giant\nArmadura: 13\nPuntos de Golpe: 12\nInteligencia: 2\nDestreza: 3\nBonif. Iniciativa: 6\nFuerza: 13\nConstitucion: 5\nCarisma: 1";
+                            personajeAux="Hill Giant\nClase: Giant\nArmadura: 13\nPuntos de Golpe: 12\nInteligencia: 2\nDestreza: 3\nBonif. Iniciativa: 6\nFuerza: 13\nConstitucion: 5\nCarisma: 1";
 
                         }
                         if(personajeSelected==11){
                             displayImage(intellectDevourer);
-                            personajeAux="Nombre: Intellect Devourer\nClase: Aberration\nArmadura: 10\nPuntos de Golpe: 8\nInteligencia: 15\nDestreza: 15\nBonif. Iniciativa: 10\nFuerza: 9\nConstitucion: 6\nCarisma: 10";
+                            personajeAux="Intellect Devourer\nClase: Aberration\nArmadura: 10\nPuntos de Golpe: 8\nInteligencia: 15\nDestreza: 15\nBonif. Iniciativa: 10\nFuerza: 9\nConstitucion: 6\nCarisma: 10";
 
                         }
                         if(personajeSelected==12){
                             displayImage(phaseSpider);
-                            personajeAux="Nombre: Phase Spider\nClase: Oozes\nArmadura: 9\nPuntos de Golpe: 9\nInteligencia: 5\nDestreza: 5\nBonif. Iniciativa: 7\nFuerza: 8\nConstitucion: 8\nCarisma: 2";
+                            personajeAux="Phase Spider\nClase: Oozes\nArmadura: 9\nPuntos de Golpe: 9\nInteligencia: 5\nDestreza: 5\nBonif. Iniciativa: 7\nFuerza: 8\nConstitucion: 8\nCarisma: 2";
 
                         }
                         if(personajeSelected==13){
                             displayImage(planetar);
-                            personajeAux="Nombre: Planetar\nClase: Celestial\nArmadura: 14\nPuntos de Golpe: 12\nInteligencia: 12\nDestreza: 10\nBonif. Iniciativa: 9\nFuerza: 11\nConstitucion: 9\nCarisma: 7";
+                            personajeAux="Planetar\nClase: Celestial\nArmadura: 14\nPuntos de Golpe: 12\nInteligencia: 12\nDestreza: 10\nBonif. Iniciativa: 9\nFuerza: 11\nConstitucion: 9\nCarisma: 7";
 
                         }
                         if(personajeSelected==14){
                             displayImage(spy);
-                            personajeAux="Nombre: Spy\nClase: Fiend\nArmadura: 6\nPuntos de Golpe: 7\nInteligencia: 13\nDestreza: 12\nBonif. Iniciativa: 7\nFuerza: 7\nConstitucion: 7\nCarisma: 10";
+                            personajeAux="Spy\nClase: Fiend\nArmadura: 6\nPuntos de Golpe: 7\nInteligencia: 13\nDestreza: 12\nBonif. Iniciativa: 7\nFuerza: 7\nConstitucion: 7\nCarisma: 10";
 
                         }
                         if(personajeSelected==15){
                             displayImage(youngRedDragon);
-                            personajeAux="Nombre: Young Red Dragon\nClase: Dragon\nArmadura: 10\nPuntos de Golpe: 14\nInteligencia: 7\nDestreza: 6\nBonif. Iniciativa: 8\nFuerza: 10\nConstitucion: 6\nCarisma: 9";
+                            personajeAux="Young Red Dragon\nClase: Dragon\nArmadura: 10\nPuntos de Golpe: 14\nInteligencia: 7\nDestreza: 6\nBonif. Iniciativa: 8\nFuerza: 10\nConstitucion: 6\nCarisma: 9";
 
                         }
                         detallesPersonaje.setText(personajeAux);
@@ -209,8 +213,9 @@ public class ControladorNPCAgregar  implements Initializable {
 
     }
 
-    void initData(VBox customer) {
+    void initData(VBox customer,configuracion conf) {
         tabla= customer;
+        this.conf = conf;
     }
 
     public void displayImage(Image i){
