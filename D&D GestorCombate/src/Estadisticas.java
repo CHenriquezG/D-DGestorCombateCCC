@@ -20,8 +20,6 @@ public class Estadisticas {
     configuracion conf;
     int combR;
     public void initialize(){
-        jugador.setText("fsdfdsfdsf");
-
 
         tablero.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
