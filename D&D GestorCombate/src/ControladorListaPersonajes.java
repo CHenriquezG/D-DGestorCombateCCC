@@ -59,7 +59,8 @@ public class ControladorListaPersonajes {
                 ControladorJuego controller = loader.<ControladorJuego>getController();
 
                 back.setCenter(controller.back.getCenter());
-                controller.initData(back,tabla,scene);
+
+                controller.initData(back,tabla,scene,conf);
 
 
 
@@ -113,9 +114,7 @@ public class ControladorListaPersonajes {
                 }
                 Parent root = new Pane();
                 ControladorNPCAgregar controller = loader.<ControladorNPCAgregar>getController();
-
-                //Estadisticas controller = loader.<Estadisticas>getController();
-
+                
                 controller.initData(tabla,conf);
                 Ventana.setScene(new Scene(b));
                 Ventana.show();

@@ -1,6 +1,7 @@
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.Image;
@@ -10,10 +11,16 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import logico.Combatiente.CombatienteReal;
+import logico.Configuracion.configuracion;
 import logico.Configuracion.iniciativa;
 import logico.Estrategia.Estrategia;
 import logico.Estrategia.contexto;
 import  logico.InstanciaCombate.combate;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class ControladorJuego {
     @FXML
     VBox tabla;
@@ -27,11 +34,13 @@ public class ControladorJuego {
     HBox golpeCurar,reaccion;
     contexto contexto = new contexto();
     combate combateinstancia ;
+    iniciativa i;
 
     String[] clavesAccion = {"Atacar","Moverse","PasarTurno","Curar","Ayudar"};
 
     @FXML
     ImageView imaSalir;
+
     public void initialize(){/**
 
 
@@ -40,7 +49,7 @@ public class ControladorJuego {
 
 
         combateinstancia = new combate();
-        iniciativa i = new iniciativa();
+
         contenidoAccion.getItems().addAll(clavesAccion);
         contenidoAccion.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
@@ -91,12 +100,21 @@ public class ControladorJuego {
 
 
     }
-    void initData(BorderPane customer, VBox tabla, Stage primary) {
+    void initData(BorderPane customer, VBox tabla, Stage primary, configuracion config) {
         //customer.setPrefWidth(back.getPrefWidth());
         //customer.setPrefHeight(back.getPrefHeight());
 
         //Scene s = new Scene(customer);
         //primary.setScene(s);
+
+        ArrayList<CombatienteReal> combatientes= new ArrayList<CombatienteReal>();
+
+        combatientes=config.combatientes;
+
+        i = new iniciativa();
+
+        i.GenerarOrdenCombatiente(combatientes);
+
         primary.setWidth(back.getPrefWidth());
         primary.setHeight(back.getPrefHeight());
         back = customer;
