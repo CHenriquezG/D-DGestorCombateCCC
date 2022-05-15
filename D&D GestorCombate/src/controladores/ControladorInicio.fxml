@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="575.0" prefWidth="970.0" stylesheets="@../aplicacion.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ControladorInicio">
+
+    <left>
+        <AnchorPane fx:id="lef" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="228.0" prefWidth="32.0" style="-fx-background-color: BLUE;" BorderPane.alignment="CENTER" />
+    </left>
+    <right>
+        <AnchorPane fx:id="rig" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="228.0" prefWidth="32.0" BorderPane.alignment="CENTER" />
+    </right>
+    <top>
+        <HBox fx:id="up" prefHeight="32.0" prefWidth="481.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox fx:id="toplef" prefHeight="32.0" prefWidth="32.0" HBox.hgrow="ALWAYS" />
+                <HBox fx:id="toprig" alignment="TOP_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="32.0" HBox.hgrow="ALWAYS" />
+            </children>
+        </HBox>
+    </top>
+    <bottom>
+        <HBox fx:id="bot" prefHeight="32.0" prefWidth="481.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox fx:id="botlef" prefHeight="36.0" prefWidth="36.0" HBox.hgrow="ALWAYS" />
+                <HBox fx:id="botrig" alignment="TOP_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="36.0" prefWidth="36.0" HBox.hgrow="ALWAYS" />
+            </children>
+        </HBox>
+    </bottom>
+    <center>
+        <VBox fx:id="cen" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
+            <children>
+            <ImageView fitHeight="33.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true" x="100.0" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets left="800.0" top="10.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../Recursos/Botones/Ayuda.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="339.0" fitWidth="668.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+               <image>
+                  <Image url="@../Recursos/Diseño/8.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" prefHeight="111.0" prefWidth="801.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <ImageView fx:id="ima" fitHeight="111.0" fitWidth="208.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../Recursos/Botones/1.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fx:id="imaCargar" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../Recursos/Botones/2.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fx:id="imaSalir" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../Recursos/Botones/Salir.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

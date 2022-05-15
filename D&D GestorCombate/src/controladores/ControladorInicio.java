@@ -1,4 +1,5 @@
-import javafx.event.ActionEvent;
+package controladores;
+
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,13 +15,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.ResourceBundle;
-import controladores.ControladorListaPersonajes;
-import logico.Datos.estructuraDeDatos;
 
 public class ControladorInicio {
     @FXML
@@ -59,7 +55,7 @@ public class ControladorInicio {
                 }
                 ControladorListaPersonajes controller = loader.<ControladorListaPersonajes>getController();
 
-                back.setCenter(controller.getBack().getCenter());
+                back.setCenter(controller.back.getCenter());
                 controller.initData(back,scene);
 
 
@@ -76,7 +72,7 @@ public class ControladorInicio {
         });
 
     }
-    void initData(Stage customer) {
+    public void initData(Stage customer) {
         scene = customer;
     }
     public void crear(){

@@ -1,27 +1,23 @@
+package controladores;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import logico.Combatiente.Combatiente;
 import logico.Combatiente.Creadora;
 import logico.Combatiente.CreadoraReal;
 import logico.Configuracion.configuracion;
-import controladores.Estadisticas;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Random;
 
 public class ControladorFormulario {
@@ -40,7 +36,7 @@ public class ControladorFormulario {
     ChoiceBox clase,tipoimagen;
 
     Image auxima;
-    configuracion conf;
+    public configuracion conf;
 
     public void initialize(){
         tipoimagen.getItems().addAll(personajes);
@@ -49,7 +45,7 @@ public class ControladorFormulario {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 System.out.println(newValue);
-                auxima = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\"+tipoimagen.getItems().get((Integer) newValue)+".png"));
+                auxima = new Image(getClass().getResourceAsStream("..\\Recursos\\Foto de personajes\\"+tipoimagen.getItems().get((Integer) newValue)+".png"));
                 ima.setImage(auxima);
 
             }
@@ -79,7 +75,7 @@ public class ControladorFormulario {
                     b.getChildren().add(bu);*/
                     FXMLLoader loader = new FXMLLoader(
                             getClass().getResource(
-                                    "controladores\\Estadisticas.fxml"
+                                    "Estadisticas.fxml"
                             )
                     );
 
@@ -87,10 +83,15 @@ public class ControladorFormulario {
                     try {
                         b = (BorderPane)loader.load();
                         Estadisticas controller = loader.<Estadisticas>getController();
-                        controller.getImaper().setImage(auxima);
-                        controller.getNombre().setText("Nombre Personaje: "+nombre.getText());
-                        controller.getJugador().setText("Nombre Jugador: "+nombreJugador.getText());
-                        controller.getPts().setText("PG:"+PGolpe.getText());
+                        controller.imaper.setImage(auxima);
+
+                        controller.nombre.setText(nombre.getText());
+                        controller.jugador.setText(nombreJugador.getText());
+                        controller.pts.setText(PGolpe.getText());
+
+                        controller.nombre.setText("Nombre Personaje: "+nombre.getText());
+                        controller.jugador.setText("Nombre Jugador: "+nombreJugador.getText());
+                        controller.pts.setText("PG:"+PGolpe.getText());
 
                         // aca se crean el combatiente
                         int ar = Integer.parseInt(armadura.getText()),pg =Integer.parseInt(PGolpe.getText())
@@ -100,15 +101,21 @@ public class ControladorFormulario {
                                 ,sab=Integer.parseInt(sabiduria.getText());
                         // crear ID random
                         int id = (char) (rnd.nextInt(94)+33); // actualizar método de obtener una ID;
-
                         conf.setCombatiente(nombre.getText(),nombreJugador.getText(),clase.getAccessibleText(),tipoimagen.getAccessibleText(),bi,pg,ar,fue,in,des,con,car, sab,id);
                         controller.initData(0,conf);
                         tabla.getChildren().add(b);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-
                     // aca se crean el combatiente
+                    int ar = Integer.parseInt(armadura.getText()),pg =Integer.parseInt(PGolpe.getText())
+                            ,bi=Integer.parseInt(BIniciativa.getText()) ,fue=Integer.parseInt(Fuerza.getText())
+                            ,in=Integer.parseInt(Inteligencia.getText()),des=Integer.parseInt(destreza.getText())
+                            ,con=Integer.parseInt(constitucion.getText()),car=Integer.parseInt(carisma.getText())
+                            ,sab=Integer.parseInt(sabiduria.getText());
+                            int id = (char) (rnd.nextInt(94)+33); // actualizar método de obtener una ID;
+                    Creadora c = new CreadoraReal();
+                    Combatiente nuevo = c.CrearCombatiente(nombre.getText(),nombreJugador.getText(),clase.getAccessibleText(),tipoimagen.getAccessibleText(),bi,pg,ar,fue,in,des,con,car,sab,id);
 
                 }
             }
