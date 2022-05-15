@@ -1,4 +1,6 @@
 package logico.Combatiente;
+import javafx.scene.layout.BorderPane;
+
 import java.util.ArrayList;
 
 
@@ -6,6 +8,7 @@ public class Combatiente {
     // poner máximo de combatientes
     String nombre,clase, imagen, nombreJugador;
     int Bini,PG,Arm,fue,inte,des,cons,car, id, sab;
+    BorderPane Grafico;
 
     public Combatiente(String nombre,String nombreJugador, String clase,String imagen, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car, int sab ,int id) {
         this.nombre = nombre;
@@ -136,5 +139,13 @@ public class Combatiente {
 
     public void setSab(int sab) {
         this.sab = sab;
+    }
+
+    public BorderPane getGrafico() {
+        return Grafico;
+    }
+
+    public void setGrafico(BorderPane grafico) {
+        Grafico = grafico;
     }
 }

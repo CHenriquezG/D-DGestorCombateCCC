@@ -1,22 +1,27 @@
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import logico.Combatiente.CombatienteInstancia;
 import logico.Combatiente.CombatienteReal;
 import logico.Configuracion.configuracion;
 import logico.Configuracion.iniciativa;
 import logico.Estrategia.Estrategia;
 import logico.Estrategia.contexto;
 import  logico.InstanciaCombate.combate;
+import logico.Lista.Iterador;
+import logico.Lista.IteradorCombatiente;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -35,6 +40,7 @@ public class ControladorJuego {
     contexto contexto = new contexto();
     combate combateinstancia ;
     iniciativa i;
+    IteradorCombatiente aux;
 
     String[] clavesAccion = {"Atacar","Moverse","PasarTurno","Curar","Ayudar"};
 
@@ -114,11 +120,39 @@ public class ControladorJuego {
         i = new iniciativa();
 
         i.GenerarOrdenCombatiente(combatientes);
+        IteradorCombatiente c = i.d;
+        tabla.getChildren().removeAll(tabla.getChildren());
+        while(c != null) {
+            BorderPane BP = c.getCombatiente().getGrafico();
+            System.out.println(BP);
+            aux = c;
+            BP.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                final IteradorCombatiente est = aux;
+                @Override
+                public void handle(MouseEvent event) {
+                    System.out.println("hola "+ est.getCombatiente().getNombreJugador());
+
+                }
+            });
+
+            tabla.getChildren().add(BP);
+            c = c.getSiguiente();
+        }
+
+
+
+
+
+
 
         primary.setWidth(back.getPrefWidth());
         primary.setHeight(back.getPrefHeight());
         back = customer;
+
+
+
         this.tabla.getChildren().setAll(tabla.getChildren());
+        //this.tabla.getChildren().setAll(tabla.getChildren());
     }
 
 }
