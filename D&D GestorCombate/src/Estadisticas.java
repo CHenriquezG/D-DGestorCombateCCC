@@ -23,13 +23,6 @@ public class Estadisticas {
         jugador.setText("fsdfdsfdsf");
 
 
-        tablero.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                conf.getCombatientes();
-            }
-        });
-
 
 
 
