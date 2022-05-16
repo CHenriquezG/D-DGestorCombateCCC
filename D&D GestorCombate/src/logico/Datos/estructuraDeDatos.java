@@ -1,22 +1,17 @@
 package logico.Datos;
-// import java.sql.*;
+import java.sql.*;
+import java.util.Date;
 
 public class estructuraDeDatos {   // NO TOCAR
 	// CREAR BD, abrir conexion , ejecutar insert comando, cerrar conexion con la BVD
-	/*estructuraDeDatos e = new estructuraDeDatos();
-        e.extraerInformacion();
-        System.out.println("-------------------------");
-        e.insertarDatos("Combate chiquito 4", "2022-05-12");
-        System.out.println("-------------------------");
-        e.extraerInformacion();
 
-	public  void extraerInformacion() {
+	/*public  void extraerInformacion() {
 
 		//  Cargue el controlador de acceso a datos
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			// 2. Conéctese a la "biblioteca" de datos
-			String url = "jdbc:mysql://localhost:3306/test";
+			String url = "jdbc:mysql://localhost:3306/dyd";
 			String user= "root";
 			String passwd= "";
 			Connection conn= DriverManager.getConnection(url,user,passwd);
@@ -33,15 +28,15 @@ public class estructuraDeDatos {   // NO TOCAR
 			// iterate through the java resultset
 			while (rs.next())
 			{
-				String titulo  = rs.getString("Titulo");
-				Date fecha = rs.getDate("Fecha");
+				String titulo  = rs.getString("titulo");
+				Date fecha = rs.getDate("fecha");
 
 				// print the results
 				System.out.format("%s,%s \n", titulo,fecha);
 			}
 			st.close(); // importante
 
-		}catch(ClassNotFoundException | SQLException e ){
+		}catch(ClassNotFoundException | SQLException ignored){
 
 		}
 
@@ -51,12 +46,12 @@ public class estructuraDeDatos {   // NO TOCAR
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			// 2. Conéctese a la "biblioteca" de datos
-			String url = "jdbc:mysql://localhost:3306/test";
+			String url = "jdbc:mysql://localhost:3306/dyd";
 			String user= "root";
 			String passwd= "";
 			Connection conn= DriverManager.getConnection(url,user,passwd);
 
-			String query = "insert into Combate (titulo,fecha) values('"+titulo +"','"+fecha+"');";
+			String query = "insert into combate (titulo,fecha) values('"+titulo +"','"+fecha+"');";
 			System.out.println(query);
 			// create the java statement: crea obj en java de la sentencia como tal
 			Statement st = conn.createStatement();
@@ -74,5 +69,5 @@ public class estructuraDeDatos {   // NO TOCAR
 	// acceder y guardar en BD
      // JSON serializable
     // combatiente real
-   */
+*/
 }

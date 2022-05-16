@@ -65,7 +65,6 @@ public class iniciativa {
                 CombatienteInstancia ad = c.getCombatiente();
                 System.out.print(ad.getIniciativa()+" - ");
                 c = c.getSiguiente();
-                System.out.println("a :"+combatientes.get(i).getNombre());
             }
             System.out.println();
         }
@@ -73,6 +72,27 @@ public class iniciativa {
 
     }
 
+    public IteradorCombatiente getC() {
+        return c;
+    }
 
+    public void setC(IteradorCombatiente c) {
+        this.c = c;
+    }
 
+    public IteradorCombatiente getD() {
+        return d;
+    }
+
+    public void setD(IteradorCombatiente d) {
+        this.d = d;
+    }
+
+    public boolean isFs() {
+        return fs;
+    }
+
+    public void setFs(boolean fs) {
+        this.fs = fs;
+    }
 }

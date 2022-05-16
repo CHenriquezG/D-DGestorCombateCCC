@@ -99,7 +99,7 @@ public class ControladorNPCAgregar  implements Initializable {
                     Estadisticas controller = loader.<Estadisticas>getController();
 
                     queImagen();
-                    controller.nombre.setText("Nombre Personaje: "+auxCombatiente.getNombre());
+                    controller.nombre.setText(auxCombatiente.getNombre());
                     controller.jugador.setText("Nombre Jugador: "+auxCombatiente.getNombreJugador());
                     controller.pts.setText("PG:"+auxCombatiente.getPG());
                     conf.setCombatiente(auxCombatiente.getNombre(),auxCombatiente.getNombreJugador(),auxCombatiente.getImagen(),auxCombatiente.getClase(),auxCombatiente.getBini(),auxCombatiente.getPG(),auxCombatiente.getArm(),auxCombatiente.getFue(),auxCombatiente.getInte(),auxCombatiente.getDes(),auxCombatiente.getCons(),auxCombatiente.getCar(), auxCombatiente.getSab(),auxCombatiente.getId());
