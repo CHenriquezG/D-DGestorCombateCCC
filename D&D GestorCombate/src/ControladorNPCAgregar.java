@@ -241,7 +241,7 @@ public class ControladorNPCAgregar  implements Initializable {
             }
             if(personajeSelected==2){
                 auxima= danielMoreno;
-                auxCombatiente= new Combatiente("Daniel Moreno","\\Recursos\\Foto de personajes\\Daniel Moreno.png","Aberration","",10,12,10,9,8,11,6,6,10,100003);
+                auxCombatiente= new Combatiente("Daniel Moreno","","Aberration","\\Recursos\\Foto de personajes\\Daniel Moreno.png",10,12,10,9,8,11,6,6,10,100003);
             }
             if(personajeSelected==3){
 
