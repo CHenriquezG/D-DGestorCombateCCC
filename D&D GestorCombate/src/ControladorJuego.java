@@ -47,6 +47,8 @@ public class ControladorJuego {
 
     @FXML
     ImageView imaSalir;
+    @FXML
+    ImageView imaPerfil;
 
     public void initialize(){/**
 
@@ -122,7 +124,8 @@ public class ControladorJuego {
                 else{
                     combatienteActual = i.getD();
                 }
-
+                
+                imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen())));
             }
         });
 
@@ -142,6 +145,7 @@ public class ControladorJuego {
         i.GenerarOrdenCombatiente(combatientes);
 
         this.combatienteActual = i.getD();
+        imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen())));
 
 
         primary.setWidth(back.getPrefWidth());
