@@ -5,9 +5,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import logico.Combatiente.CombatienteInstancia;
+import logico.InstanciaCombate.combate;
 
 public class MiniEstadistica {
-
+    combate c;
     CombatienteInstancia tuLog;
     public VBox tabla,cen,tu;
     @FXML
@@ -18,7 +19,8 @@ public class MiniEstadistica {
     @FXML
     Label nombre;
 
-    public void initData(VBox tabla, VBox tu, CombatienteInstancia tuLog){
+    public void initData(VBox tabla, VBox tu, CombatienteInstancia tuLog, combate c){
+        this.c = c;
         this.tabla = tabla;
         this.tu = tu;
         this.tuLog = tuLog;
@@ -31,7 +33,7 @@ public class MiniEstadistica {
 
     public void Eliminar(){
 
-
+        c.getReaccionarios().remove(tuLog);
         tabla.getChildren().remove(tu);
     }
 

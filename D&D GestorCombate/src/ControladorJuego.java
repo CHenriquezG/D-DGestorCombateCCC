@@ -189,6 +189,8 @@ public class ControladorJuego {
                 tablaAccion.setVisible(false);
                 tablaSeleccion.setVisible(true);
 
+
+
             }
         });
 
@@ -220,22 +222,25 @@ public class ControladorJuego {
                     System.out.println("hola "+ est.getCombatiente().getNombreJugador());
 
                     if(tablaSeleccion.isVisible()){
-                        FXMLLoader loader = new FXMLLoader(
-                                getClass().getResource(
-                                        "MiniEstadistica.fxml"
-                                )
-                        );
+                        CombatienteInstancia com = est.getCombatiente();
+                        if(!combateinstancia.getReaccionarios().contains(com)) {
+                            FXMLLoader loader = new FXMLLoader(
+                                    getClass().getResource(
+                                            "MiniEstadistica.fxml"
+                                    )
+                            );
 
-                        VBox b ;
-                        try {
-                            b = loader.load();
-                            MiniEstadistica controller = loader.<MiniEstadistica>getController();
-                            SeleccionReaccion.getChildren().add(b);
-                            controller.initData(SeleccionReaccion,b,est.getCombatiente());
-                        }catch (IOException e) {
-                            e.printStackTrace();
+                            VBox b;
+                            try {
+                                b = loader.load();
+                                MiniEstadistica controller = loader.<MiniEstadistica>getController();
+                                SeleccionReaccion.getChildren().add(b);
+                                controller.initData(SeleccionReaccion, b, com,combateinstancia);
+                                combateinstancia.getReaccionarios().add(com);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                         }
-
 
                     }
 

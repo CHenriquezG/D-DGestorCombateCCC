@@ -102,9 +102,9 @@
                                  <children>
                                     <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                        <children>
-                                          <ScrollPane fx:id="ContieneReacciones" prefHeight="232.0" prefWidth="128.0">
+                                          <ScrollPane fx:id="ContieneReacciones" prefHeight="213.0" prefWidth="159.0">
                                              <content>
-                                                <VBox fx:id="SeleccionReaccion" alignment="TOP_CENTER" prefHeight="130.0" prefWidth="130.0" />
+                                                <VBox fx:id="SeleccionReaccion" alignment="TOP_CENTER" prefHeight="130.0" prefWidth="146.0" />
                                              </content>
                                           </ScrollPane>
                                           <VBox alignment="BOTTOM_RIGHT" prefHeight="232.0" prefWidth="255.0">
