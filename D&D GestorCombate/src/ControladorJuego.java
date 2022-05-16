@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -13,6 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import logico.Combatiente.CombatienteReal;
 import logico.Configuracion.configuracion;
@@ -43,6 +45,10 @@ public class ControladorJuego {
     iniciativa i;
     IteradorCombatiente combatienteActual;
 
+    @FXML
+    Label caracteristicas;
+    int auxTimerCaracteristicas=0;
+
     String[] clavesAccion = {"Atacar","Moverse","PasarTurno","Curar","Ayudar"};
 
     @FXML
@@ -55,6 +61,13 @@ public class ControladorJuego {
         paisaje.fitWidthProperty().bind(fcontent.widthProperty());
         paisaje.fitHeightProperty().bind(fcontent.heightProperty());**/
         combateinstancia = new combate();
+
+        Font font =
+                Font.loadFont(getClass()
+                        .getResourceAsStream("\\Recursos\\Diseño\\SF Atarian System.ttf"), 25);
+
+        caracteristicas.setText("");
+        caracteristicas.setFont(font);
 
         this.combatienteActual= new IteradorCombatiente();
 
@@ -106,25 +119,59 @@ public class ControladorJuego {
         });
 
         //timer solo para mostrar el combatiente del turno actual
+
         Timer t = new Timer( );
         t.scheduleAtFixedRate(new TimerTask() {
+
             @Override
             public void run() {
-                System.out.println("actual: "+combatienteActual.getCombatiente().getNombre());
+                Platform.runLater(() -> {
+                    if(auxTimerCaracteristicas%2==0){
+                        //nombre, fuerza, nombre jugador, int, des, armadura, constsitencia, bonusIniciativa, ptsAct, ptsMax
+                        caracteristicas.setText("nombre: "+combatienteActual.getCombatiente().getNombre()+"\nfuerza: "+combatienteActual.getCombatiente().getFue()+"\ninteligencia: "+combatienteActual.getCombatiente().getInte()+"\ndestreza: "+combatienteActual.getCombatiente().getDes()+"\narmadura: "+combatienteActual.getCombatiente().getArm());
+                    }
+                    else{
+                        caracteristicas.setText("constsitencia: "+combatienteActual.getCombatiente().getCons()+"\niniciativa: "+combatienteActual.getCombatiente().getIniciativa()+"\nptsAct: \nptsMax: ");
+
+                    }
+                    auxTimerCaracteristicas=auxTimerCaracteristicas+1;
+
+                });
+
+
             }
-        }, 00,3000);
+        }, 00,4600);
+
+        imaPerfil.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                auxTimerCaracteristicas=auxTimerCaracteristicas+1;
+                if(auxTimerCaracteristicas%2==0){
+                    //nombre, fuerza, nombre jugador, int, des, armadura, constsitencia, bonusIniciativa, ptsAct, ptsMax
+                    caracteristicas.setText("nombre: "+combatienteActual.getCombatiente().getNombre()+"\nfuerza: "+combatienteActual.getCombatiente().getFue()+"\ninteligencia: "+combatienteActual.getCombatiente().getInte()+"\ndestreza: "+combatienteActual.getCombatiente().getDes()+"\narmadura: "+combatienteActual.getCombatiente().getArm());
+                }
+                else{
+                    caracteristicas.setText("constsitencia: "+combatienteActual.getCombatiente().getCons()+"\niniciativa: "+combatienteActual.getCombatiente().getIniciativa()+"\nptsAct: \nptsMax: ");
+
+                }
+
+            }
+
+        });
 
         siguienteTurno.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 if (combatienteActual.getSiguiente()!=null) {
                     combatienteActual = combatienteActual.getSiguiente();
-                    System.out.println("actual: " + combatienteActual.getCombatiente().getNombre());
+
+
                 }
                 else{
                     combatienteActual = i.getD();
                 }
-                
+                System.out.println("actual turno de: " + combatienteActual.getCombatiente().getNombre());
+                caracteristicas.setText("nombre: "+combatienteActual.getCombatiente().getNombre()+"\nfuerza: "+combatienteActual.getCombatiente().getFue()+"\ninteligencia: "+combatienteActual.getCombatiente().getInte()+"\ndestreza: "+combatienteActual.getCombatiente().getDes()+"\narmadura: "+combatienteActual.getCombatiente().getArm());
                 imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen())));
             }
         });

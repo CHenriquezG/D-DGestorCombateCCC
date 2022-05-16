@@ -14,13 +14,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="50.0" minWidth="50.0" prefHeight="575.0" prefWidth="1193.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorJuego">
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="50.0" minWidth="50.0" prefHeight="575.0" prefWidth="1193.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorJuego">
    <center>
       <HBox fx:id="cen" prefHeight="511.0" prefWidth="835.0" BorderPane.alignment="CENTER">
          <children>
             <VBox prefHeight="511.0" prefWidth="653.0" spacing="15.0" HBox.hgrow="ALWAYS">
                <children>
-                  <BorderPane prefHeight="238.0" prefWidth="406.0" VBox.vgrow="ALWAYS">
+                  <BorderPane prefHeight="301.0" prefWidth="489.0" VBox.vgrow="ALWAYS">
                      <right>
                         <AnchorPane fx:id="subrig" prefHeight="200.0" prefWidth="32.0" BorderPane.alignment="CENTER" />
                      </right>
@@ -96,7 +96,7 @@
                            </children></VBox>
                      </center>
                   </BorderPane>
-                  <BorderPane prefHeight="202.0" prefWidth="306.0">
+                  <BorderPane prefHeight="227.0" prefWidth="587.0">
                      <right>
                         <AnchorPane fx:id="subrig1" prefHeight="200.0" prefWidth="32.0" BorderPane.alignment="CENTER" />
                      </right>
@@ -120,121 +120,25 @@
                         </HBox>
                      </top>
                      <center>
-                        <VBox fx:id="fcontent" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                        <VBox fx:id="fcontent" alignment="CENTER" prefHeight="153.0" prefWidth="459.0" BorderPane.alignment="CENTER">
                            <children>
                               <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
                                  <children>
-                                    <HBox prefHeight="83.0" prefWidth="242.0">
+                                    <HBox prefHeight="164.0" prefWidth="354.0">
                                        <children>
-                                          <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                          <HBox prefHeight="141.0" prefWidth="145.0">
                                              <children>
-                                                <Label fx:id="FuePer" text="fue">
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="IntPer" text="int">
-                                                   <VBox.margin>
-                                                      <Insets right="15.0" />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="DesPer" text="des">
-                                                   <VBox.margin>
-                                                      <Insets right="30.0" />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="ConPer" text="cons">
-                                                   <VBox.margin>
-                                                      <Insets right="15.0" />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="CarPer" text="car">
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
+                                                <ImageView fx:id="imaPerfil" fitHeight="153.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Recursos/Foto%20de%20personajes/Gibbering%20Mouther.png" />
+                                                   </image>
+                                                </ImageView>
                                              </children>
-                                          </VBox>
-                                          <ImageView fx:id="imaPerfil" fitHeight="119.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                                             <image>
-                                                <Image url="@Recursos/Foto%20de%20personajes/Gibbering%20Mouther.png" />
-                                             </image>
-                                          </ImageView>
-                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
-                                             <children>
-                                                <Label fx:id="NomPer" text="nombre">
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="JugPer" text="jugador">
-                                                   <VBox.margin>
-                                                      <Insets left="15.0" />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="ArmPer" prefHeight="17.0" prefWidth="55.0" text="armadura">
-                                                   <VBox.margin>
-                                                      <Insets left="30.0" />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="iniPer" text="iniciativa">
-                                                   <VBox.margin>
-                                                      <Insets left="15.0" />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="BIPer" text="bonif">
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                             <HBox.margin>
-                                                <Insets />
-                                             </HBox.margin>
-                                          </VBox>
-                                       </children>
-                                    </HBox>
-                                    <HBox alignment="CENTER" prefHeight="0.0" prefWidth="242.0" spacing="30.0" VBox.vgrow="ALWAYS">
-                                       <children>
-                                          <Label text="ptsAct ">
+                                          </HBox>
+                                          <Label fx:id="caracteristicas" alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="151.0" prefWidth="194.0" text="Label" textFill="WHITE">
                                              <font>
-                                                <Font name="System Bold" size="12.0" />
+                                                <Font size="11.0" />
                                              </font></Label>
-                                          <Label text="pts max">
-                                             <font>
-                                                <Font name="System Bold" size="12.0" />
-                                             </font>
-                                          </Label>
                                        </children>
                                     </HBox>
                                  </children>
@@ -287,7 +191,7 @@
                         </VBox>
                      </center>
                   </BorderPane>
-                  <HBox alignment="BOTTOM_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="73.0" prefWidth="500.0" spacing="15.0">
+                  <HBox alignment="BOTTOM_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="88.0" prefWidth="550.0" spacing="15.0">
                      <padding>
                         <Insets right="20.0" />
                      </padding>
