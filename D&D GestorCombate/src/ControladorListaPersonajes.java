@@ -12,9 +12,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import logico.Configuracion.configuracion;
+import logico.Lista.IteradorCombatiente;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Random;
 
 public class ControladorListaPersonajes {

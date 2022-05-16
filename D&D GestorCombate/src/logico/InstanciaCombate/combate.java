@@ -1,12 +1,14 @@
 package logico.InstanciaCombate;
 
 import javafx.fxml.FXMLLoader;
+import logico.Combatiente.CombatienteInstancia;
 import logico.Combatiente.CombatienteReal;
 import logico.Configuracion.configuracion;
 
 import java.util.ArrayList;
 
 public class combate {
+     ArrayList<CombatienteInstancia> Reaccionarios = new ArrayList<>();
     ArrayList<CombatienteReal> combatientes;
     configuracion c;
 
@@ -23,4 +25,11 @@ public class combate {
        // combatientes=c.combatientes;
     }
 
+    public ArrayList<CombatienteInstancia> getReaccionarios() {
+        return Reaccionarios;
+    }
+
+    public void setReaccionarios(ArrayList<CombatienteInstancia> reaccionarios) {
+        Reaccionarios = reaccionarios;
+    }
 }

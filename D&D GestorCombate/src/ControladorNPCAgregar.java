@@ -12,6 +12,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import logico.Combatiente.Combatiente;
 import logico.Configuracion.configuracion;
 
 import java.io.IOException;
@@ -41,6 +42,8 @@ public class ControladorNPCAgregar  implements Initializable {
     Label myLabel;
     @FXML
     ImageView imaSiguente;
+
+    Combatiente auxCombatiente;
 
     Image animatedBroom = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Animated Broom.png"));
     Image awakenedTree = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\Awakened Tree.png"));
@@ -94,8 +97,12 @@ public class ControladorNPCAgregar  implements Initializable {
                 try {
                     b = (BorderPane)loader.load();
                     Estadisticas controller = loader.<Estadisticas>getController();
+
                     queImagen();
-                    conf.setCombatiente("","nombreJugador.getText()","clase.getAccessibleText()","tipoimagen.getAccessibleText()",22,2,2,2,2,2,2,2, 2,2);
+                    controller.nombre.setText(auxCombatiente.getNombre());
+                    controller.jugador.setText("Nombre Jugador: "+auxCombatiente.getNombreJugador());
+                    controller.pts.setText("PG:"+auxCombatiente.getPG());
+                    conf.setCombatiente(auxCombatiente.getNombre(),auxCombatiente.getNombreJugador(),auxCombatiente.getImagen(),auxCombatiente.getClase(),auxCombatiente.getBini(),auxCombatiente.getPG(),auxCombatiente.getArm(),auxCombatiente.getFue(),auxCombatiente.getInte(),auxCombatiente.getDes(),auxCombatiente.getCons(),auxCombatiente.getCar(), auxCombatiente.getSab(),auxCombatiente.getId());
                     controller.initData(0,conf);
                     tabla.getChildren().add(b);
                     controller.imaper.setImage(auxima);
@@ -120,7 +127,7 @@ public class ControladorNPCAgregar  implements Initializable {
                     if(personajeSelected>=0){
                         if(personajeSelected==0){
                             displayImage(animatedBroom);
-                            personajeAux="Animated Broom\nClase: Construct\nArmadura: 4\nPuntos de Golpe: 4\nInteligencia:           5\nDestreza: 5\nBonif. Iniciativa: 4\nFuerza: 2\nConstitucion: 5\nCarisma: 2";
+                            personajeAux="Animated Broom\nClase: Construct\nArmadura: 4\nPuntos de Golpe: 4\nInteligencia: 5\nDestreza: 5\nBonif. Iniciativa: 4\nFuerza: 2\nConstitucion: 5\nCarisma: 2";
                         }
                         if(personajeSelected==1){
                             displayImage(awakenedTree);
@@ -222,58 +229,72 @@ public class ControladorNPCAgregar  implements Initializable {
 
     public void queImagen(){
         int personajeSelected = listaNPC.getSelectionModel().getSelectedIndex();
-
         if(personajeSelected>=0){
             if(personajeSelected==0){
                 auxima= animatedBroom;
-                detallesPersonaje.setText("Nombre: Animated Broom\nClase: Construct\nArmadura: 9\nPuntos de Golpe: 5\nInteligencia: 5\nDestreza: 6\nBonif. Iniciativa: 7\nFuerza: 7\nConstitucion: 5\nCarisma: 4");
+                auxCombatiente= new Combatiente("Animated Broom","","Construct","\\Recursos\\Foto de personajes\\Animated Broom.png",7,5,9,7,5,6,5,8,4,100001);
             }
             if(personajeSelected==1){
                 auxima= awakenedTree;
+                auxCombatiente= new Combatiente("Awakened Tree","","Plant","\\Recursos\\Foto de personajes\\Awakened Tree.png",7,2,3,7,5,6,5,4,3,100002);
 
             }
             if(personajeSelected==2){
                 auxima= danielMoreno;
+                auxCombatiente= new Combatiente("Daniel Moreno","","Aberration","\\Recursos\\Foto de personajes\\Daniel Moreno.png",10,12,10,9,8,11,6,6,10,100003);
             }
             if(personajeSelected==3){
 
                 auxima= drowArachnomancer;
+                auxCombatiente= new Combatiente("Drow Arachnomancer","","Humanoid","\\Recursos\\Foto de personajes\\Drow Arachnomancer.png",8,11,7,7,11,10,3,3,7,100004);
             }
             if(personajeSelected==4) {
                 auxima= dryad;
+                auxCombatiente= new Combatiente("Dryad","","Fey","\\Recursos\\Foto de personajes\\Dryad.png",7,5,9,7,5,6,5,4,8,100005);
             }
             if(personajeSelected==5){
                 auxima= dwarvenNoble;
+                auxCombatiente= new Combatiente("Dwarven Noble","","Fey","\\Recursos\\Foto de personajes\\Dwarven Noble.png",12,7,5,6,10,10,7,4,9,100006);
             }
             if(personajeSelected==6){
                 auxima= erinyesSummoned;
+                auxCombatiente= new Combatiente("Erinyes Summoned","","Celestial","\\Recursos\\Foto de personajes\\Erinyes-Summoned.png",11,8,10,9,8,9,7,10,7,100007);
             }
             if(personajeSelected==7){
                 auxima= gibberingMouther;
+                auxCombatiente= new Combatiente("Gibbering Mouther","","Aberration","\\Recursos\\Foto de personajes\\Gibbering Mouther.png",6,12,14,10,9,6,5,1,6,100008);
             }
             if(personajeSelected==8){
                 auxima= gladiator;
+                auxCombatiente= new Combatiente("Gladiator","","Fiend","\\Recursos\\Foto de personajes\\Gladiator.png",11,9,12,8,8,6,4,10,7,100009);
             }
             if(personajeSelected==9){
                 auxima= guardVillage;
+                auxCombatiente= new Combatiente("Guard Village","","Fiend","\\Recursos\\Foto de personajes\\Guard-Village.png",7,8,8,8,9,9,5,5,5,100010);
             }
             if(personajeSelected==10){
                 auxima= hillGiant;
+                auxCombatiente= new Combatiente("Hill Giant","","Giant","\\Recursos\\Foto de personajes\\Hill Giant.png",6,12,13,13,2,3,5,1,4,100011);
             }
             if(personajeSelected==11){
                 auxima= intellectDevourer;
+                auxCombatiente= new Combatiente("Intellect Devourer","","Aberration","\\Recursos\\Foto de personajes\\Intellect Devourer.png",10,8,10,9,15,15,6,10,15,100012);
             }
             if(personajeSelected==12){
                 auxima= phaseSpider;
+                auxCombatiente= new Combatiente("Phase Spider","","Oozes","\\Recursos\\Foto de personajes\\Phase Spider.png",7,9,9,8,5,5,8,2,4,100013);
             }
             if(personajeSelected==13){
                 auxima= planetar;
+                auxCombatiente= new Combatiente("Planetar","","Celestial","\\Recursos\\Foto de personajes\\Planetar.png",9,12,14,11,12,10,9,7,13,100014);
             }
             if(personajeSelected==14){
                 auxima= spy;
+                auxCombatiente= new Combatiente("Spy","","Fiend","\\Recursos\\Foto de personajes\\Spy.png",12,7,6,7,13,12,7,10,13,100015);
             }
             if(personajeSelected==15){
                 auxima= youngRedDragon;
+                auxCombatiente= new Combatiente("Young Red Dragon","","Dragon","\\Recursos\\Foto de personajes\\Young Red Dragon.png",8,14,10,10,7,6,6,9,9,100016);
             }
         }
     }
