@@ -1,21 +1,19 @@
 package logico.Configuracion;
 
+import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
 import logico.Combatiente.CombatienteInstancia;
+import logico.Combatiente.CombatienteReal;
 import logico.Combatiente.CreadoraEnCombate;
 import logico.Lista.IteradorCombatiente;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class iniciativa {
-    IteradorCombatiente c,d = null;
+    public IteradorCombatiente c,d = null;
     boolean fs;
-    public iniciativa() {
-        GenerarOrdenCombatiente();
 
-
-
-    }
 
     private void GenerarIniciativa(CombatienteInstancia c){
         Random r = new Random();
@@ -23,16 +21,25 @@ public class iniciativa {
 
     }
 
-    public IteradorCombatiente GenerarOrdenCombatiente(){
+    public IteradorCombatiente GenerarOrdenCombatiente(ArrayList<CombatienteReal> combatientes){
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource(
+                        "Configuracion.fxml"
+                    )
+            );
+
+            configuracion controller = loader.<configuracion>getController();
 
         CreadoraEnCombate f = new CreadoraEnCombate();
 
         IteradorCombatiente aux;
         CombatienteInstancia y;
         Random r = new Random();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < combatientes.size(); i++) {
             // aca se generan las instancias de combatientes en base a los combatientes reales
-            y = (CombatienteInstancia) f.CrearCombatiente("ew", "eret", "dsdsf", "sd", 3, 3, 3, 3, 3, 3, 3,5,1,3);
+            y = (CombatienteInstancia) f.CrearCombatiente(combatientes.get(i).getNombre(), combatientes.get(i).getNombreJugador(), combatientes.get(i).getClase(), combatientes.get(i).getImagen(), combatientes.get(i).getBini(), combatientes.get(i).getPG(), combatientes.get(i).getArm(), combatientes.get(i).getFue(), combatientes.get(i).getInte(), combatientes.get(i).getDes(), combatientes.get(i).getCons(),combatientes.get(i).getCar(),combatientes.get(i).getSab(),combatientes.get(i).getId());
+            y.setGrafico(combatientes.get(i).getGrafico());
+            System.out.println(combatientes.get(i).getGrafico());
             GenerarIniciativa(y);// aca se genera las iniciativas de cada combatiente
             aux = new IteradorCombatiente(y);
             c = d;
@@ -60,13 +67,10 @@ public class iniciativa {
                 CombatienteInstancia ad = c.getCombatiente();
                 System.out.print(ad.getIniciativa()+" - ");
                 c = c.getSiguiente();
+                System.out.println("a :"+combatientes.get(i).getNombre());
             }
             System.out.println();
-
-
         }
-
-
         return d;
 
     }

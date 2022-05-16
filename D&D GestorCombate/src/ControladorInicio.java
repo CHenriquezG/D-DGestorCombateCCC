@@ -1,4 +1,3 @@
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +17,6 @@ import java.net.URL;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.ResourceBundle;
 
 import logico.Datos.estructuraDeDatos;
 
@@ -79,6 +77,7 @@ public class ControladorInicio {
     void initData(Stage customer) {
         scene = customer;
     }
+
     public void crear(){
         ArrayList<String> s = new ArrayList<>();
         s.add("Guard-Village");
