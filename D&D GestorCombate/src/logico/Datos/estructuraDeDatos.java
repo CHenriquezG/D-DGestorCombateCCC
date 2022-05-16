@@ -1,15 +1,86 @@
 package logico.Datos;
-// import java.sql.*;
+import java.sql.*;
+import java.util.Date;
 
-public class estructuraDeDatos {   // NO TOCAR
-	// CREAR BD, abrir conexion , ejecutar insert comando, cerrar conexion con la BVD
-	/*estructuraDeDatos e = new estructuraDeDatos();
-        e.extraerInformacion();
-        System.out.println("-------------------------");
-        e.insertarDatos("Combate chiquito 4", "2022-05-12");
-        System.out.println("-------------------------");
-        e.extraerInformacion();
+public class estructuraDeDatos {
+// CREAR BD, abrir conexion , ejecutar insert comando, cerrar conexion con la BVD
 
+	public void insertarDatosCombate(String titulo, String fecha){ // sirve para eliminar , modificacion, actualizacion dentro de una bd
+		// 3. Construir comandos SQL
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			// 2. Conéctese a la "biblioteca" de datos
+			String url = "jdbc:mysql://localhost:3306/test";
+			String user= "root";
+			String passwd= "";
+			Connection conn= DriverManager.getConnection(url,user,passwd);
+
+			String query = "insert into Combate (titulo,fecha) values('"+titulo +"','"+fecha+"');";
+			System.out.println(query);
+			// create the java statement: crea obj en java de la sentencia como tal
+			Statement st = conn.createStatement();
+
+			// execute the query, and get a java resultset:	 lista de todos los objetos de la consulta anterior
+			int rs = st.executeUpdate(query);
+			System.out.println(rs);
+
+			st.close(); // importante
+
+		}catch(ClassNotFoundException | SQLException e ){
+			e.printStackTrace();
+		}
+	}
+
+	/*public void insertarDatosCombatiente(String nombre,String nombreJugador, String clase, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car, int sab ,int id){ // sirve para eliminar , modificacion, actualizacion dentro de una bd
+		// 3. Construir comandos SQL
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			// 2. Conéctese a la "biblioteca" de datos
+			String url = "jdbc:mysql://localhost:3306/test";
+			String user= "root";
+			String passwd= "";
+			Connection conn= DriverManager.getConnection(url,user,passwd);
+
+			String query = "insert into Combatiente (titulo,fecha) values('"+titulo +"','"+fecha+"');";
+			System.out.println(query);
+			// create the java statement: crea obj en java de la sentencia como tal
+			Statement st = conn.createStatement();
+
+			// execute the query, and get a java resultset:	 lista de todos los objetos de la consulta anterior
+			int rs = st.executeUpdate(query);
+			System.out.println(rs);
+
+			st.close(); // importante
+
+		}catch(ClassNotFoundException | SQLException e ){
+			e.printStackTrace();
+		}
+	}*/
+	/*public void insertarDatosInstanciaCombatiente(String nombre,String nombreJugador, String clase, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car, int sab ,int id){ // sirve para eliminar , modificacion, actualizacion dentro de una bd
+		// 3. Construir comandos SQL
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			// 2. Conéctese a la "biblioteca" de datos
+			String url = "jdbc:mysql://localhost:3306/test";
+			String user= "root";
+			String passwd= "";
+			Connection conn= DriverManager.getConnection(url,user,passwd);
+
+			String query = "insert into Combatiente (titulo,fecha) values('"+titulo +"','"+fecha+"');";
+			System.out.println(query);
+			// create the java statement: crea obj en java de la sentencia como tal
+			Statement st = conn.createStatement();
+
+			// execute the query, and get a java resultset:	 lista de todos los objetos de la consulta anterior
+			int rs = st.executeUpdate(query);
+			System.out.println(rs);
+
+			st.close(); // importante
+
+		}catch(ClassNotFoundException | SQLException e ){
+			e.printStackTrace();
+		}
+	}*/
 	public  void extraerInformacion() {
 
 		//  Cargue el controlador de acceso a datos
@@ -42,37 +113,9 @@ public class estructuraDeDatos {   // NO TOCAR
 			st.close(); // importante
 
 		}catch(ClassNotFoundException | SQLException e ){
-
-		}
-
-	}
-	public void insertarDatos(String titulo, String fecha){ // sirve para eliminar , modificacion, actualizacion dentro de una bd
-		// 3. Construir comandos SQL
-		try{
-			Class.forName("com.mysql.jdbc.Driver");
-			// 2. Conéctese a la "biblioteca" de datos
-			String url = "jdbc:mysql://localhost:3306/test";
-			String user= "root";
-			String passwd= "";
-			Connection conn= DriverManager.getConnection(url,user,passwd);
-
-			String query = "insert into Combate (titulo,fecha) values('"+titulo +"','"+fecha+"');";
-			System.out.println(query);
-			// create the java statement: crea obj en java de la sentencia como tal
-			Statement st = conn.createStatement();
-
-			// execute the query, and get a java resultset:	 lista de todos los objetos de la consulta anterior
-			int rs = st.executeUpdate(query);
-			System.out.println(rs);
-
-			st.close(); // importante
-
-		}catch(ClassNotFoundException | SQLException e ){
-			e.printStackTrace();
 		}
 	}
 	// acceder y guardar en BD
-     // JSON serializable
     // combatiente real
-   */
+
 }
