@@ -4,12 +4,12 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -22,7 +22,6 @@ import logico.Configuracion.iniciativa;
 import logico.Estrategia.Estrategia;
 import logico.Estrategia.contexto;
 import  logico.InstanciaCombate.combate;
-import logico.Lista.Iterador;
 import logico.Lista.IteradorCombatiente;
 
 import java.io.IOException;
@@ -32,31 +31,32 @@ import java.util.TimerTask;
 
 public class ControladorJuego {
     @FXML
-    VBox tabla,tablaAccion,tablaSeleccion,tablaReaccion,SeleccionReaccion;
+    VBox tabla,tablaAccion,tablaSeleccion,SeleccionReaccion;
     @FXML
-    ImageView siguienteFase,siguienteTurno,siguienteReac,siguientePer,CurDno,imaReAc;
+    ImageView siguienteFase,siguienteTurno,CurDno;
+    @FXML
+    ImageView combatienteAtacar_image;
     @FXML
     BorderPane back;
     @FXML
-    ChoiceBox contenidoAccion,contenidoReaccion;
+    ChoiceBox contenidoAccion;
     @FXML
     HBox golpeCurar,reaccion;
-    @FXML
-    CheckBox verReaccion;
     contexto contexto = new contexto();
     combate combateinstancia ;
     iniciativa i;
     IteradorCombatiente combatienteActual;
     IteradorCombatiente aux;
 
+    CombatienteInstancia combatienteAatacar;
+
+
     @FXML
-    TextField IngresoR,IngresoA;
-    @FXML
-    Label caracteristicas;
+    Label caracteristicas, combatienteAtacar_label;
     int auxTimerCaracteristicas=0;
 
     String[] clavesAccion = {"Atacar","Moverse","PasarTurno","Curar","Ayudar"};
-    String[] clavesReaccion = {"Contraatacar","PasarTurno"};
+
     @FXML
     ImageView imaSalir;
     @FXML
@@ -64,10 +64,12 @@ public class ControladorJuego {
     @FXML
     ScrollPane ContieneReacciones;
 
+    CombatienteInstancia combatiente_aAtacar;
+
     public void initialize(){/**
 
-        paisaje.fitWidthProperty().bind(fcontent.widthProperty());
-        paisaje.fitHeightProperty().bind(fcontent.heightProperty());**/
+     paisaje.fitWidthProperty().bind(fcontent.widthProperty());
+     paisaje.fitHeightProperty().bind(fcontent.heightProperty());**/
         combateinstancia = new combate();
 
         Font font =
@@ -76,9 +78,10 @@ public class ControladorJuego {
 
         caracteristicas.setText("");
         caracteristicas.setFont(font);
+        combatienteAtacar_label.setFont(font);
 
         this.combatienteActual= new IteradorCombatiente();
-        contenidoReaccion.getItems().addAll(clavesReaccion);
+
         contenidoAccion.getItems().addAll(clavesAccion);
         contenidoAccion.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
@@ -86,52 +89,37 @@ public class ControladorJuego {
                 Estrategia est =contexto.ObtenerEstrategia((String) contenidoAccion.getItems().get((Integer) newValue));
                 //HBox golpeCurar,reaccion;
 /**
-                if(est.TieneOpcionAyudar()){
-                    System.out.println("puede ayudar");
-                    siguienteFase.setVisible(true);
-                    golpeCurar.setVisible(true);
+ if(est.TieneOpcionAyudar()){
+ System.out.println("puede ayudar");
+ siguienteFase.setVisible(true);
+ golpeCurar.setVisible(true);
 
 
-                }else{
-                    golpeCurar.setVisible(false);
-                }
-                if(est.TieneOpcionDaño()){
-                    System.out.println("puede atacar");
-                    siguienteFase.setVisible(true);
-                    golpeCurar.setVisible(true);
-                }else {
-                    golpeCurar.setVisible(true);
+ }else{
+ golpeCurar.setVisible(false);
+ }
+ if(est.TieneOpcionDaño()){
+ System.out.println("puede atacar");
+ siguienteFase.setVisible(true);
+ golpeCurar.setVisible(true);
+ }else {
+ golpeCurar.setVisible(true);
 
-                }
-                if(est.TieneOpcionReaccion()){
-                    System.out.println("puede reaccionar el enemigo");
-                    siguienteFase.setVisible(true);
+ }
+ if(est.TieneOpcionReaccion()){
+ System.out.println("puede reaccionar el enemigo");
+ siguienteFase.setVisible(true);
 
-                }else{
+ }else{
 
-                }
+ }
 
-                if(!est.TieneOpcionReaccion() && est.TieneOpcionDaño() && est.TieneOpcionAyudar()){
-                    siguienteTurno.setVisible(true);
-                    siguienteFase.setVisible(false);
-                }else{
+ if(!est.TieneOpcionReaccion() && est.TieneOpcionDaño() && est.TieneOpcionAyudar()){
+ siguienteTurno.setVisible(true);
+ siguienteFase.setVisible(false);
+ }else{
 
-                }*/
-                reaccion.setVisible(est.TieneOpcionReaccion());
-                golpeCurar.setVisible(est.TieneOpcionDaño() || est.TieneOpcionAyudar());
-                siguienteTurno.setVisible(!est.TieneOpcionDaño() && !est.TieneOpcionReaccion() && !est.TieneOpcionAyudar());
-                siguienteFase.setVisible(est.TieneOpcionDaño() || est.TieneOpcionReaccion() || est.TieneOpcionAyudar());
-
-                System.out.println("+++++++++++++++++++++++++++++++++");
-            }
-        });
-
-        contenidoReaccion.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                Estrategia est =contexto.ObtenerEstrategia((String) contenidoReaccion.getItems().get((Integer) newValue));
-                //HBox golpeCurar,reaccion;
-
+ }*/
                 reaccion.setVisible(est.TieneOpcionReaccion());
                 golpeCurar.setVisible(est.TieneOpcionDaño() || est.TieneOpcionAyudar());
                 siguienteTurno.setVisible(!est.TieneOpcionDaño() && !est.TieneOpcionReaccion() && !est.TieneOpcionAyudar());
@@ -182,50 +170,9 @@ public class ControladorJuego {
 
         });
 
-        siguientePer.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-
-                if(combateinstancia.getReaccionarios().size() == 1){
-                    combateinstancia.getReaccionarios().remove(0);
-                    SeleccionReaccion.getChildren().removeAll(SeleccionReaccion.getChildren());
-                    imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
-                    if (combatienteActual.getSiguiente()!=null) {
-                        combatienteActual = combatienteActual.getSiguiente();
-
-
-                    }
-                    else{
-                        combatienteActual = i.getD();
-                    }
-                    System.out.println("actual turno de: " + combatienteActual.getCombatiente().getNombre());
-                    caracteristicas.setText("nombre: "+combatienteActual.getCombatiente().getNombre()+"\nfuerza: "+combatienteActual.getCombatiente().getFue()+"\ninteligencia: "+combatienteActual.getCombatiente().getInte()+"\ndestreza: "+combatienteActual.getCombatiente().getDes()+"\narmadura: "+combatienteActual.getCombatiente().getArm());
-                    imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen())));
-                    tablaAccion.setVisible(true);
-                    tablaSeleccion.setVisible(false);
-                    tablaReaccion.setVisible(false);
-                }else{
-                    combateinstancia.getReaccionarios().remove(0);
-                }
-                // aca reseatearia todo
-                System.out.println("hola");
-            }
-        });
-
-        siguienteReac.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-
-                tablaAccion.setVisible(false);
-                tablaSeleccion.setVisible(false);
-                tablaReaccion.setVisible(true);
-            }
-        });
-
         siguienteTurno.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
                 if (combatienteActual.getSiguiente()!=null) {
                     combatienteActual = combatienteActual.getSiguiente();
 
@@ -244,31 +191,38 @@ public class ControladorJuego {
             @Override
             public void handle(MouseEvent event) {
 
-
-                if(verReaccion.isSelected()){
-                    tablaAccion.setVisible(false);
-                    tablaSeleccion.setVisible(true);
-                    tablaReaccion.setVisible(false);
-                }else{
-                    imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
-                    if (combatienteActual.getSiguiente()!=null) {
-                        combatienteActual = combatienteActual.getSiguiente();
-
-
-                    }
-                    else{
-                        combatienteActual = i.getD();
-                    }
-                    System.out.println("actual turno de: " + combatienteActual.getCombatiente().getNombre());
-                    caracteristicas.setText("nombre: "+combatienteActual.getCombatiente().getNombre()+"\nfuerza: "+combatienteActual.getCombatiente().getFue()+"\ninteligencia: "+combatienteActual.getCombatiente().getInte()+"\ndestreza: "+combatienteActual.getCombatiente().getDes()+"\narmadura: "+combatienteActual.getCombatiente().getArm());
-                    imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen())));
-
-                }
+                tablaAccion.setVisible(false);
+                tablaSeleccion.setVisible(true);
 
 
 
             }
         });
+
+        Timer time = new Timer( );
+        time.scheduleAtFixedRate(new TimerTask() {
+
+            @Override
+            public void run() {
+                Platform.runLater(() -> {
+
+                    if(contenidoAccion.getSelectionModel().getSelectedItem()!=null && contenidoAccion.getSelectionModel().getSelectedItem().equals("Atacar") && combatienteAatacar!=null){
+                        combatienteAtacar_label.setText("Combatiente a atacar: \n"+combatienteAatacar.getNombre());
+                        combatienteAtacar_image.setImage(new Image(getClass().getResourceAsStream(combatienteAatacar.getImagen())));
+
+                    }
+                    else{
+                        combatienteAtacar_label.setText("");
+                        combatienteAtacar_image.imageProperty().set(null);
+
+                    }
+
+
+                });
+
+
+            }
+        }, 00,100);
 
 
     }
@@ -288,6 +242,7 @@ public class ControladorJuego {
         IteradorCombatiente c = i.d;
         tabla.getChildren().removeAll(tabla.getChildren());
         while(c != null) {
+            System.out.println(" asdasddas  "+c.getCombatiente().getNombre());
             BorderPane BP = c.getCombatiente().getGrafico();
             System.out.println(BP);
             aux = c;
@@ -295,11 +250,10 @@ public class ControladorJuego {
                 final IteradorCombatiente est = aux;
                 @Override
                 public void handle(MouseEvent event) {
-                    System.out.println("hola "+ est.getCombatiente().getNombreJugador());
-
+                    combatienteAatacar=est.getCombatiente();
                     if(tablaSeleccion.isVisible()){
                         CombatienteInstancia com = est.getCombatiente();
-                        if(!combateinstancia.getReaccionarios().contains(com) && !combatienteActual.getCombatiente().equals(com)) {
+                        if(!combateinstancia.getReaccionarios().contains(com)) {
                             FXMLLoader loader = new FXMLLoader(
                                     getClass().getResource(
                                             "MiniEstadistica.fxml"
@@ -337,9 +291,8 @@ public class ControladorJuego {
         imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen())));
 
 
-        //primary.setWidth(back.getPrefWidth());
-        //primary.setHeight(back.getPrefHeight());
-
+        primary.setWidth(back.getPrefWidth());
+        primary.setHeight(back.getPrefHeight());
         back = customer;
 
 
