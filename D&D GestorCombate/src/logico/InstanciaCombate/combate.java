@@ -30,10 +30,11 @@ public class combate {
         this.fecha = fecha;
     }
 
-    public void guardarCombateBD(combate c,configuracion combatienteI){
-
+    public void guardarCombateBD(combate c){
         estructuraDeDatos e = new estructuraDeDatos();
         e.insertarDatosCombate(c);
+        /*combatienteI.getCombatientes();
+        e.insertarDatosCombatiente();
         // insertar instancias de combatientes
         //e.insertar(); */
 

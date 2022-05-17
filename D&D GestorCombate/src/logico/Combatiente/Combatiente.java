@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Combatiente {
     // poner máximo de combatientes
     String nombre,clase, imagen, nombreJugador;
-    int Bini,PG,Arm,fue,inte,des,cons,car, id, sab;
+    int Bini,PG,Arm,fue,inte,des,cons,car, sab,id;
     BorderPane Grafico;
 
     public Combatiente(String nombre,String nombreJugador, String clase,String imagen, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car, int sab ,int id) {
@@ -117,12 +117,12 @@ public class Combatiente {
         this.car = car;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNombreJugador() {

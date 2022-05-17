@@ -54,7 +54,7 @@ public class ControladorJuego {
         paisaje.fitWidthProperty().bind(fcontent.widthProperty());
         paisaje.fitHeightProperty().bind(fcontent.heightProperty());**/
 
-    // Creación combate
+    // ------------  Creación combate --------
         Calendar c1 = Calendar.getInstance();
         String  dia = Integer.toString(c1.get(Calendar.DATE));
         String mes = Integer.toString(c1.get(Calendar.MONTH)+1);
@@ -64,7 +64,6 @@ public class ControladorJuego {
         String annio = Integer.toString(c1.get(Calendar.YEAR));
         combate combateinstancia;
         combateinstancia = new combate("random",annio  +"-"+mes+"-"+dia); // nombre random , se setea después cuando se guarda
-
 
         contenidoAccion.getItems().addAll(clavesAccion);
 

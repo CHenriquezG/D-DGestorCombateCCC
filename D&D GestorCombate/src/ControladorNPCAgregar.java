@@ -232,7 +232,7 @@ public class ControladorNPCAgregar  implements Initializable {
         if(personajeSelected>=0){
             if(personajeSelected==0){
                 auxima= animatedBroom;
-                auxCombatiente= new Combatiente("Animated Broom","","Construct","\\Recursos\\Foto de personajes\\Animated Broom.png",7,5,9,7,5,6,5,8,4,100001);
+                auxCombatiente= new Combatiente( "Animated Broom","","Construct","\\Recursos\\Foto de personajes\\Animated Broom.png",7,5,9,7,5,6,5,8,4,100001);
             }
             if(personajeSelected==1){
                 auxima= awakenedTree;
