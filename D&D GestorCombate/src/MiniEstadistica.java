@@ -25,7 +25,7 @@ public class MiniEstadistica {
         this.tu = tu;
         this.tuLog = tuLog;
         System.out.println(tuLog.getImagen());
-        ima.setImage(new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\"+tuLog.getImagen()+".png")));
+        ima.setImage(new Image(getClass().getResourceAsStream(tuLog.getImagen())));
         nombre.setText(tuLog.getNombre());
 
 

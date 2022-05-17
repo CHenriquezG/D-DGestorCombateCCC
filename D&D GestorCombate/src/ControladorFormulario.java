@@ -102,7 +102,7 @@ public class ControladorFormulario {
                                 ,sab=Integer.parseInt(sabiduria.getText());
                         // crear ID random
                         int id = (char) (rnd.nextInt(94)+33); // actualizar método de obtener una ID;
-                        conf.setCombatiente(nombre.getText(),nombreJugador.getText(), (String) tipoimagen.getValue(),clase.getAccessibleText(),bi,pg,ar,fue,in,des,con,car, sab,id);
+                        conf.setCombatiente(nombre.getText(),nombreJugador.getText(), "\\Recursos\\Foto de personajes\\"+tipoimagen.getValue()+".png",clase.getAccessibleText(),bi,pg,ar,fue,in,des,con,car, sab,id);
                         conf.combatientes.get(conf.combatientes.size()-1).setGrafico(b);
 
                         controller.initData(0,conf);

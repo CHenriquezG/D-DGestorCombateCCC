@@ -258,7 +258,7 @@ public class ControladorJuego {
 
 
         this.combatienteActual = i.getD();
-        //imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen()));
+        imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen())));
 
 
         primary.setWidth(back.getPrefWidth());
