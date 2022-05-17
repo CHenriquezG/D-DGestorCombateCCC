@@ -5,10 +5,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -44,6 +41,8 @@ public class ControladorJuego {
     ChoiceBox contenidoAccion,contenidoReaccion;
     @FXML
     HBox golpeCurar,reaccion;
+    @FXML
+    CheckBox verReaccion;
     contexto contexto = new contexto();
     combate combateinstancia ;
     iniciativa i;
@@ -186,6 +185,28 @@ public class ControladorJuego {
         siguientePer.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
+
+                if(combateinstancia.getReaccionarios().size() == 1){
+                    combateinstancia.getReaccionarios().remove(0);
+                    SeleccionReaccion.getChildren().removeAll(SeleccionReaccion.getChildren());
+                    imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
+                    if (combatienteActual.getSiguiente()!=null) {
+                        combatienteActual = combatienteActual.getSiguiente();
+
+
+                    }
+                    else{
+                        combatienteActual = i.getD();
+                    }
+                    System.out.println("actual turno de: " + combatienteActual.getCombatiente().getNombre());
+                    caracteristicas.setText("nombre: "+combatienteActual.getCombatiente().getNombre()+"\nfuerza: "+combatienteActual.getCombatiente().getFue()+"\ninteligencia: "+combatienteActual.getCombatiente().getInte()+"\ndestreza: "+combatienteActual.getCombatiente().getDes()+"\narmadura: "+combatienteActual.getCombatiente().getArm());
+                    imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen())));
+                    tablaAccion.setVisible(true);
+                    tablaSeleccion.setVisible(false);
+                    tablaReaccion.setVisible(false);
+                }else{
+                    combateinstancia.getReaccionarios().remove(0);
+                }
                 // aca reseatearia todo
                 System.out.println("hola");
             }
@@ -194,7 +215,7 @@ public class ControladorJuego {
         siguienteReac.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-         
+
                 tablaAccion.setVisible(false);
                 tablaSeleccion.setVisible(false);
                 tablaReaccion.setVisible(true);
@@ -223,9 +244,27 @@ public class ControladorJuego {
             @Override
             public void handle(MouseEvent event) {
 
-                tablaAccion.setVisible(false);
-                tablaSeleccion.setVisible(true);
-                tablaReaccion.setVisible(false);
+
+                if(verReaccion.isSelected()){
+                    tablaAccion.setVisible(false);
+                    tablaSeleccion.setVisible(true);
+                    tablaReaccion.setVisible(false);
+                }else{
+                    imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
+                    if (combatienteActual.getSiguiente()!=null) {
+                        combatienteActual = combatienteActual.getSiguiente();
+
+
+                    }
+                    else{
+                        combatienteActual = i.getD();
+                    }
+                    System.out.println("actual turno de: " + combatienteActual.getCombatiente().getNombre());
+                    caracteristicas.setText("nombre: "+combatienteActual.getCombatiente().getNombre()+"\nfuerza: "+combatienteActual.getCombatiente().getFue()+"\ninteligencia: "+combatienteActual.getCombatiente().getInte()+"\ndestreza: "+combatienteActual.getCombatiente().getDes()+"\narmadura: "+combatienteActual.getCombatiente().getArm());
+                    imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen())));
+
+                }
+
 
 
             }
@@ -260,7 +299,7 @@ public class ControladorJuego {
 
                     if(tablaSeleccion.isVisible()){
                         CombatienteInstancia com = est.getCombatiente();
-                        if(!combateinstancia.getReaccionarios().contains(com) && !combatienteActual.equals(com)) {
+                        if(!combateinstancia.getReaccionarios().contains(com) && !combatienteActual.getCombatiente().equals(com)) {
                             FXMLLoader loader = new FXMLLoader(
                                     getClass().getResource(
                                             "MiniEstadistica.fxml"
@@ -298,8 +337,9 @@ public class ControladorJuego {
         imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen())));
 
 
-        primary.setWidth(back.getPrefWidth());
-        primary.setHeight(back.getPrefHeight());
+        //primary.setWidth(back.getPrefWidth());
+        //primary.setHeight(back.getPrefHeight());
+
         back = customer;
 
 
