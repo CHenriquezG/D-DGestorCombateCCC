@@ -1,9 +1,12 @@
 package logico.Combatiente;
 
+import logico.Estrategia.Estrategia;
+
 public class CombatienteInstancia extends Combatiente{
 
     String estado;
     int iniciativa;
+
 
 
     public CombatienteInstancia(String nombre,String nombreJugador, String clase,String imagen,String estado, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car,int sab, int id) {

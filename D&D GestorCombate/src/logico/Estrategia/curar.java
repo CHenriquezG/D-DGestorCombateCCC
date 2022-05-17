@@ -23,6 +23,7 @@ public class curar  implements Estrategia{
     public void EfectuarEstrategia(IteradorCombatiente CombTurn, IteradorCombatiente Implicado,int dado) {
         CombatienteInstancia afectado = Implicado.getCombatiente();
         afectado.setPG(afectado.getPG() + dado);
+        afectado.getPGG().setText(String.valueOf(afectado.getPG()));
         VerificarEstado(Implicado);
     }
 }

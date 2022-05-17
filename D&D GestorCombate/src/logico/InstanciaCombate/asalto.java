@@ -34,7 +34,7 @@ public class asalto {
 
 
     public void EfectuarTurno(){
-
+        actual.EfectuarTurno();
 
     }
 

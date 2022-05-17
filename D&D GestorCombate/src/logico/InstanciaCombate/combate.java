@@ -26,12 +26,10 @@ public class combate {
         actual.CrearTurno();
     }
 
-    public void ReiniciarAsalto(){
-        actual.ReiniciarAsalto();
 
-    }
     public void EfectuarTurno(){
         actual.EfectuarTurno();
+        actual.ReiniciarAsalto();
     }
 
     public void ConstruirAccionEnAsalto(IteradorCombatiente aturno,IteradorCombatiente aaccion,String clave,int dado){

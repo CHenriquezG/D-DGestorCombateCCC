@@ -21,10 +21,12 @@ public class atacar  implements Estrategia{
 
     @Override
     public void EfectuarEstrategia(IteradorCombatiente CombTurn, IteradorCombatiente Implicado,int dado) {
-
+        System.out.println("ataco");
         CombatienteInstancia afectado = Implicado.getCombatiente();
         afectado.setPG(afectado.getPG() - dado);
+        afectado.getPGG().setText(String.valueOf(afectado.getPG()));
         VerificarEstado(Implicado);
+
 
     }
 

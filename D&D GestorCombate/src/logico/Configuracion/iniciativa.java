@@ -39,6 +39,8 @@ public class iniciativa {
             // aca se generan las instancias de combatientes en base a los combatientes reales
             y = (CombatienteInstancia) f.CrearCombatiente(combatientes.get(i).getNombre(), combatientes.get(i).getNombreJugador(), combatientes.get(i).getClase(), combatientes.get(i).getImagen(), combatientes.get(i).getBini(), combatientes.get(i).getPG(), combatientes.get(i).getArm(), combatientes.get(i).getFue(), combatientes.get(i).getInte(), combatientes.get(i).getDes(), combatientes.get(i).getCons(),combatientes.get(i).getCar(),combatientes.get(i).getSab(),combatientes.get(i).getId());
             y.setGrafico(combatientes.get(i).getGrafico());
+            y.setPGG(combatientes.get(i).getPGG());
+            y.setTipoG(combatientes.get(i).getTipoG());
             System.out.println(combatientes.get(i).getGrafico());
             GenerarIniciativa(y);// aca se genera las iniciativas de cada combatiente
             aux = new IteradorCombatiente(y);

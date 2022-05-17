@@ -1,4 +1,6 @@
 package logico.Combatiente;
+
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
 import java.util.ArrayList;
@@ -9,8 +11,10 @@ public class Combatiente {
     String nombre,clase, imagen, nombreJugador;
     int Bini,PG,Arm,fue,inte,des,cons,car, id, sab;
     BorderPane Grafico;
+    Label PGG,tipoG;
 
-    public Combatiente(String nombre,String nombreJugador, String clase,String imagen, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car, int sab ,int id) {
+
+    public Combatiente(String nombre, String nombreJugador, String clase, String imagen, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car, int sab , int id) {
         this.nombre = nombre;
         this.clase = clase;
         this.imagen = imagen;
@@ -24,6 +28,9 @@ public class Combatiente {
         this.car = car;
         this.id = id;
         this.sab = sab;
+
+
+
         this.nombreJugador= nombreJugador;
         // validar jugador
         Jugador e = new Jugador(nombreJugador); // puede haber un jugador repetido
@@ -147,5 +154,21 @@ public class Combatiente {
 
     public void setGrafico(BorderPane grafico) {
         Grafico = grafico;
+    }
+
+    public Label getPGG() {
+        return PGG;
+    }
+
+    public void setPGG(Label PGG) {
+        this.PGG = PGG;
+    }
+
+    public Label getTipoG() {
+        return tipoG;
+    }
+
+    public void setTipoG(Label tipoG) {
+        this.tipoG = tipoG;
     }
 }

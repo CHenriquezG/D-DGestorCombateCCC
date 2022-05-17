@@ -104,6 +104,9 @@ public class ControladorFormulario {
                         int id = (char) (rnd.nextInt(94)+33); // actualizar método de obtener una ID;
                         conf.setCombatiente(nombre.getText(),nombreJugador.getText(), "\\Recursos\\Foto de personajes\\"+tipoimagen.getValue()+".png",clase.getAccessibleText(),bi,pg,ar,fue,in,des,con,car, sab,id);
                         conf.combatientes.get(conf.combatientes.size()-1).setGrafico(b);
+                        conf.combatientes.get(conf.combatientes.size()-1).setPGG(controller.pts);
+                        conf.combatientes.get(conf.combatientes.size()-1).setTipoG(controller.tipo);
+
 
                         controller.initData(0,conf);
                         tabla.getChildren().add(b);

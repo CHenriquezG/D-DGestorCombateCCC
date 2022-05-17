@@ -194,7 +194,7 @@ public class ControladorJuego {
 
                 if(combateinstancia.getReaccionarios().size() == 0){
 
-                    combateinstancia.ReiniciarAsalto();
+                    combateinstancia.EfectuarTurno();
                     SeleccionReaccion.getChildren().removeAll(SeleccionReaccion.getChildren());
                     imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
 
@@ -228,6 +228,8 @@ public class ControladorJuego {
         siguienteTurno.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
+                System.out.println("hola");
+
                 imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
                 if (combatienteActual.getSiguiente()!=null) {
                     combatienteActual = combatienteActual.getSiguiente();
@@ -252,6 +254,7 @@ public class ControladorJuego {
                     tablaSeleccion.setVisible(true);
                     tablaReaccion.setVisible(false);
                 }else{
+                    combateinstancia.EfectuarTurno();
                     imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
                     if (combatienteActual.getSiguiente()!=null) {
                         combatienteActual = combatienteActual.getSiguiente();
