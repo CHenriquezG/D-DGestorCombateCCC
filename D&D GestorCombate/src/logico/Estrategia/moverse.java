@@ -1,5 +1,7 @@
 package logico.Estrategia;
 
+import logico.Lista.IteradorCombatiente;
+
 public class moverse implements Estrategia{
     @Override
     public boolean TieneOpcionDaño() {
@@ -14,5 +16,10 @@ public class moverse implements Estrategia{
     @Override
     public boolean TieneOpcionAyudar() {
         return false;
+    }
+
+    @Override
+    public void EfectuarEstrategia(IteradorCombatiente CombTurn, IteradorCombatiente Implicado) {
+
     }
 }

@@ -185,29 +185,26 @@ public class ControladorJuego {
         siguientePer.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-
-                if(combateinstancia.getReaccionarios().size() == 1){
+                if(combateinstancia.getReaccionarios().size() != 0){
                     combateinstancia.getReaccionarios().remove(0);
+                }
+
+                if(combateinstancia.getReaccionarios().size() == 0){
+
                     SeleccionReaccion.getChildren().removeAll(SeleccionReaccion.getChildren());
                     imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
-                    if (combatienteActual.getSiguiente()!=null) {
-                        combatienteActual = combatienteActual.getSiguiente();
 
-
-                    }
-                    else{
-                        combatienteActual = i.getD();
-                    }
-                    System.out.println("actual turno de: " + combatienteActual.getCombatiente().getNombre());
-                    caracteristicas.setText("nombre: "+combatienteActual.getCombatiente().getNombre()+"\nfuerza: "+combatienteActual.getCombatiente().getFue()+"\ninteligencia: "+combatienteActual.getCombatiente().getInte()+"\ndestreza: "+combatienteActual.getCombatiente().getDes()+"\narmadura: "+combatienteActual.getCombatiente().getArm());
-                    imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen())));
                     tablaAccion.setVisible(true);
                     tablaSeleccion.setVisible(false);
                     tablaReaccion.setVisible(false);
+                    DefinirPerfil(combatienteActual.getCombatiente());
                 }else{
-                    combateinstancia.getReaccionarios().remove(0);
+                    CombatienteInstancia aux = combateinstancia.getReaccionarios().get(0);
+                    DefinirPerfil(aux);
+
                 }
                 // aca reseatearia todo
+
                 System.out.println("hola");
             }
         });
@@ -216,6 +213,8 @@ public class ControladorJuego {
             @Override
             public void handle(MouseEvent event) {
 
+                CombatienteInstancia aux = combateinstancia.getReaccionarios().get(0);
+                DefinirPerfil(aux);
                 tablaAccion.setVisible(false);
                 tablaSeleccion.setVisible(false);
                 tablaReaccion.setVisible(true);
@@ -270,6 +269,13 @@ public class ControladorJuego {
             }
         });
 
+
+    }
+
+    public void DefinirPerfil(CombatienteInstancia combatienteActual){
+        System.out.println("actual turno de: " + combatienteActual.getNombre());
+        caracteristicas.setText("nombre: "+combatienteActual.getNombre()+"\nfuerza: "+combatienteActual.getFue()+"\ninteligencia: "+combatienteActual.getInte()+"\ndestreza: "+combatienteActual.getDes()+"\narmadura: "+combatienteActual.getArm());
+        imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getImagen())));
 
     }
     void initData(BorderPane customer, VBox tabla, Stage primary, configuracion config) {

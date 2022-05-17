@@ -74,6 +74,8 @@ public class iniciativa {
 
     }
 
+
+
     public IteradorCombatiente getC() {
         return c;
     }

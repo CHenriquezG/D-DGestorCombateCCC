@@ -54,6 +54,17 @@ public class IteradorCombatiente implements Iterador {
 
     }
 
+    public void InsertarFinal(IteradorCombatiente c){
+        IteradorCombatiente aux = siguiente;
+        while(aux.getSiguiente() != null){
+
+
+            aux = aux.getSiguiente();
+        }
+        aux.InsertarDerecha(c);
+
+    }
+
     public IteradorCombatiente(){
         this.combatiente =  new CombatienteInstancia("","","","","",0,0,0,0,0,0,0,0,0,0);
 
@@ -78,4 +89,5 @@ public class IteradorCombatiente implements Iterador {
     public void setAtras(IteradorCombatiente atras) {
         Atras = atras;
     }
+
 }
