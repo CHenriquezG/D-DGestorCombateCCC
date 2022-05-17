@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class combate {
      ArrayList<CombatienteInstancia> Reaccionarios = new ArrayList<>();
+     asalto actual;
     ArrayList<CombatienteReal> combatientes;
     configuracion c;
 
@@ -32,4 +33,8 @@ public class combate {
     public void setReaccionarios(ArrayList<CombatienteInstancia> reaccionarios) {
         Reaccionarios = reaccionarios;
     }
+
+
+
+
 }

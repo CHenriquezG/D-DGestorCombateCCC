@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -34,13 +35,13 @@ import java.util.TimerTask;
 
 public class ControladorJuego {
     @FXML
-    VBox tabla,tablaAccion,tablaSeleccion,SeleccionReaccion;
+    VBox tabla,tablaAccion,tablaSeleccion,tablaReaccion,SeleccionReaccion;
     @FXML
-    ImageView siguienteFase,siguienteTurno,CurDno;
+    ImageView siguienteFase,siguienteTurno,siguienteReac,siguientePer,CurDno,imaReAc;
     @FXML
     BorderPane back;
     @FXML
-    ChoiceBox contenidoAccion;
+    ChoiceBox contenidoAccion,contenidoReaccion;
     @FXML
     HBox golpeCurar,reaccion;
     contexto contexto = new contexto();
@@ -50,11 +51,13 @@ public class ControladorJuego {
     IteradorCombatiente aux;
 
     @FXML
+    TextField IngresoR,IngresoA;
+    @FXML
     Label caracteristicas;
     int auxTimerCaracteristicas=0;
 
     String[] clavesAccion = {"Atacar","Moverse","PasarTurno","Curar","Ayudar"};
-
+    String[] clavesReaccion = {"Contraatacar","PasarTurno"};
     @FXML
     ImageView imaSalir;
     @FXML
@@ -76,7 +79,7 @@ public class ControladorJuego {
         caracteristicas.setFont(font);
 
         this.combatienteActual= new IteradorCombatiente();
-
+        contenidoReaccion.getItems().addAll(clavesReaccion);
         contenidoAccion.getItems().addAll(clavesAccion);
         contenidoAccion.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
@@ -115,6 +118,21 @@ public class ControladorJuego {
                 }else{
 
                 }*/
+                reaccion.setVisible(est.TieneOpcionReaccion());
+                golpeCurar.setVisible(est.TieneOpcionDaño() || est.TieneOpcionAyudar());
+                siguienteTurno.setVisible(!est.TieneOpcionDaño() && !est.TieneOpcionReaccion() && !est.TieneOpcionAyudar());
+                siguienteFase.setVisible(est.TieneOpcionDaño() || est.TieneOpcionReaccion() || est.TieneOpcionAyudar());
+
+                System.out.println("+++++++++++++++++++++++++++++++++");
+            }
+        });
+
+        contenidoReaccion.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                Estrategia est =contexto.ObtenerEstrategia((String) contenidoReaccion.getItems().get((Integer) newValue));
+                //HBox golpeCurar,reaccion;
+
                 reaccion.setVisible(est.TieneOpcionReaccion());
                 golpeCurar.setVisible(est.TieneOpcionDaño() || est.TieneOpcionAyudar());
                 siguienteTurno.setVisible(!est.TieneOpcionDaño() && !est.TieneOpcionReaccion() && !est.TieneOpcionAyudar());
@@ -165,9 +183,28 @@ public class ControladorJuego {
 
         });
 
+        siguientePer.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                // aca reseatearia todo
+                System.out.println("hola");
+            }
+        });
+
+        siguienteReac.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+         
+                tablaAccion.setVisible(false);
+                tablaSeleccion.setVisible(false);
+                tablaReaccion.setVisible(true);
+            }
+        });
+
         siguienteTurno.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
+                imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
                 if (combatienteActual.getSiguiente()!=null) {
                     combatienteActual = combatienteActual.getSiguiente();
 
@@ -188,7 +225,7 @@ public class ControladorJuego {
 
                 tablaAccion.setVisible(false);
                 tablaSeleccion.setVisible(true);
-
+                tablaReaccion.setVisible(false);
 
 
             }
@@ -223,7 +260,7 @@ public class ControladorJuego {
 
                     if(tablaSeleccion.isVisible()){
                         CombatienteInstancia com = est.getCombatiente();
-                        if(!combateinstancia.getReaccionarios().contains(com)) {
+                        if(!combateinstancia.getReaccionarios().contains(com) && !combatienteActual.equals(com)) {
                             FXMLLoader loader = new FXMLLoader(
                                     getClass().getResource(
                                             "MiniEstadistica.fxml"
