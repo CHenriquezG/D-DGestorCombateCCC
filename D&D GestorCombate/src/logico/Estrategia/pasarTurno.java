@@ -19,6 +19,11 @@ public class pasarTurno implements Estrategia{
     }
 
     @Override
+    public boolean TieneOpcionOtraAccion() {
+        return false;
+    }
+
+    @Override
     public void EfectuarEstrategia(IteradorCombatiente CombTurn, IteradorCombatiente Implicado,int dado) {
 
     }

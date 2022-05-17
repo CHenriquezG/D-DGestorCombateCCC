@@ -54,7 +54,7 @@ public class ControladorJuego {
     @FXML
     Label caracteristicas;
     int auxTimerCaracteristicas=0;
-    String clave;
+    String claveAccion,claveReaccion;
     String[] clavesAccion = {"Atacar","Moverse","PasarTurno","Curar","Ayudar"};
     String[] clavesReaccion = {"Contraatacar","PasarTurno"};
     @FXML
@@ -83,8 +83,8 @@ public class ControladorJuego {
         contenidoAccion.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                clave = (String) contenidoAccion.getItems().get((Integer) newValue);
-                Estrategia est =contexto.ObtenerEstrategia(clave);
+                claveAccion = (String) contenidoAccion.getItems().get((Integer) newValue);
+                Estrategia est =contexto.ObtenerEstrategia(claveAccion);
                 //HBox golpeCurar,reaccion;
 /**
                 if(est.TieneOpcionAyudar()){
@@ -130,7 +130,8 @@ public class ControladorJuego {
         contenidoReaccion.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                Estrategia est =contexto.ObtenerEstrategia((String) contenidoReaccion.getItems().get((Integer) newValue));
+                claveReaccion = (String) contenidoReaccion.getItems().get((Integer) newValue);
+                Estrategia est =contexto.ObtenerEstrategia(claveReaccion);
                 //HBox golpeCurar,reaccion;
 
                 reaccion.setVisible(est.TieneOpcionReaccion());
@@ -187,7 +188,7 @@ public class ControladorJuego {
             @Override
             public void handle(MouseEvent event) {
                 if(combateinstancia.getReaccionarios().size() != 0){
-                    combateinstancia.ConstruirReacccionEnAsalto(combateinstancia.getReaccionarios().get(0),clave,Integer.parseInt(IngresoR.getText()));
+                    combateinstancia.ConstruirReacccionEnAsalto(combateinstancia.getReaccionarios().get(0),claveReaccion,Integer.parseInt(IngresoR.getText()));
                     combateinstancia.getReaccionarios().remove(0);
 
                 }
@@ -217,11 +218,29 @@ public class ControladorJuego {
             @Override
             public void handle(MouseEvent event) {
 
-                CombatienteInstancia aux = combateinstancia.getReaccionarios().get(0).getCombatiente();
-                DefinirPerfil(aux);
-                tablaAccion.setVisible(false);
-                tablaSeleccion.setVisible(false);
-                tablaReaccion.setVisible(true);
+
+
+                if(combateinstancia.getReaccionarios().size() == 0){
+                    combateinstancia.EfectuarTurno();
+                    if (combatienteActual.getSiguiente()!=null) {
+                        combatienteActual = combatienteActual.getSiguiente();
+                    }
+                    else{
+                        combatienteActual = i.getD();
+                    }
+                    DefinirPerfil(combatienteActual.getCombatiente());
+
+                    tablaAccion.setVisible(true);
+                    tablaSeleccion.setVisible(false);
+                    tablaReaccion.setVisible(false);
+                }else{
+                    CombatienteInstancia aux = combateinstancia.getReaccionarios().get(0).getCombatiente();
+                    DefinirPerfil(aux);
+                    tablaAccion.setVisible(false);
+                    tablaSeleccion.setVisible(false);
+                    tablaReaccion.setVisible(true);
+                }
+
             }
         });
 
@@ -248,7 +267,7 @@ public class ControladorJuego {
         siguienteFase.setOnMouseClicked(new EventHandler<MouseEvent>() {// con este boton pasa a la subvista de reacciones o pasa de turno
             @Override
             public void handle(MouseEvent event) {
-                combateinstancia.ConstruirAccionEnAsalto(combatienteActual,combatienteActual,clave,Integer.parseInt(IngresoA.getText()));
+                combateinstancia.ConstruirAccionEnAsalto(combatienteActual,combatienteActual,claveAccion,Integer.parseInt(IngresoA.getText()));
                 if(verReaccion.isSelected()){
                     tablaAccion.setVisible(false);
                     tablaSeleccion.setVisible(true);

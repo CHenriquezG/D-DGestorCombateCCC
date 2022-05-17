@@ -19,6 +19,11 @@ public class moverse implements Estrategia{
     }
 
     @Override
+    public boolean TieneOpcionOtraAccion() {
+        return true;
+    }
+
+    @Override
     public void EfectuarEstrategia(IteradorCombatiente CombTurn, IteradorCombatiente Implicado,int dado) {
 
     }

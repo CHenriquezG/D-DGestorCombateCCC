@@ -20,10 +20,15 @@ public class curar  implements Estrategia{
     }
 
     @Override
+    public boolean TieneOpcionOtraAccion() {
+        return false;
+    }
+
+    @Override
     public void EfectuarEstrategia(IteradorCombatiente CombTurn, IteradorCombatiente Implicado,int dado) {
         CombatienteInstancia afectado = Implicado.getCombatiente();
         afectado.setPG(afectado.getPG() + dado);
-        afectado.getPGG().setText(String.valueOf(afectado.getPG()));
+        afectado.getPGG().setText(String.valueOf("PG:"+afectado.getPG()));
         VerificarEstado(Implicado);
     }
 }
