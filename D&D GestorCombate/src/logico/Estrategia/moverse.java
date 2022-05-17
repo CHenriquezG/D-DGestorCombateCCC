@@ -19,7 +19,7 @@ public class moverse implements Estrategia{
     }
 
     @Override
-    public void EfectuarEstrategia(IteradorCombatiente CombTurn, IteradorCombatiente Implicado) {
+    public void EfectuarEstrategia(IteradorCombatiente CombTurn, IteradorCombatiente Implicado,int dado) {
 
     }
 }

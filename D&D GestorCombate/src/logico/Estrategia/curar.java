@@ -1,5 +1,6 @@
 package logico.Estrategia;
 
+import logico.Combatiente.CombatienteInstancia;
 import logico.Lista.IteradorCombatiente;
 
 public class curar  implements Estrategia{
@@ -19,7 +20,9 @@ public class curar  implements Estrategia{
     }
 
     @Override
-    public void EfectuarEstrategia(IteradorCombatiente CombTurn, IteradorCombatiente Implicado) {
-
+    public void EfectuarEstrategia(IteradorCombatiente CombTurn, IteradorCombatiente Implicado,int dado) {
+        CombatienteInstancia afectado = Implicado.getCombatiente();
+        afectado.setPG(afectado.getPG() + dado);
+        VerificarEstado(Implicado);
     }
 }

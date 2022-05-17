@@ -9,13 +9,18 @@ public class accion {
     Estrategia est;
     IteradorCombatiente tu;
     IteradorCombatiente implicado;
-
-    public accion( IteradorCombatiente tu, IteradorCombatiente implicado,String clavecontexto) {
+    int dado;
+    public accion( IteradorCombatiente tu, IteradorCombatiente implicado,String clavecontexto,int dado) {
         this.clavecontexto = clavecontexto;
+        this.dado = dado;
         this.tu = tu;
         this.implicado = implicado;
         contexto cont = new contexto();
         est = cont.ObtenerEstrategia(clavecontexto);
+    }
+
+    public void EfectuarEstrategia(){
+        est.EfectuarEstrategia(tu,implicado,dado);
     }
 
     public String getClavecontexto() {
@@ -48,5 +53,13 @@ public class accion {
 
     public void setImplicado(IteradorCombatiente implicado) {
         this.implicado = implicado;
+    }
+
+    public int getDado() {
+        return dado;
+    }
+
+    public void setDado(int dado) {
+        this.dado = dado;
     }
 }

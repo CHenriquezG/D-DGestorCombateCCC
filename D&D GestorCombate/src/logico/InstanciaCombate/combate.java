@@ -9,11 +9,13 @@ import logico.Lista.IteradorCombatiente;
 import java.util.ArrayList;
 
 public class combate {
-     ArrayList<CombatienteInstancia> Reaccionarios = new ArrayList<>();
+     ArrayList<IteradorCombatiente> Reaccionarios = new ArrayList<>();
      asalto actual = new asalto();
     ArrayList<CombatienteReal> combatientes;
     configuracion c;
-
+    public combate(){
+        InicializarAsalto();
+    }
 
     public void CrearAsalto(){
         actual = new asalto();
@@ -28,12 +30,15 @@ public class combate {
         actual.ReiniciarAsalto();
 
     }
-
-    public void ConstruirAccionEnAsalto(IteradorCombatiente aturno,IteradorCombatiente aaccion,String clave){
-        actual.ConstruirAccionesCombatiente(aturno,aaccion,clave);
+    public void EfectuarTurno(){
+        actual.EfectuarTurno();
     }
-    public void ConstruirReacccionEnAsalto(IteradorCombatiente reaccionario,String clave){
-        actual.ConstruirReaccionesCombatiente(reaccionario,clave);
+
+    public void ConstruirAccionEnAsalto(IteradorCombatiente aturno,IteradorCombatiente aaccion,String clave,int dado){
+        actual.ConstruirAccionesCombatiente(aturno,aaccion,clave,dado); // valoreas int de prueba
+    }
+    public void ConstruirReacccionEnAsalto(IteradorCombatiente reaccionario,String clave,int dado){
+        actual.ConstruirReaccionesCombatiente(reaccionario,clave,dado); // valores int a prueba
     }
 
     public void crearListaPersonajes(){
@@ -49,11 +54,11 @@ public class combate {
        // combatientes=c.combatientes;
     }
 
-    public ArrayList<CombatienteInstancia> getReaccionarios() {
+    public ArrayList<IteradorCombatiente> getReaccionarios() {
         return Reaccionarios;
     }
 
-    public void setReaccionarios(ArrayList<CombatienteInstancia> reaccionarios) {
+    public void setReaccionarios(ArrayList<IteradorCombatiente> reaccionarios) {
         Reaccionarios = reaccionarios;
     }
 

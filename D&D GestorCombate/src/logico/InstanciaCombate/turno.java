@@ -17,22 +17,29 @@ public class turno {
     }
 
 
+    public void EfectuarTurno(){
+        for(int i=0;i<reac.size();i++){
+            reac.get(i).EfectuarEstrategia();
+        }
+        acc.EfectuarEstrategia();
+    }
+
 
 
     public Estrategia SolicitarAccion(String accion){
         return acc.getEst();
     }
-    public Estrategia solicitarreaccion(String reaccion,int indice){
+    public Estrategia Solicitarreaccion(String reaccion,int indice){
 
         return reac.get(indice).getEst();
     }
 
 
-    public void ConstruirAccion(IteradorCombatiente aturno,IteradorCombatiente aaccion,String clave){
-        acc = new accion(aturno,aaccion,clave);
+    public void ConstruirAccion(IteradorCombatiente aturno,IteradorCombatiente aaccion,String clave,int dado){
+        acc = new accion(aturno,aaccion,clave,dado);
 
     }
-    public void ConstruirReacciones(IteradorCombatiente iniReac,String clave){
-        reac.add(new reaccion(iniReac,acc.getTu(),clave));
+    public void ConstruirReacciones(IteradorCombatiente iniReac,String clave,int dado){
+        reac.add(new reaccion(iniReac,acc.getTu(),clave,dado));
     }
 }

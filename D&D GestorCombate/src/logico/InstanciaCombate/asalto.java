@@ -20,16 +20,22 @@ public class asalto {
         coleccion.add(nuevo);
         return  nuevo;
     }
-    public void ConstruirAccionesCombatiente(IteradorCombatiente aturno,IteradorCombatiente aaccion,String clave){
-        actual.ConstruirAccion(aturno,aaccion,clave);
+    public void ConstruirAccionesCombatiente(IteradorCombatiente aturno,IteradorCombatiente aaccion,String clave,int dado){
+        actual.ConstruirAccion(aturno,aaccion,clave, dado);
     }
-    public void ConstruirReaccionesCombatiente(IteradorCombatiente reaccionario,String clave){
-        actual.ConstruirReacciones(reaccionario,clave);
+    public void ConstruirReaccionesCombatiente(IteradorCombatiente reaccionario,String clave,int dado){
+        actual.ConstruirReacciones(reaccionario,clave,dado);
     }
 
     public void ReiniciarAsalto(){
         coleccion = new ArrayList<>();
         CrearTurno();
+    }
+
+
+    public void EfectuarTurno(){
+
+
     }
 
     public turno getActual() {

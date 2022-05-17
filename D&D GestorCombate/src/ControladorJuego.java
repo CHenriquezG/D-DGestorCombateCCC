@@ -54,7 +54,7 @@ public class ControladorJuego {
     @FXML
     Label caracteristicas;
     int auxTimerCaracteristicas=0;
-
+    String clave;
     String[] clavesAccion = {"Atacar","Moverse","PasarTurno","Curar","Ayudar"};
     String[] clavesReaccion = {"Contraatacar","PasarTurno"};
     @FXML
@@ -83,7 +83,8 @@ public class ControladorJuego {
         contenidoAccion.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                Estrategia est =contexto.ObtenerEstrategia((String) contenidoAccion.getItems().get((Integer) newValue));
+                clave = (String) contenidoAccion.getItems().get((Integer) newValue);
+                Estrategia est =contexto.ObtenerEstrategia(clave);
                 //HBox golpeCurar,reaccion;
 /**
                 if(est.TieneOpcionAyudar()){
@@ -186,11 +187,14 @@ public class ControladorJuego {
             @Override
             public void handle(MouseEvent event) {
                 if(combateinstancia.getReaccionarios().size() != 0){
+                    combateinstancia.ConstruirReacccionEnAsalto(combateinstancia.getReaccionarios().get(0),clave,Integer.parseInt(IngresoR.getText()));
                     combateinstancia.getReaccionarios().remove(0);
+
                 }
 
                 if(combateinstancia.getReaccionarios().size() == 0){
 
+                    combateinstancia.ReiniciarAsalto();
                     SeleccionReaccion.getChildren().removeAll(SeleccionReaccion.getChildren());
                     imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
 
@@ -199,7 +203,7 @@ public class ControladorJuego {
                     tablaReaccion.setVisible(false);
                     DefinirPerfil(combatienteActual.getCombatiente());
                 }else{
-                    CombatienteInstancia aux = combateinstancia.getReaccionarios().get(0);
+                    CombatienteInstancia aux = combateinstancia.getReaccionarios().get(0).getCombatiente();
                     DefinirPerfil(aux);
 
                 }
@@ -213,7 +217,7 @@ public class ControladorJuego {
             @Override
             public void handle(MouseEvent event) {
 
-                CombatienteInstancia aux = combateinstancia.getReaccionarios().get(0);
+                CombatienteInstancia aux = combateinstancia.getReaccionarios().get(0).getCombatiente();
                 DefinirPerfil(aux);
                 tablaAccion.setVisible(false);
                 tablaSeleccion.setVisible(false);
@@ -239,11 +243,10 @@ public class ControladorJuego {
             }
         });
 
-        siguienteFase.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        siguienteFase.setOnMouseClicked(new EventHandler<MouseEvent>() {// con este boton pasa a la subvista de reacciones o pasa de turno
             @Override
             public void handle(MouseEvent event) {
-
-
+                combateinstancia.ConstruirAccionEnAsalto(combatienteActual,combatienteActual,clave,Integer.parseInt(IngresoA.getText()));
                 if(verReaccion.isSelected()){
                     tablaAccion.setVisible(false);
                     tablaSeleccion.setVisible(true);
@@ -304,8 +307,8 @@ public class ControladorJuego {
                     System.out.println("hola "+ est.getCombatiente().getNombreJugador());
 
                     if(tablaSeleccion.isVisible()){
-                        CombatienteInstancia com = est.getCombatiente();
-                        if(!combateinstancia.getReaccionarios().contains(com) && !combatienteActual.getCombatiente().equals(com)) {
+
+                        if(!combateinstancia.getReaccionarios().contains(est) && !combatienteActual.equals(est)) {
                             FXMLLoader loader = new FXMLLoader(
                                     getClass().getResource(
                                             "MiniEstadistica.fxml"
@@ -317,8 +320,8 @@ public class ControladorJuego {
                                 b = loader.load();
                                 MiniEstadistica controller = loader.<MiniEstadistica>getController();
                                 SeleccionReaccion.getChildren().add(b);
-                                controller.initData(SeleccionReaccion, b, com,combateinstancia);
-                                combateinstancia.getReaccionarios().add(com);
+                                controller.initData(SeleccionReaccion, b, est,combateinstancia);
+                                combateinstancia.getReaccionarios().add(est);
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
