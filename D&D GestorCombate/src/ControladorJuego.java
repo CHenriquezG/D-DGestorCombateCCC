@@ -17,6 +17,7 @@ import logico.Combatiente.CombatienteInstancia;
 import logico.Combatiente.CombatienteReal;
 import logico.Configuracion.configuracion;
 import logico.Configuracion.iniciativa;
+import logico.Datos.estructuraDeDatos;
 import logico.Estrategia.Estrategia;
 import logico.Estrategia.contexto;
 import  logico.InstanciaCombate.combate;
@@ -25,6 +26,7 @@ import logico.Lista.IteradorCombatiente;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class ControladorJuego {
     @FXML
@@ -38,7 +40,6 @@ public class ControladorJuego {
     @FXML
     HBox golpeCurar,reaccion;
     contexto contexto = new contexto();
-    combate combateinstancia ;
     iniciativa i;
     IteradorCombatiente aux;
 
@@ -53,10 +54,20 @@ public class ControladorJuego {
         paisaje.fitWidthProperty().bind(fcontent.widthProperty());
         paisaje.fitHeightProperty().bind(fcontent.heightProperty());**/
 
+    // Creación combate
+        Calendar c1 = Calendar.getInstance();
+        String  dia = Integer.toString(c1.get(Calendar.DATE));
+        String mes = Integer.toString(c1.get(Calendar.MONTH)+1);
+        if(mes.length()==1){
+            mes ="0"+mes;
+        }
+        String annio = Integer.toString(c1.get(Calendar.YEAR));
+        combate combateinstancia;
+        combateinstancia = new combate("random",annio  +"-"+mes+"-"+dia); // nombre random , se setea después cuando se guarda
 
-        combateinstancia = new combate();
 
         contenidoAccion.getItems().addAll(clavesAccion);
+
         contenidoAccion.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {

@@ -11,13 +11,11 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.net.URL;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Random;
 
+import logico.InstanciaCombate.combate;
 import logico.Datos.estructuraDeDatos;
 
 public class ControladorInicio {
@@ -38,12 +36,7 @@ public class ControladorInicio {
     Stage scene;
 
     public void initialize(){
-        estructuraDeDatos e = new estructuraDeDatos();
-        e.extraerInformacion();
-        System.out.println("-------------------------");
-        e.insertarDatosCombate("Combate prueba 1", "2022-05-11");
-        System.out.println("-------------------------");
-        e.extraerInformacion();
+
         ima.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {

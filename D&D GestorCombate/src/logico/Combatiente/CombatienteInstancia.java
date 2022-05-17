@@ -2,6 +2,7 @@ package logico.Combatiente;
 
 public class CombatienteInstancia extends Combatiente{
 
+
     String estado;
     int iniciativa;
     int tiradaSalvacionFallido ,tiradaSalvacionExitoso;
@@ -19,6 +20,14 @@ public class CombatienteInstancia extends Combatiente{
 
     public void setTiradaSalvacionFallido(int tiradaSalvacionFallido) {
         this.tiradaSalvacionFallido = tiradaSalvacionFallido;
+    }
+
+    public int getTiradaSalvacionExitoso() {
+        return tiradaSalvacionExitoso;
+    }
+
+    public void setTiradaSalvacionExitoso(int tiradaSalvacionExitoso) {
+        this.tiradaSalvacionExitoso = tiradaSalvacionExitoso;
     }
 
     public String getEstado() {
