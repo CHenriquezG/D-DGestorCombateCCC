@@ -7,7 +7,7 @@ public class contexto {
         if(opcion.equals("Ayudar")){
             obtener = new ayudar();
 
-        }else if(opcion.equals("Atacar")){
+        }else if(opcion.equals("Atacar") || opcion.equals("Contraatacar")){
             obtener = new atacar();
         }else if(opcion.equals("Moverse")){
             obtener = new moverse();

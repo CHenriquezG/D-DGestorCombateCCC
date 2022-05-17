@@ -5,8 +5,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -16,12 +15,14 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import logico.Combatiente.CombatienteInstancia;
 import logico.Combatiente.CombatienteReal;
 import logico.Configuracion.configuracion;
 import logico.Configuracion.iniciativa;
 import logico.Estrategia.Estrategia;
 import logico.Estrategia.contexto;
 import  logico.InstanciaCombate.combate;
+import logico.Lista.Iterador;
 import logico.Lista.IteradorCombatiente;
 
 import java.io.IOException;
@@ -31,30 +32,37 @@ import java.util.TimerTask;
 
 public class ControladorJuego {
     @FXML
-    VBox tabla;
+    VBox tabla,tablaAccion,tablaSeleccion,tablaReaccion,SeleccionReaccion;
     @FXML
-    ImageView siguienteFase,siguienteTurno,CurDno;
+    ImageView siguienteFase,siguienteTurno,siguienteReac,siguientePer,CurDno,imaReAc;
     @FXML
     BorderPane back;
     @FXML
-    ChoiceBox contenidoAccion;
+    ChoiceBox contenidoAccion,contenidoReaccion;
     @FXML
     HBox golpeCurar,reaccion;
+    @FXML
+    CheckBox verReaccion;
     contexto contexto = new contexto();
     combate combateinstancia ;
     iniciativa i;
     IteradorCombatiente combatienteActual;
+    IteradorCombatiente aux;
 
+    @FXML
+    TextField IngresoR,IngresoA;
     @FXML
     Label caracteristicas;
     int auxTimerCaracteristicas=0;
 
     String[] clavesAccion = {"Atacar","Moverse","PasarTurno","Curar","Ayudar"};
-
+    String[] clavesReaccion = {"Contraatacar","PasarTurno"};
     @FXML
     ImageView imaSalir;
     @FXML
     ImageView imaPerfil;
+    @FXML
+    ScrollPane ContieneReacciones;
 
     public void initialize(){/**
 
@@ -70,7 +78,7 @@ public class ControladorJuego {
         caracteristicas.setFont(font);
 
         this.combatienteActual= new IteradorCombatiente();
-
+        contenidoReaccion.getItems().addAll(clavesReaccion);
         contenidoAccion.getItems().addAll(clavesAccion);
         contenidoAccion.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
@@ -109,6 +117,21 @@ public class ControladorJuego {
                 }else{
 
                 }*/
+                reaccion.setVisible(est.TieneOpcionReaccion());
+                golpeCurar.setVisible(est.TieneOpcionDaño() || est.TieneOpcionAyudar());
+                siguienteTurno.setVisible(!est.TieneOpcionDaño() && !est.TieneOpcionReaccion() && !est.TieneOpcionAyudar());
+                siguienteFase.setVisible(est.TieneOpcionDaño() || est.TieneOpcionReaccion() || est.TieneOpcionAyudar());
+
+                System.out.println("+++++++++++++++++++++++++++++++++");
+            }
+        });
+
+        contenidoReaccion.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                Estrategia est =contexto.ObtenerEstrategia((String) contenidoReaccion.getItems().get((Integer) newValue));
+                //HBox golpeCurar,reaccion;
+
                 reaccion.setVisible(est.TieneOpcionReaccion());
                 golpeCurar.setVisible(est.TieneOpcionDaño() || est.TieneOpcionAyudar());
                 siguienteTurno.setVisible(!est.TieneOpcionDaño() && !est.TieneOpcionReaccion() && !est.TieneOpcionAyudar());
@@ -159,9 +182,50 @@ public class ControladorJuego {
 
         });
 
+        siguientePer.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+
+                if(combateinstancia.getReaccionarios().size() == 1){
+                    combateinstancia.getReaccionarios().remove(0);
+                    SeleccionReaccion.getChildren().removeAll(SeleccionReaccion.getChildren());
+                    imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
+                    if (combatienteActual.getSiguiente()!=null) {
+                        combatienteActual = combatienteActual.getSiguiente();
+
+
+                    }
+                    else{
+                        combatienteActual = i.getD();
+                    }
+                    System.out.println("actual turno de: " + combatienteActual.getCombatiente().getNombre());
+                    caracteristicas.setText("nombre: "+combatienteActual.getCombatiente().getNombre()+"\nfuerza: "+combatienteActual.getCombatiente().getFue()+"\ninteligencia: "+combatienteActual.getCombatiente().getInte()+"\ndestreza: "+combatienteActual.getCombatiente().getDes()+"\narmadura: "+combatienteActual.getCombatiente().getArm());
+                    imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen())));
+                    tablaAccion.setVisible(true);
+                    tablaSeleccion.setVisible(false);
+                    tablaReaccion.setVisible(false);
+                }else{
+                    combateinstancia.getReaccionarios().remove(0);
+                }
+                // aca reseatearia todo
+                System.out.println("hola");
+            }
+        });
+
+        siguienteReac.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+
+                tablaAccion.setVisible(false);
+                tablaSeleccion.setVisible(false);
+                tablaReaccion.setVisible(true);
+            }
+        });
+
         siguienteTurno.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
+                imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
                 if (combatienteActual.getSiguiente()!=null) {
                     combatienteActual = combatienteActual.getSiguiente();
 
@@ -175,6 +239,37 @@ public class ControladorJuego {
                 imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen())));
             }
         });
+
+        siguienteFase.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+
+
+                if(verReaccion.isSelected()){
+                    tablaAccion.setVisible(false);
+                    tablaSeleccion.setVisible(true);
+                    tablaReaccion.setVisible(false);
+                }else{
+                    imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
+                    if (combatienteActual.getSiguiente()!=null) {
+                        combatienteActual = combatienteActual.getSiguiente();
+
+
+                    }
+                    else{
+                        combatienteActual = i.getD();
+                    }
+                    System.out.println("actual turno de: " + combatienteActual.getCombatiente().getNombre());
+                    caracteristicas.setText("nombre: "+combatienteActual.getCombatiente().getNombre()+"\nfuerza: "+combatienteActual.getCombatiente().getFue()+"\ninteligencia: "+combatienteActual.getCombatiente().getInte()+"\ndestreza: "+combatienteActual.getCombatiente().getDes()+"\narmadura: "+combatienteActual.getCombatiente().getArm());
+                    imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen())));
+
+                }
+
+
+
+            }
+        });
+
 
     }
     void initData(BorderPane customer, VBox tabla, Stage primary, configuracion config) {
@@ -190,15 +285,67 @@ public class ControladorJuego {
 
         i = new iniciativa();
         i.GenerarOrdenCombatiente(combatientes);
+        IteradorCombatiente c = i.d;
+        tabla.getChildren().removeAll(tabla.getChildren());
+        while(c != null) {
+            BorderPane BP = c.getCombatiente().getGrafico();
+            System.out.println(BP);
+            aux = c;
+            BP.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                final IteradorCombatiente est = aux;
+                @Override
+                public void handle(MouseEvent event) {
+                    System.out.println("hola "+ est.getCombatiente().getNombreJugador());
+
+                    if(tablaSeleccion.isVisible()){
+                        CombatienteInstancia com = est.getCombatiente();
+                        if(!combateinstancia.getReaccionarios().contains(com) && !combatienteActual.getCombatiente().equals(com)) {
+                            FXMLLoader loader = new FXMLLoader(
+                                    getClass().getResource(
+                                            "MiniEstadistica.fxml"
+                                    )
+                            );
+
+                            VBox b;
+                            try {
+                                b = loader.load();
+                                MiniEstadistica controller = loader.<MiniEstadistica>getController();
+                                SeleccionReaccion.getChildren().add(b);
+                                controller.initData(SeleccionReaccion, b, com,combateinstancia);
+                                combateinstancia.getReaccionarios().add(com);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+                    }
+
+                }
+            });
+
+            tabla.getChildren().add(BP);
+            c = c.getSiguiente();
+        }
+
+
+
+
+
+
 
         this.combatienteActual = i.getD();
         imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen())));
 
 
-        primary.setWidth(back.getPrefWidth());
-        primary.setHeight(back.getPrefHeight());
+        //primary.setWidth(back.getPrefWidth());
+        //primary.setHeight(back.getPrefHeight());
+
         back = customer;
+
+
+
         this.tabla.getChildren().setAll(tabla.getChildren());
+        //this.tabla.getChildren().setAll(tabla.getChildren());
     }
 
 }

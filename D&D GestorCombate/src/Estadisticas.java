@@ -21,13 +21,6 @@ public class Estadisticas {
     int combR;
     public void initialize(){
 
-        tablero.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                conf.getCombatientes();
-            }
-        });
-
 
 
 
