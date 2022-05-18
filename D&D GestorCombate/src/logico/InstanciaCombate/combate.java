@@ -3,6 +3,8 @@ import logico.Datos.estructuraDeDatos;
 import javafx.fxml.FXMLLoader;
 import logico.Combatiente.CombatienteReal;
 import logico.Configuracion.configuracion;
+
+import java.util.ArrayList;
 import java.util.Date;
 
 public class combate {
@@ -30,15 +32,13 @@ public class combate {
         this.fecha = fecha;
     }
 
-    public void guardarCombateBD(combate c){
+    public void guardarCombateBD(combate c, configuracion combatientes){
         estructuraDeDatos e = new estructuraDeDatos();
         e.insertarDatosCombate(c);
-        /*combatienteI.getCombatientes();
-        e.insertarDatosCombatiente();
-        // insertar instancias de combatientes
-        //e.insertar(); */
-
-
+        for (int i=0 ;combatientes.combatientes.size()>i;i++) {
+            e.insertarDatosCombatiente(combatientes.combatientes.get(i));
+        }
+        // FALTA GUARDAR COMBATIENTES EN EL SISTEMA
 
     }
 

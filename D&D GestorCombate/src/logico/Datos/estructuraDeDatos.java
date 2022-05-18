@@ -4,7 +4,6 @@ import logico.InstanciaCombate.combate;
 import logico.Combatiente.CombatienteInstancia;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class estructuraDeDatos {
 	ArrayList < combate > combatesBD;
@@ -52,7 +51,6 @@ public class estructuraDeDatos {
 			e.printStackTrace();
 		}
 	}
-
 	public void insertarDatosCombatiente(CombatienteReal combatiente) { // sirve para eliminar , modificacion, actualizacion dentro de una bd
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -85,7 +83,6 @@ public class estructuraDeDatos {
 		}
 	}
 	public void insertarDatosInstanciaCombatiente(CombatienteInstancia combatiente, combate combateInstancia) { // sirve para eliminar , modificacion, actualizacion dentro de una bd
-
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			String url = "jdbc:mysql://localhost:3306/test";
@@ -180,10 +177,9 @@ public class estructuraDeDatos {
 				CombatienteReal combatienteAux = new CombatienteReal(nombre, nombreJugador, "1", clase,
 						bIniciativa, puntosDeGolpe, armadura, fuerza, inteligencia, destreza, constitucion, carisma, sabiduria, id);
 
-				combatienteRealBD.add(combatienteAux);
+				combatienteRealBD.add(combatienteAux); // combatientes guardados
 			}
 			st1.close(); // importante
-
 		} catch (ClassNotFoundException | SQLException e) {}
 	}
 
@@ -225,8 +221,7 @@ public class estructuraDeDatos {
 				String tituloCombate = rs3.getString("refCombate");
 
 				CombatienteInstancia combatienteInstanciaAux = new CombatienteInstancia(nombre, nombreJugador, clase, "imagen", estado, bIniciativa, PG, armadura, fuerza, inteligencia, destreza, constitucion, carisma, sabiduria, id, tiradaSalvacionE, tiradaSalvacionF, tituloCombate);
-
-				combatienteInstanciaBD.add(combatienteInstanciaAux);
+				combatienteInstanciaBD.add(combatienteInstanciaAux); // combatientes para de un combate en especifico
 			}st3.close();
 			st4.close();
 		} catch (ClassNotFoundException | SQLException e) {}
