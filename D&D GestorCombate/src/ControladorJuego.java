@@ -54,7 +54,7 @@ public class ControladorJuego {
     @FXML
     Label caracteristicas, combatienteAtacar_label;
     int auxTimerCaracteristicas=0;
-    String claveAccion,claveReaccion;
+
     String[] clavesAccion = {"Atacar","Moverse","PasarTurno","Curar","Ayudar"};
 
     @FXML
@@ -88,8 +88,7 @@ public class ControladorJuego {
         contenidoAccion.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                claveAccion = (String) contenidoAccion.getItems().get((Integer) newValue);
-                Estrategia est =contexto.ObtenerEstrategia(claveAccion);
+                Estrategia est =contexto.ObtenerEstrategia((String) contenidoAccion.getItems().get((Integer) newValue));
                 //HBox golpeCurar,reaccion;
 /**
  if(est.TieneOpcionAyudar()){
@@ -117,19 +116,10 @@ public class ControladorJuego {
 
  }
 
-<<<<<<< HEAD
  if(!est.TieneOpcionReaccion() && est.TieneOpcionDaño() && est.TieneOpcionAyudar()){
  siguienteTurno.setVisible(true);
  siguienteFase.setVisible(false);
  }else{
-=======
-        contenidoReaccion.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                claveReaccion = (String) contenidoReaccion.getItems().get((Integer) newValue);
-                Estrategia est =contexto.ObtenerEstrategia(claveReaccion);
-                //HBox golpeCurar,reaccion;
->>>>>>> V2Claudio
 
  }*/
                 reaccion.setVisible(est.TieneOpcionReaccion());
@@ -185,72 +175,6 @@ public class ControladorJuego {
         siguienteTurno.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-        siguientePer.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                if(combateinstancia.getReaccionarios().size() != 0){
-                    combateinstancia.ConstruirReacccionEnAsalto(combateinstancia.getReaccionarios().get(0),claveReaccion,Integer.parseInt(IngresoR.getText()));
-                    combateinstancia.getReaccionarios().remove(0);
-
-                }
-
-                if(combateinstancia.getReaccionarios().size() == 0){
-
-                    combateinstancia.EfectuarTurno();
-                    SeleccionReaccion.getChildren().removeAll(SeleccionReaccion.getChildren());
-                    imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
-
-                    tablaAccion.setVisible(true);
-                    tablaSeleccion.setVisible(false);
-                    tablaReaccion.setVisible(false);
-                    DefinirPerfil(combatienteActual.getCombatiente());
-                }else{
-                    CombatienteInstancia aux = combateinstancia.getReaccionarios().get(0).getCombatiente();
-                    DefinirPerfil(aux);
-
-                }
-                // aca reseatearia todo
-
-                System.out.println("hola");
-            }
-        });
-
-        siguienteReac.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-
-
-
-                if(combateinstancia.getReaccionarios().size() == 0){
-                    combateinstancia.EfectuarTurno();
-                    if (combatienteActual.getSiguiente()!=null) {
-                        combatienteActual = combatienteActual.getSiguiente();
-                    }
-                    else{
-                        combatienteActual = i.getD();
-                    }
-                    DefinirPerfil(combatienteActual.getCombatiente());
-
-                    tablaAccion.setVisible(true);
-                    tablaSeleccion.setVisible(false);
-                    tablaReaccion.setVisible(false);
-                }else{
-                    CombatienteInstancia aux = combateinstancia.getReaccionarios().get(0).getCombatiente();
-                    DefinirPerfil(aux);
-                    tablaAccion.setVisible(false);
-                    tablaSeleccion.setVisible(false);
-                    tablaReaccion.setVisible(true);
-                }
-
-            }
-        });
-
-        siguienteTurno.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                System.out.println("hola");
-
-                imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
                 if (combatienteActual.getSiguiente()!=null) {
                     combatienteActual = combatienteActual.getSiguiente();
 
@@ -265,10 +189,9 @@ public class ControladorJuego {
             }
         });
 
-        siguienteFase.setOnMouseClicked(new EventHandler<MouseEvent>() {// con este boton pasa a la subvista de reacciones o pasa de turno
+        siguienteFase.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-<<<<<<< HEAD
 
                 tablaAccion.setVisible(false);
                 tablaSeleccion.setVisible(true);
@@ -284,18 +207,6 @@ public class ControladorJuego {
             @Override
             public void run() {
                 Platform.runLater(() -> {
-=======
-                combateinstancia.ConstruirAccionEnAsalto(combatienteActual,combatienteActual,claveAccion,Integer.parseInt(IngresoA.getText()));
-                if(verReaccion.isSelected()){
-                    tablaAccion.setVisible(false);
-                    tablaSeleccion.setVisible(true);
-                    tablaReaccion.setVisible(false);
-                }else{
-                    combateinstancia.EfectuarTurno();
-                    imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
-                    if (combatienteActual.getSiguiente()!=null) {
-                        combatienteActual = combatienteActual.getSiguiente();
->>>>>>> V2Claudio
 
                     if(contenidoAccion.getSelectionModel().getSelectedItem()!=null && contenidoAccion.getSelectionModel().getSelectedItem().equals("Atacar") && combatienteAatacar!=null){
                         combatienteAtacar_label.setText("Combatiente a atacar: \n"+combatienteAatacar.getNombre());
@@ -342,13 +253,6 @@ public class ControladorJuego {
         });
 
     }
-
-    public void DefinirPerfil(CombatienteInstancia combatienteActual){
-        System.out.println("actual turno de: " + combatienteActual.getNombre());
-        caracteristicas.setText("nombre: "+combatienteActual.getNombre()+"\nfuerza: "+combatienteActual.getFue()+"\ninteligencia: "+combatienteActual.getInte()+"\ndestreza: "+combatienteActual.getDes()+"\narmadura: "+combatienteActual.getArm());
-        imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getImagen())));
-
-    }
     void initData(BorderPane customer, VBox tabla, Stage primary, configuracion config) {
         //customer.setPrefWidth(back.getPrefWidth());
         //customer.setPrefHeight(back.getPrefHeight());
@@ -377,8 +281,6 @@ public class ControladorJuego {
                     if(tablaSeleccion.isVisible()){
                         CombatienteInstancia com = est.getCombatiente();
                         if(!combateinstancia.getReaccionarios().contains(com)) {
-
-                        if(!combateinstancia.getReaccionarios().contains(est) && !combatienteActual.equals(est)) {
                             FXMLLoader loader = new FXMLLoader(
                                     getClass().getResource(
                                             "MiniEstadistica.fxml"
@@ -390,8 +292,8 @@ public class ControladorJuego {
                                 b = loader.load();
                                 MiniEstadistica controller = loader.<MiniEstadistica>getController();
                                 SeleccionReaccion.getChildren().add(b);
-                                controller.initData(SeleccionReaccion, b, est,combateinstancia);
-                                combateinstancia.getReaccionarios().add(est);
+                                //controller.initData(SeleccionReaccion, b, com,combateinstancia);
+                                //combateinstancia.getReaccionarios().add(com);
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
