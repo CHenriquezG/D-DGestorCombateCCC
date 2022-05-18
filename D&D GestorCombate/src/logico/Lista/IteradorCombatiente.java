@@ -66,7 +66,7 @@ public class IteradorCombatiente implements Iterador {
     }
 
     public IteradorCombatiente(){
-        this.combatiente =  new CombatienteInstancia("","","","","",0,0,0,0,0,0,0,0,0,0);
+        this.combatiente =  new CombatienteInstancia("","","","","",0,0,0,0,0,0,0,0,0,0,0,0,"");
 
     }
 
