@@ -31,6 +31,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.Calendar;
 
 public class ControladorJuego {
     @FXML
@@ -65,6 +66,7 @@ public class ControladorJuego {
     @FXML
     ScrollPane ContieneReacciones;
 
+    combate combateinstancia;
     Random rnd = new Random(); //instance of random class
     //generate random values from 0-24
 
@@ -72,7 +74,22 @@ public class ControladorJuego {
 
         paisaje.fitWidthProperty().bind(fcontent.widthProperty());
         paisaje.fitHeightProperty().bind(fcontent.heightProperty());**/
-        combateinstancia = new combate();
+
+
+
+        Calendar c = Calendar.getInstance();
+
+        String dia, mes, annio;
+
+        dia = Integer.toString(c.get(Calendar.DATE));
+        mes = Integer.toString(c.get(Calendar.MONTH));
+        annio = Integer.toString(c.get(Calendar.YEAR));
+
+        if(mes.length()==1){
+            mes= 0 + mes;
+        }
+
+        combateinstancia = new combate("Combate"+rnd.nextInt(94)+33,annio+"-"+mes+"-"+dia);
 
         Font font =
                 Font.loadFont(getClass()
@@ -298,8 +315,6 @@ public class ControladorJuego {
 
             }
         });
-
-
     }
 
     public void DefinirPerfil(CombatienteInstancia combatienteActual){
@@ -377,9 +392,6 @@ public class ControladorJuego {
         //primary.setHeight(back.getPrefHeight());
 
         back = customer;
-
-
-
         this.tabla.getChildren().setAll(tabla.getChildren());
         //this.tabla.getChildren().setAll(tabla.getChildren());
     }

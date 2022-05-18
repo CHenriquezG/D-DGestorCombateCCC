@@ -10,11 +10,16 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class combate {
-     ArrayList<IteradorCombatiente> Reaccionarios = new ArrayList<>();
-     asalto actual = new asalto();
+    String titulo, fecha;
+    ArrayList<IteradorCombatiente> Reaccionarios = new ArrayList<>();
+        asalto actual = new asalto();
     ArrayList<CombatienteReal> combatientes;
     configuracion c;
-    public combate(){
+
+
+    public combate(String titulo, String fecha){
+        this.titulo = titulo;
+        this.fecha = fecha;
         InicializarAsalto();
     }
 
@@ -72,5 +77,19 @@ public class combate {
 
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
 }
