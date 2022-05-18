@@ -112,7 +112,6 @@ public class ControladorJuego {
         BD.extraerCombate();
         BD.extraerCombatientes();
 
-
         Font font =
                 Font.loadFont(getClass()
                         .getResourceAsStream("\\Recursos\\Diseño\\SF Atarian System.ttf"), 25);

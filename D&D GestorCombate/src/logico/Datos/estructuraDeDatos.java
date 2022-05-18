@@ -142,7 +142,8 @@ public class estructuraDeDatos {
 
 			// execute the query, and get a java resultset:	 lista de todos los objetos de la consulta anterior
 			ResultSet rs = st.executeQuery(query);
-
+			System.out.println("**********************");
+			System.out.println("Combates: ");
 			// iterate through the java resultset
 			while (rs.next()) {
 				String titulo = rs.getString("Titulo");
@@ -155,6 +156,7 @@ public class estructuraDeDatos {
 				// print the results
 				System.out.format("%s,%s \n", titulo, fecha);
 			}
+			System.out.println("**********************");
 			st.close(); // importante
 		} catch (ClassNotFoundException | SQLException e) {}
 	}
@@ -175,6 +177,8 @@ public class estructuraDeDatos {
 			Statement st1 = conn.createStatement();
 			ResultSet rs1 = st1.executeQuery(query1);
 
+			System.out.println("**********************");
+			System.out.println("Combatientes BD:");
 			while (rs1.next()) {
 				int id = rs1.getInt("id");
 				String nombre = rs1.getString("nombre");
@@ -192,9 +196,10 @@ public class estructuraDeDatos {
 
 				CombatienteReal combatienteAux = new CombatienteReal(nombre, nombreJugador, "1", clase,
 						bIniciativa, puntosDeGolpe, armadura, fuerza, inteligencia, destreza, constitucion, carisma, sabiduria, id);
-
+				System.out.format("%s,%s \n", nombre, nombreJugador);
 				//combatienteRealBD.add(combatienteAux); // combatientes guardados
 			}
+			System.out.println("**********************");
 			st1.close(); // importante
 		} catch (ClassNotFoundException | SQLException e) {}
 	}
@@ -242,7 +247,6 @@ public class estructuraDeDatos {
 			st4.close();
 		} catch (ClassNotFoundException | SQLException e) {}
 	}
-
 
 	public void guardarCombateBD(combate c, configuracion combatientes){
 		estructuraDeDatos e = new estructuraDeDatos();
