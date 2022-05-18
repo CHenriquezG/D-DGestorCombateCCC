@@ -19,16 +19,19 @@ import logico.Combatiente.CombatienteInstancia;
 import logico.Combatiente.CombatienteReal;
 import logico.Configuracion.configuracion;
 import logico.Configuracion.iniciativa;
+import logico.Datos.estructuraDeDatos;
 import logico.Estrategia.Estrategia;
 import logico.Estrategia.contexto;
 import  logico.InstanciaCombate.combate;
 import logico.Lista.Iterador;
 import logico.Lista.IteradorCombatiente;
-
+import java.util.Random;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.Calendar;
 
 public class ControladorJuego {
     @FXML
@@ -44,7 +47,6 @@ public class ControladorJuego {
     @FXML
     CheckBox verReaccion;
     contexto contexto = new contexto();
-    combate combateinstancia ;
     iniciativa i;
     IteradorCombatiente combatienteActual;
     IteradorCombatiente aux;
@@ -72,11 +74,30 @@ public class ControladorJuego {
     ImageView combatienteAtacar_image;
     CombatienteInstancia combatiente_aAtacar;
 
+    combate combateinstancia;
+    Random rnd = new Random(); //instance of random class
+    //generate random values from 0-24
+
     public void initialize(){/**
 
         paisaje.fitWidthProperty().bind(fcontent.widthProperty());
         paisaje.fitHeightProperty().bind(fcontent.heightProperty());**/
-        combateinstancia = new combate();
+
+
+
+        Calendar c = Calendar.getInstance();
+
+        String dia, mes, annio;
+
+        dia = Integer.toString(c.get(Calendar.DATE));
+        mes = Integer.toString(c.get(Calendar.MONTH));
+        annio = Integer.toString(c.get(Calendar.YEAR));
+
+        if(mes.length()==1){
+            mes= 0 + mes;
+        }
+
+        combateinstancia = new combate("Combate"+rnd.nextInt(94)+33,annio+"-"+mes+"-"+dia);
 
         Font font =
                 Font.loadFont(getClass()
@@ -89,6 +110,7 @@ public class ControladorJuego {
         this.combatienteActual= new IteradorCombatiente();
         contenidoReaccion.getItems().addAll(clavesReaccion);
         contenidoAccion.getItems().addAll(clavesAccion);
+
         contenidoAccion.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
@@ -323,8 +345,6 @@ public class ControladorJuego {
 
             }
         });
-
-
     }
 
     public void DefinirPerfil(CombatienteInstancia combatienteActual){
@@ -403,9 +423,6 @@ public class ControladorJuego {
         //primary.setHeight(back.getPrefHeight());
 
         back = customer;
-
-
-
         this.tabla.getChildren().setAll(tabla.getChildren());
         //this.tabla.getChildren().setAll(tabla.getChildren());
     }

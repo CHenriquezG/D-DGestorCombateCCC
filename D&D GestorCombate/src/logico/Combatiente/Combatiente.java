@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Combatiente {
     // poner máximo de combatientes
     String nombre,clase, imagen, nombreJugador;
-    int Bini,PG,Arm,fue,inte,des,cons,car, id, sab;
+    int Bini,PG,Arm,fue,inte,des,cons,car, sab,id;
     BorderPane Grafico;
     Label PGG,tipoG;
 
@@ -124,12 +124,12 @@ public class Combatiente {
         this.car = car;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNombreJugador() {

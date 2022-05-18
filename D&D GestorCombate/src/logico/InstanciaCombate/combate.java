@@ -1,5 +1,5 @@
 package logico.InstanciaCombate;
-
+import logico.Datos.estructuraDeDatos;
 import javafx.fxml.FXMLLoader;
 import logico.Combatiente.CombatienteInstancia;
 import logico.Combatiente.CombatienteReal;
@@ -7,13 +7,19 @@ import logico.Configuracion.configuracion;
 import logico.Lista.IteradorCombatiente;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class combate {
-     ArrayList<IteradorCombatiente> Reaccionarios = new ArrayList<>();
-     asalto actual = new asalto();
+    String titulo, fecha;
+    ArrayList<IteradorCombatiente> Reaccionarios = new ArrayList<>();
+        asalto actual = new asalto();
     ArrayList<CombatienteReal> combatientes;
     configuracion c;
-    public combate(){
+
+
+    public combate(String titulo, String fecha){
+        this.titulo = titulo;
+        this.fecha = fecha;
         InicializarAsalto();
     }
 
@@ -45,7 +51,6 @@ public class combate {
                         "VentanaFormulario.fxml"
                 )
         );
-
         //ControladorFormulario controller = loader.<ControladorFormulario>getController();
         //combatientes= new ArrayList<CombatienteReal>();
 
@@ -72,5 +77,19 @@ public class combate {
 
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
 }
