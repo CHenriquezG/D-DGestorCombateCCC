@@ -1,5 +1,5 @@
 package logico.InstanciaCombate;
 
-public class turno {
+public class 		turno {
 
 }

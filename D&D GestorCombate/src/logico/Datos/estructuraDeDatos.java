@@ -1,5 +1,6 @@
 package logico.Datos;
 import logico.Combatiente.CombatienteReal;
+import logico.Configuracion.configuracion;
 import logico.InstanciaCombate.combate;
 import logico.Combatiente.CombatienteInstancia;
 import java.sql.*;
@@ -27,6 +28,22 @@ public class estructuraDeDatos {
 	// insertar instancias de combatientes
         e.extraerInformacion(); */
 
+
+
+
+
+	/*estructuraDeDatos e = new estructuraDeDatos();
+        System.out.println("-------------------------");
+	configuracion c = new configuracion();
+        c.setCombatiente("claudio","serllet","1","guerrero",4,6,6,8,5,9,8,9,2,rnd.nextInt(94)+33);
+
+        e.guardarCombateBD(combateinstancia,c);
+
+        e.extraerCombate();
+        System.out.println("***************************************************************");
+        e.extraerCombatientes();*/
+
+
 	public void insertarDatosCombate(combate c) { // sirve para eliminar , modificacion, actualizacion dentro de una bd
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -51,7 +68,7 @@ public class estructuraDeDatos {
 			e.printStackTrace();
 		}
 	}
-	public void insertarDatosCombatiente(CombatienteReal combatiente) { // sirve para eliminar , modificacion, actualizacion dentro de una bd
+	/*public void insertarDatosCombatiente(CombatienteReal combatiente) { // sirve para eliminar , modificacion, actualizacion dentro de una bd
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			// 2. Conéctese a la "biblioteca" de datos
@@ -77,11 +94,10 @@ public class estructuraDeDatos {
 			//System.out.println(rs);
 
 			st.close(); // importante
-
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 	public void insertarDatosInstanciaCombatiente(CombatienteInstancia combatiente, combate combateInstancia) { // sirve para eliminar , modificacion, actualizacion dentro de una bd
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -134,6 +150,7 @@ public class estructuraDeDatos {
 				String fecha = rs.getString("Fecha");
 
 				combate combateAux = new combate(titulo, fecha);
+
 				combatesBD.add(combateAux);
 
 				// print the results
@@ -226,5 +243,17 @@ public class estructuraDeDatos {
 			st4.close();
 		} catch (ClassNotFoundException | SQLException e) {}
 	}
+
+
+	/*public void guardarCombateBD(combate c, configuracion combatientes){
+		estructuraDeDatos e = new estructuraDeDatos();
+		e.insertarDatosCombate(c);
+		for (int i=0 ;combatientes.combatientes.size()>i;i++) {
+			e.insertarDatosCombatiente(combatientes.combatientes.get(i));
+			e.insertarDatosInstanciaCombatiente(,c);
+		}
+		// FALTA GUARDAR COMBATIENTES EN EL SISTEMA
+
+	}*/
 }
 

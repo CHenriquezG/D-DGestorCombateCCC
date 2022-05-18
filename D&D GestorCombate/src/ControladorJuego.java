@@ -23,7 +23,7 @@ import logico.Estrategia.contexto;
 import  logico.InstanciaCombate.combate;
 import logico.Lista.Iterador;
 import logico.Lista.IteradorCombatiente;
-
+import java.util.Random;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -48,11 +48,19 @@ public class ControladorJuego {
     @FXML
     ImageView imaSalir;
 
+    Random rnd = new Random(); //instance of random class
+    //generate random values from 0-24
+
     public void initialize(){/**
+
+
 
 
         paisaje.fitWidthProperty().bind(fcontent.widthProperty());
         paisaje.fitHeightProperty().bind(fcontent.heightProperty());**/
+
+
+
 
     // ------------  Creación combate --------
         Calendar c1 = Calendar.getInstance();
@@ -63,7 +71,8 @@ public class ControladorJuego {
         }
         String annio = Integer.toString(c1.get(Calendar.YEAR));
         combate combateinstancia;
-        combateinstancia = new combate("random",annio  +"-"+mes+"-"+dia); // nombre random , se setea después cuando se guarda
+        combateinstancia = new combate("random"+rnd.nextInt(94)+33,annio  +"-"+mes+"-"+dia); // nombre random , se setea después cuando se guarda
+        // insertar instancias de combatientes
 
         contenidoAccion.getItems().addAll(clavesAccion);
 
