@@ -277,7 +277,7 @@
                               <ImageView fx:id="combatienteAtacar_image" fitHeight="130.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </HBox>
-                        <ImageView fitHeight="88.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imaSalir" fitHeight="88.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Recursos/Botones/Finalizar%20combate.png" />
                            </image>

@@ -78,6 +78,9 @@ public class ControladorJuego {
     Random rnd = new Random(); //instance of random class
     //generate random values from 0-24
 
+    Stage scene;
+
+
     public void initialize(){/**
 
         paisaje.fitWidthProperty().bind(fcontent.widthProperty());
@@ -340,6 +343,31 @@ public class ControladorJuego {
                     imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen())));
 
                 }
+
+
+
+            }
+        });
+        imaSalir.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+
+                FXMLLoader loader = new FXMLLoader(
+                        getClass().getResource(
+                                "ControladorInicio.fxml"
+                        )
+                );
+
+                BorderPane b = null;
+                try {
+                    b = (BorderPane)loader.load();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                ControladorInicio controller = loader.<ControladorInicio>getController();
+
+                back.setCenter(controller.back.getCenter());
+                controller.initData(scene);
 
 
 
