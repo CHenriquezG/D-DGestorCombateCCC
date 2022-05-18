@@ -263,6 +263,20 @@
                         <Insets right="20.0" />
                      </padding>
                      <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="combatienteAtacar_label" text="Label" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="50.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="combatienteAtacar_image" fitHeight="130.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </HBox>
                         <ImageView fitHeight="88.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Recursos/Botones/Finalizar%20combate.png" />

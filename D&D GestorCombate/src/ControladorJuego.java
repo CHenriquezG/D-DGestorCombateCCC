@@ -64,6 +64,14 @@ public class ControladorJuego {
     @FXML
     ScrollPane ContieneReacciones;
 
+    @FXML
+    Label  combatienteAtacar_label;
+    IteradorCombatiente combatienteAatacar;
+
+    @FXML
+    ImageView combatienteAtacar_image;
+    CombatienteInstancia combatiente_aAtacar;
+
     public void initialize(){/**
 
         paisaje.fitWidthProperty().bind(fcontent.widthProperty());
@@ -76,6 +84,7 @@ public class ControladorJuego {
 
         caracteristicas.setText("");
         caracteristicas.setFont(font);
+        combatienteAtacar_label.setFont(font);
 
         this.combatienteActual= new IteradorCombatiente();
         contenidoReaccion.getItems().addAll(clavesReaccion);
@@ -156,7 +165,7 @@ public class ControladorJuego {
                         caracteristicas.setText("nombre: "+combatienteActual.getCombatiente().getNombre()+"\nfuerza: "+combatienteActual.getCombatiente().getFue()+"\ninteligencia: "+combatienteActual.getCombatiente().getInte()+"\ndestreza: "+combatienteActual.getCombatiente().getDes()+"\narmadura: "+combatienteActual.getCombatiente().getArm());
                     }
                     else{
-                        caracteristicas.setText("constsitencia: "+combatienteActual.getCombatiente().getCons()+"\niniciativa: "+combatienteActual.getCombatiente().getIniciativa()+"\nptsAct: \nptsMax: ");
+                        caracteristicas.setText("consistencia: "+combatienteActual.getCombatiente().getCons()+"\niniciativa: "+combatienteActual.getCombatiente().getIniciativa()+"\nptsAct: \nptsMax: ");
 
                     }
                     auxTimerCaracteristicas=auxTimerCaracteristicas+1;
@@ -263,11 +272,32 @@ public class ControladorJuego {
                 imaPerfil.setImage(new Image(getClass().getResourceAsStream(combatienteActual.getCombatiente().getImagen())));
             }
         });
+        Timer time = new Timer( );
+        time.scheduleAtFixedRate(new TimerTask() {
+
+            @Override
+            public void run() {
+                Platform.runLater(() -> {
+
+                    if(contenidoAccion.getSelectionModel().getSelectedItem()!=null && contenidoAccion.getSelectionModel().getSelectedItem().equals("Atacar") && combatienteAatacar!=null){
+                        combatienteAtacar_label.setText("Combatiente a atacar: \n"+combatienteAatacar.getCombatiente().getNombre());
+                        combatienteAtacar_image.setImage(new Image(getClass().getResourceAsStream(combatienteAatacar.getCombatiente().getImagen())));
+
+                    }
+                    else{
+
+                        combatienteAtacar_label.setText("");
+                        combatienteAtacar_image.imageProperty().set(null);
+
+                    }
+                });
+                    }
+        }, 00,100);
 
         siguienteFase.setOnMouseClicked(new EventHandler<MouseEvent>() {// con este boton pasa a la subvista de reacciones o pasa de turno
             @Override
             public void handle(MouseEvent event) {
-                combateinstancia.ConstruirAccionEnAsalto(combatienteActual,combatienteActual,claveAccion,Integer.parseInt(IngresoA.getText()));
+                combateinstancia.ConstruirAccionEnAsalto(combatienteActual,combatienteAatacar,claveAccion,Integer.parseInt(IngresoA.getText()));
                 if(verReaccion.isSelected()){
                     tablaAccion.setVisible(false);
                     tablaSeleccion.setVisible(true);
@@ -328,6 +358,7 @@ public class ControladorJuego {
                 public void handle(MouseEvent event) {
                     System.out.println("hola "+ est.getCombatiente().getNombreJugador());
 
+                    combatienteAatacar=est;
                     if(tablaSeleccion.isVisible()){
 
                         if(!combateinstancia.getReaccionarios().contains(est) && !combatienteActual.equals(est)) {

@@ -76,7 +76,7 @@
                         <Insets />
                      </opaqueInsets>
                      <center>
-                        <Label fx:id="nombre" prefHeight="17.0" prefWidth="185.0" text="nombre" BorderPane.alignment="CENTER">
+                        <Label fx:id="nombre" prefHeight="17.0" prefWidth="185.0" text="nombre" textFill="WHITE" BorderPane.alignment="CENTER">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -110,7 +110,7 @@
                         <Insets />
                      </opaqueInsets>
                      <center>
-                        <Label fx:id="jugador" prefHeight="17.0" prefWidth="197.0" text="jugador" BorderPane.alignment="CENTER">
+                        <Label fx:id="jugador" prefHeight="17.0" prefWidth="197.0" text="jugador" textFill="WHITE" BorderPane.alignment="CENTER">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -151,7 +151,7 @@
                         <Insets />
                      </opaqueInsets>
                      <center>
-                        <Label fx:id="pts" prefHeight="17.0" prefWidth="34.0" text="PG: 5" BorderPane.alignment="CENTER">
+                        <Label fx:id="pts" prefHeight="17.0" prefWidth="34.0" text="PG: 5" textFill="WHITE" BorderPane.alignment="CENTER">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -185,7 +185,7 @@
                         <Insets />
                      </opaqueInsets>
                      <center>
-                        <Label fx:id="tipo" prefHeight="17.0" prefWidth="29.0" text="Tipo" BorderPane.alignment="CENTER">
+                        <Label fx:id="tipo" prefHeight="17.0" prefWidth="29.0" text="Tipo" textFill="WHITE" BorderPane.alignment="CENTER">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
