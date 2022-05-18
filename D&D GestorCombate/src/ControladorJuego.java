@@ -182,11 +182,9 @@ public class ControladorJuego {
 
         });
 
-<<<<<<< HEAD
         siguienteTurno.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-=======
         siguientePer.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -253,7 +251,6 @@ public class ControladorJuego {
                 System.out.println("hola");
 
                 imaReAc = new ImageView(new Image(getClass().getResourceAsStream("Recursos\\Botones\\Reaccion.png")));
->>>>>>> V2Claudio
                 if (combatienteActual.getSiguiente()!=null) {
                     combatienteActual = combatienteActual.getSiguiente();
 
@@ -378,13 +375,10 @@ public class ControladorJuego {
                 public void handle(MouseEvent event) {
                     combatienteAatacar=est.getCombatiente();
                     if(tablaSeleccion.isVisible()){
-<<<<<<< HEAD
                         CombatienteInstancia com = est.getCombatiente();
                         if(!combateinstancia.getReaccionarios().contains(com)) {
-=======
 
                         if(!combateinstancia.getReaccionarios().contains(est) && !combatienteActual.equals(est)) {
->>>>>>> V2Claudio
                             FXMLLoader loader = new FXMLLoader(
                                     getClass().getResource(
                                             "MiniEstadistica.fxml"
