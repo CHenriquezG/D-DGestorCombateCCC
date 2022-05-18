@@ -36,7 +36,11 @@ public class ControladorInicio {
     Stage scene;
 
     public void initialize(){
-
+        estructuraDeDatos e = new estructuraDeDatos();
+        System.out.println("-------------------------");
+      //  e.insertarDatos("Combate chiquito 4", "2022-05-12");
+      //  System.out.println("-------------------------");
+      //  e.extraerInformacion();
         ima.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {

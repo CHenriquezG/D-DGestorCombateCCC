@@ -18,9 +18,9 @@
    <center>
       <HBox fx:id="cen" prefHeight="511.0" prefWidth="835.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="511.0" prefWidth="653.0" spacing="15.0" HBox.hgrow="ALWAYS">
+            <VBox prefHeight="444.0" prefWidth="520.0" spacing="15.0" HBox.hgrow="ALWAYS">
                <children>
-                  <BorderPane prefHeight="238.0" prefWidth="406.0" VBox.vgrow="ALWAYS">
+                  <BorderPane fx:id="tableroAccion" prefHeight="331.0" prefWidth="520.0" VBox.vgrow="ALWAYS">
                      <right>
                         <AnchorPane fx:id="subrig" prefHeight="200.0" prefWidth="32.0" BorderPane.alignment="CENTER" />
                      </right>
@@ -44,59 +44,124 @@
                         </HBox>
                      </top>
                      <center>
-                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                        <VBox prefHeight="147.0" prefWidth="456.0" BorderPane.alignment="CENTER">
                            <children>
-                              <HBox alignment="CENTER" prefHeight="47.0" prefWidth="342.0" VBox.vgrow="ALWAYS">
+                              <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="179.0" prefWidth="456.0" VBox.vgrow="ALWAYS">
                                  <children>
-                                    <ImageView fitHeight="50.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Recursos/Botones/Accion.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ChoiceBox fx:id="contenidoAccion" prefWidth="150.0" />
-                                 </children></HBox>
-                              <HBox fx:id="reaccion" alignment="CENTER" prefHeight="48.0" prefWidth="207.0" spacing="10.0" visible="false" VBox.vgrow="ALWAYS">
-                                 <children>
-                                    <ImageView fitHeight="49.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Recursos/Botones/Reaccion.png" />
-                                       </image>
-                                    </ImageView>
-                                    <CheckBox fx:id="verReaccion" mnemonicParsing="false" prefHeight="17.0" prefWidth="31.0" />
+                                    <VBox fx:id="tablaAccion" alignment="TOP_CENTER" prefHeight="213.0" prefWidth="456.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="47.0" prefWidth="342.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <ImageView fx:id="imaReAc" fitHeight="50.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Recursos/Botones/Accion.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ChoiceBox fx:id="contenidoAccion" prefWidth="150.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox fx:id="reaccion" alignment="CENTER" prefHeight="48.0" prefWidth="207.0" spacing="10.0" visible="false" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <ImageView fitHeight="49.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Recursos/Botones/Reaccion.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <CheckBox fx:id="verReaccion" mnemonicParsing="false" prefHeight="17.0" prefWidth="31.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox fx:id="golpeCurar" alignment="CENTER" prefHeight="35.0" prefWidth="342.0" spacing="10.0" visible="false" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <ImageView fx:id="CurDno" fitHeight="43.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Recursos/Botones/golpe.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <TextField fx:id="IngresoA" prefHeight="25.0" prefWidth="69.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox />
+                                          <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="444.0" spacing="20.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <ImageView fx:id="siguienteFase" fitHeight="68.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image>
+                                                      <Image url="@Recursos/Botones/Siguiente.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="siguienteTurno" fitHeight="68.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image>
+                                                      <Image url="@Recursos/Botones/siguiente%20turno.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets right="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox fx:id="tablaSeleccion" prefHeight="213.0" prefWidth="456.0" visible="false">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <ScrollPane fx:id="ContieneReacciones" prefHeight="213.0" prefWidth="159.0">
+                                                   <content>
+                                                      <VBox fx:id="SeleccionReaccion" alignment="TOP_CENTER" prefHeight="130.0" prefWidth="146.0" />
+                                                   </content>
+                                                </ScrollPane>
+                                                <VBox alignment="BOTTOM_RIGHT" prefHeight="232.0" prefWidth="255.0">
+                                                   <children>
+                                                      <ImageView fx:id="siguienteReac" fitHeight="65.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@Recursos/Botones/Siguiente.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox fx:id="tablaReaccion" prefHeight="200.0" prefWidth="455.0" visible="false">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="101.0" prefWidth="455.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <ImageView fx:id="imaReaccion" fitHeight="50.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Recursos/Botones/Reaccion.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ChoiceBox fx:id="contenidoReaccion" prefWidth="150.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox fx:id="golpeCurar1" alignment="CENTER" prefHeight="115.0" prefWidth="455.0" spacing="10.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <ImageView fx:id="DnoR" fitHeight="43.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Recursos/Botones/golpe.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <TextField fx:id="IngresoR" prefHeight="25.0" prefWidth="69.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fx:id="siguientePer" fitHeight="81.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Recursos/Botones/Siguiente.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
                                  </children>
-                              </HBox>
-                              <HBox fx:id="golpeCurar" alignment="CENTER" prefHeight="35.0" prefWidth="342.0" spacing="10.0" visible="false" VBox.vgrow="ALWAYS">
-                                 <children>
-                                    <ImageView fx:id="CurDno" fitHeight="43.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Recursos/Botones/golpe.png" />
-                                       </image>
-                                    </ImageView>
-                                    <TextField fx:id="Ingreso" prefHeight="25.0" prefWidth="69.0" />
-                                 </children>
-                              </HBox>
-                              <HBox />
-                              <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="444.0" spacing="20.0" VBox.vgrow="ALWAYS">
-                                 <children>
-                                    <ImageView fx:id="siguienteFase" fitHeight="68.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                                       <image>
-                                          <Image url="@Recursos/Botones/Siguiente.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fx:id="siguienteTurno" fitHeight="68.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                                       <image>
-                                          <Image url="@Recursos/Botones/siguiente%20turno.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets right="10.0" />
-                                 </VBox.margin>
-                              </HBox>
-                           </children></VBox>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
                      </center>
                   </BorderPane>
-                  <BorderPane prefHeight="202.0" prefWidth="306.0">
+                  <BorderPane prefHeight="253.0" prefWidth="420.0">
                      <right>
                         <AnchorPane fx:id="subrig1" prefHeight="200.0" prefWidth="32.0" BorderPane.alignment="CENTER" />
                      </right>
@@ -120,126 +185,32 @@
                         </HBox>
                      </top>
                      <center>
-                        <VBox fx:id="fcontent" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                        <VBox fx:id="fcontent" alignment="CENTER" prefHeight="153.0" prefWidth="459.0" BorderPane.alignment="CENTER">
                            <children>
                               <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
                                  <children>
-                                    <HBox prefHeight="83.0" prefWidth="242.0">
+                                    <HBox prefHeight="164.0" prefWidth="354.0">
                                        <children>
-                                          <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                          <HBox prefHeight="141.0" prefWidth="145.0">
                                              <children>
-                                                <Label fx:id="FuePer" text="fue">
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="IntPer" text="int">
-                                                   <VBox.margin>
-                                                      <Insets right="15.0" />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="DesPer" text="des">
-                                                   <VBox.margin>
-                                                      <Insets right="30.0" />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="ConPer" text="cons">
-                                                   <VBox.margin>
-                                                      <Insets right="15.0" />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="CarPer" text="car">
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
+                                                <ImageView fx:id="imaPerfil" fitHeight="153.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Recursos/Foto%20de%20personajes/Gibbering%20Mouther.png" />
+                                                   </image>
+                                                </ImageView>
                                              </children>
-                                          </VBox>
-                                          <ImageView fx:id="imaPerfil" fitHeight="119.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                                             <image>
-                                                <Image url="@Recursos/Foto%20de%20personajes/Gibbering%20Mouther.png" />
-                                             </image>
-                                          </ImageView>
-                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
-                                             <children>
-                                                <Label fx:id="NomPer" text="nombre">
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="JugPer" text="jugador">
-                                                   <VBox.margin>
-                                                      <Insets left="15.0" />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="ArmPer" prefHeight="17.0" prefWidth="55.0" text="armadura">
-                                                   <VBox.margin>
-                                                      <Insets left="30.0" />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="iniPer" text="iniciativa">
-                                                   <VBox.margin>
-                                                      <Insets left="15.0" />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="BIPer" text="bonif">
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                             <HBox.margin>
-                                                <Insets />
-                                             </HBox.margin>
-                                          </VBox>
-                                       </children>
-                                    </HBox>
-                                    <HBox alignment="CENTER" prefHeight="0.0" prefWidth="242.0" spacing="30.0" VBox.vgrow="ALWAYS">
-                                       <children>
-                                          <Label text="ptsAct ">
+                                          </HBox>
+                                          <Label fx:id="caracteristicas" alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="151.0" prefWidth="194.0" text="Label" textFill="WHITE">
                                              <font>
-                                                <Font name="System Bold" size="12.0" />
-                                             </font></Label>
-                                          <Label text="pts max">
-                                             <font>
-                                                <Font name="System Bold" size="12.0" />
+                                                <Font size="11.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </HBox>
                                  </children>
                               </VBox>
-                           </children></VBox>
+                           </children>
+                        </VBox>
                      </center>
                      <opaqueInsets>
                         <Insets />
@@ -287,7 +258,7 @@
                         </VBox>
                      </center>
                   </BorderPane>
-                  <HBox alignment="BOTTOM_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="73.0" prefWidth="500.0" spacing="15.0">
+                  <HBox alignment="BOTTOM_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="88.0" prefWidth="550.0" spacing="15.0">
                      <padding>
                         <Insets right="20.0" />
                      </padding>

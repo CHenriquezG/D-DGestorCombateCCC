@@ -13,7 +13,7 @@ public class Estadisticas {
     @FXML
     ImageView imaper;
     @FXML
-    Label jugador,nombre,pts;
+    Label jugador,nombre,pts,tipo;
     @FXML
     BorderPane tablero;
 

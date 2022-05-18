@@ -35,6 +35,7 @@ public class ControladorFormulario {
 
     Image auxima;
     public configuracion conf;
+    int indice;
 
     public void initialize(){
         tipoimagen.getItems().addAll(personajes);
@@ -43,8 +44,10 @@ public class ControladorFormulario {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 System.out.println(newValue);
+                indice = (int) newValue;
                 auxima = new Image(getClass().getResourceAsStream("\\Recursos\\Foto de personajes\\"+tipoimagen.getItems().get((Integer) newValue)+".png"));
                 ima.setImage(auxima);
+
 
             }
         });
@@ -79,7 +82,7 @@ public class ControladorFormulario {
 
                     BorderPane b ;
                     try {
-                        b = (BorderPane)loader.load();
+                        b = (BorderPane) loader.load();
                         Estadisticas controller = loader.<Estadisticas>getController();
                         controller.imaper.setImage(auxima);
 
@@ -87,20 +90,21 @@ public class ControladorFormulario {
                         controller.jugador.setText(nombreJugador.getText());
                         controller.pts.setText(PGolpe.getText());
 
-                        controller.nombre.setText("Nombre Personaje: "+nombre.getText());
-                        controller.jugador.setText("Nombre Jugador: "+nombreJugador.getText());
-                        controller.pts.setText("PG:"+PGolpe.getText());
+                        controller.nombre.setText("Nombre Personaje: " + nombre.getText());
+                        controller.jugador.setText("Nombre Jugador: " + nombreJugador.getText());
+                        controller.pts.setText("PG:" + PGolpe.getText());
 
                         // aca se crean el combatiente
-                        int ar = Integer.parseInt(armadura.getText()),pg =Integer.parseInt(PGolpe.getText())
-                                ,bi=Integer.parseInt(BIniciativa.getText()) ,fue=Integer.parseInt(Fuerza.getText())
-                                ,in=Integer.parseInt(Inteligencia.getText()),des=Integer.parseInt(destreza.getText())
-                                ,con=Integer.parseInt(constitucion.getText()),car=Integer.parseInt(carisma.getText())
-                                ,sab=Integer.parseInt(sabiduria.getText());
+                        int ar = Integer.parseInt(armadura.getText()), pg = Integer.parseInt(PGolpe.getText()), bi = Integer.parseInt(BIniciativa.getText()), fue = Integer.parseInt(Fuerza.getText()), in = Integer.parseInt(Inteligencia.getText()), des = Integer.parseInt(destreza.getText()), con = Integer.parseInt(constitucion.getText()), car = Integer.parseInt(carisma.getText()), sab = Integer.parseInt(sabiduria.getText());
                         // crear ID random
-                        int id = (char) (rnd.nextInt(94)+33); // actualizar método de obtener una ID;
-                        conf.setCombatiente(nombre.getText(),nombreJugador.getText(),clase.getAccessibleText(),tipoimagen.getAccessibleText(),bi,pg,ar,fue,in,des,con,car, sab,id);
-                        conf.combatientes.get(conf.combatientes.size()-1).setGrafico(b);
+                        int id = (char) (rnd.nextInt(94) + 33); // actualizar método de obtener una ID;
+                        conf.setCombatiente(nombre.getText(), nombreJugador.getText(), "\\Recursos\\Foto de personajes\\" + tipoimagen.getValue() + ".png", clase.getAccessibleText(), bi, pg, ar, fue, in, des, con, car, sab, id);
+                        conf.combatientes.get(conf.combatientes.size() - 1).setGrafico(b);
+
+
+                        conf.combatientes.get(conf.combatientes.size()-1).setPGG(controller.pts);
+                        conf.combatientes.get(conf.combatientes.size()-1).setTipoG(controller.tipo);
+
 
                         controller.initData(0,conf);
                         tabla.getChildren().add(b);

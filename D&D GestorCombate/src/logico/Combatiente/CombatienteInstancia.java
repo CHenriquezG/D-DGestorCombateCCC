@@ -1,5 +1,7 @@
 package logico.Combatiente;
 
+import logico.Estrategia.Estrategia;
+
 public class CombatienteInstancia extends Combatiente{
 
 
@@ -46,4 +48,5 @@ public class CombatienteInstancia extends Combatiente{
     public void setIniciativa(int iniciativa) {
         this.iniciativa = iniciativa;
     }
+
 }
