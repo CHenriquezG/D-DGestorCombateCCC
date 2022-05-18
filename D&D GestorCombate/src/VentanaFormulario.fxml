@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="622.0" prefWidth="497.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorFormulario">
+<BorderPane fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="622.0" prefWidth="497.0" stylesheets="@aplicacion.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorFormulario">
 
     <left>
         <AnchorPane fx:id="lef" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="228.0" prefWidth="32.0" style="-fx-background-color: BLUE;" BorderPane.alignment="CENTER" />
@@ -50,15 +50,18 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="30.0">
                      <children>
-                        <ImageView fitHeight="40.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="73.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Recursos/Botones/Nombre.png" />
+                              <Image url="@Recursos/Botones/nombrePersonaje.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="nombre" />
-                        <ImageView fitHeight="40.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                        <TextField fx:id="nombre">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin></TextField>
+                        <ImageView fitHeight="50.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Recursos/Botones/Nombre.png" />
+                              <Image url="@Recursos/Botones/nombreJugador.png" />
                            </image>
                         </ImageView>
                         <TextField fx:id="nombreJugador" />
@@ -159,9 +162,9 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="0.0" prefWidth="433.0" spacing="30.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <ImageView fitHeight="26.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="65.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Recursos/Botones/Destreza.png" />
+                              <Image url="@Recursos/Botones/sabiduria.png" />
                            </image>
                         </ImageView>
                         <TextField fx:id="sabiduria" prefHeight="30.0" prefWidth="30.0" />
