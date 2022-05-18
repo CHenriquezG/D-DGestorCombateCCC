@@ -17,6 +17,7 @@ public class reaccion {
         this.implicado = implicado;
         contexto cont = new contexto();
         est = cont.ObtenerEstrategia(clavecontexto);
+        this.dado=dado;
     }
 
     public void EfectuarEstrategia(){
