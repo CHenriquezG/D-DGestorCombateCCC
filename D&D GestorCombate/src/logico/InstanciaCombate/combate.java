@@ -92,4 +92,9 @@ public class combate {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+
+    public ArrayList<CombatienteReal> getCombatientes(){
+        combatientes = c.combatientes;
+        return combatientes;
+    }
 }

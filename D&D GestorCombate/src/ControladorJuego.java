@@ -83,8 +83,6 @@ public class ControladorJuego {
         paisaje.fitWidthProperty().bind(fcontent.widthProperty());
         paisaje.fitHeightProperty().bind(fcontent.heightProperty());**/
 
-
-
         Calendar c = Calendar.getInstance();
 
         String dia, mes, annio;
@@ -98,6 +96,22 @@ public class ControladorJuego {
         }
 
         combateinstancia = new combate("Combate"+rnd.nextInt(94)+33,annio+"-"+mes+"-"+dia);
+
+        estructuraDeDatos BD = new estructuraDeDatos();
+        //configuracion c1 = new configuracion();
+       // c1.combatientes= combateinstancia.getCombatientes();
+        // System.out.println(combatienteActual.getCombatiente());
+
+        BD.insertarDatosCombate(combateinstancia);
+        /*for (int i=0;i<c1.combatientes.size();i++){
+            System.out.println("aaaa");
+            BD.insertarDatosCombatiente(c1.combatientes.get(i));
+        }*/
+
+
+        BD.extraerCombate();
+        BD.extraerCombatientes();
+
 
         Font font =
                 Font.loadFont(getClass()

@@ -42,7 +42,7 @@ public class ControladorListaPersonajes {
     configuracion bhconf;
     public void initialize(){
         conf = new configuracion();
-        imaSiguente.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            imaSiguente.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
 
