@@ -64,6 +64,8 @@ public class ControladorJuego {
     @FXML
     ScrollPane ContieneReacciones;
 
+    Stage scene;
+
     CombatienteInstancia combatiente_aAtacar;
 
     public void initialize(){/**
@@ -224,6 +226,31 @@ public class ControladorJuego {
             }
         }, 00,100);
 
+        imaSalir.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+
+                FXMLLoader loader = new FXMLLoader(
+                        getClass().getResource(
+                                "ControladorInicio.fxml"
+                        )
+                );
+
+                BorderPane b = null;
+                try {
+                    b = (BorderPane)loader.load();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                ControladorInicio controller = loader.<ControladorInicio>getController();
+
+                back.setCenter(controller.back.getCenter());
+                controller.initData(scene);
+
+
+
+            }
+        });
 
     }
     void initData(BorderPane customer, VBox tabla, Stage primary, configuracion config) {
@@ -294,8 +321,6 @@ public class ControladorJuego {
         primary.setWidth(back.getPrefWidth());
         primary.setHeight(back.getPrefHeight());
         back = customer;
-
-
 
         this.tabla.getChildren().setAll(tabla.getChildren());
         //this.tabla.getChildren().setAll(tabla.getChildren());
