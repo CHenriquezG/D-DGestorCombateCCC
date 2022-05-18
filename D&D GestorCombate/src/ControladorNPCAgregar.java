@@ -104,6 +104,8 @@ public class ControladorNPCAgregar  implements Initializable {
                     controller.pts.setText("PG:"+auxCombatiente.getPG());
                     conf.setCombatiente(auxCombatiente.getNombre(),auxCombatiente.getNombreJugador(),auxCombatiente.getImagen(),auxCombatiente.getClase(),auxCombatiente.getBini(),auxCombatiente.getPG(),auxCombatiente.getArm(),auxCombatiente.getFue(),auxCombatiente.getInte(),auxCombatiente.getDes(),auxCombatiente.getCons(),auxCombatiente.getCar(), auxCombatiente.getSab(),auxCombatiente.getId());
                     conf.combatientes.get(conf.combatientes.size()-1).setGrafico(b);
+                    conf.combatientes.get(conf.combatientes.size()-1).setPGG(controller.pts);
+                    conf.combatientes.get(conf.combatientes.size()-1).setTipoG(controller.tipo);
                     controller.initData(0,conf);
                     tabla.getChildren().add(b);
                     controller.imaper.setImage(auxima);

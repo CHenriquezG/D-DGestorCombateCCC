@@ -1,9 +1,13 @@
 package logico.Combatiente;
 
+import logico.Estrategia.Estrategia;
+
 public class CombatienteInstancia extends Combatiente{
 
     String estado;
     int iniciativa;
+
+
 
     public CombatienteInstancia(String nombre,String nombreJugador, String clase,String imagen,String estado, int bini, int PG, int arm, int fue, int inte, int des, int cons, int car,int sab, int id) {
         super(nombre,nombreJugador, clase,imagen, bini, PG, arm, fue, inte, des, cons, car, sab,id);
@@ -25,4 +29,5 @@ public class CombatienteInstancia extends Combatiente{
     public void setIniciativa(int iniciativa) {
         this.iniciativa = iniciativa;
     }
+
 }
